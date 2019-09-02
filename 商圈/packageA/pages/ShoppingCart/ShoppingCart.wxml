@@ -1,0 +1,66 @@
+<!-- 头部 -->
+<view class='publish-dynamics-head'>
+  <text catchtap="goback">取消</text>
+  <text wx:if='{{deleteBtn}}' catchtap="showdeleteBtn">管理</text>
+  <text wx:else catchtap="showdeleteBtn">完成</text>
+</view>
+<view class='shoplist-container'>
+  <block wx:for-items="{{shoplist}}" wx:key="{{item.id}}">
+    <!-- 外层循环的是店铺 -->
+    <view class='shoppling-item'>
+      <view class='shoppling-top'>
+        <radio-group class="radio-group">
+          <label class="radio" bindtap="radioChange" data-storeId="{{item.store.id}}" data-chooseAllFlag="{{item.chooseAllFlag}}">
+            <radio class="radio" color="#D7000F" checked="{{item.chooseAllFlag}}" />
+
+          </label>
+        </radio-group>
+        <image class='shopIcon' src='../../../img/icon_dianputubiao@3x.png'></image>
+        <text>{{item.store.name}}</text>
+        <image class='toshoplistIcon' src='../../../image/6.png'></image>
+      </view>
+      <block wx:for-items="{{item.cartItemList}}" wx:for-item="items" wx:key="*item">
+        <view class='shoppling-list'>
+          <!-- 内层循环的是店铺里的商品 -->
+          <radio-group class="radio-group">
+            <label class="radio" bindtap="chooseFlagfn" data-id="{{items.id}}" data-chooseFlag="{{items.chooseFlag}}">
+              <radio class="radio" color="#D7000F" checked="{{items.chooseFlag}}" wx:if='{{!items.product.shelfFlag}}'  disabled='{{disabled}}'/>
+               <radio class="radio" color="#D7000F" checked="{{items.chooseFlag}}" wx:else  />
+            </label>
+          </radio-group>
+          <view class='off-self-box' style="position:relative;">
+          <image src='{{items.product.coverImageInfo.thumb}}'></image>
+          <image wx:if='{{!items.product.shelfFlag}}' src='../../../img/yixiajia1191@3x.png' class='off-self-img'></image>                 
+          </view>
+          <view>
+            <view class='shoppling-list-name'>{{items.product.name}}</view>
+            <view class='shoppling-list-price'>￥{{items.product.price}}</view>
+          </view>
+          <!-- 计数器 -->
+          <view class='count-text'>
+            <text bindtap="updateCartItemById" data-id="{{items.id}}" data-quantity="{{items.quantity-1}}"> - </text>
+            <text> {{items.quantity}} </text>
+            <text bindtap="updateCartItemById" data-id="{{items.id}}" data-quantity="{{items.quantity+1}}"> + </text>
+          </view>
+        </view>
+      </block>
+    </view>
+
+  </block>
+</view>
+
+<!-- 下部分的全选按钮 取消全选 或者 全选 -->
+<view class='bottom-menus'>
+  <radio-group class="radio-group">
+    <label class="radio" bindtap="radioChange2">
+      <radio class="radio" color="#D7000F" checked="{{chooseAllFlag}}" />全选
+    </label>
+  </radio-group>
+  <view class='countmoney'>
+    <text>合计：</text>
+    <text>￥{{totalMoney}}</text>
+  </view>
+  <text class='saveBtn' wx:if="{{deleteBtn}}" bindtap="toshoppingCartPay">结算</text>
+  <text class='saveBtn2' wx:if="{{!chooseAllFlag && !deleteBtn}}" bindtap="deleteBtnfn2">删除</text>
+  <text class='saveBtn2' wx:if="{{chooseAllFlag && !deleteBtn}}" bindtap="deleteBtnfn3">清空购物车</text>
+</view>

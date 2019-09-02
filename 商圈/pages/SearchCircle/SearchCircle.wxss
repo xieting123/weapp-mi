@@ -1,0 +1,71 @@
+/* pages/SearchCircle/SearchCircle.wxss */
+@import '../index/shanghui/shanghui.wxss';
+
+page {
+  background: #fff;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-container-head {
+  display: flex;
+  align-items: center;
+  margin: 24rpx auto 50rpx;
+  position: relative;
+}
+
+.search-container-head-left {
+  width: 600rpx;
+  height: 60rpx;
+  background: rgba(241, 242, 246, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 30px;
+}
+
+.search-container-head input {
+  width: 400rpx;
+  margin-left: -70rpx;
+  color: #333;
+  background: rgba(241, 242, 246, 1);
+}
+
+.search-cancle {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36px;
+  color: rgba(51, 51, 51, 1);
+  margin-left: 30rpx;
+}
+
+.search-cancle-icon {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 30px;
+}
+
+.search-container-head-left .search-search {
+  height: 26rpx;
+  width: 26rpx;
+}
+
+.search-info {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999;
+}
+
+.place-holder {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(153, 153, 153, 1);
+}

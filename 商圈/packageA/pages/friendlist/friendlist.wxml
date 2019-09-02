@@ -1,0 +1,20 @@
+<view class='swiper_con-fourbox-list'>
+  <block wx:for="{{toFriendlist}}" wx:key="friendUniqueId" wx:for-item="itemfans">
+    <view class='swiper_con-fourbox-list-item'>
+      <view class='swiper_con-fourbox-list-item-left'>
+        <view class='swiper_con-fourbox-list-item-avatars'>
+          <image src="{{itemfans.avatar}}"></image>
+          <image src='../../../image/icon_会员@3x.png' class='swiper_con-fourbox-list-item-avatars-Prove'></image>
+        </view>
+        <view class='swiper_con-fourbox-list-item-person'>
+          <view class='swiper_con-fourbox-list-item-person-name'>{{itemfans.nickname}}</view>
+          <view wx:if="{{itemfans.company}}" class='swiper_con-fourbox-list-item-person-position'>{{itemfans.company}}·{{itemfans.position}}</view>
+        </view>
+      </view>
+      <text class='guanzhu-btn' wx:if='{{itemfans.likeType==0}}' data-id='{{itemfans.uniqueId}}' catchtap="followbtnFn">+关注</text>
+            <text class='guanzhu-btn' wx:if='{{itemfans.likeType==1}}' data-id='{{itemfans.uniqueId}}' catchtap="followbtnFn">+关注</text>
+      <text class='guanzhu-btn2' wx:if='{{itemfans.likeType==2}}' data-id='{{itemfans.uniqueId}}' catchtap="unfollowbtnFn">已关注</text>
+      <text class='guanzhu-btn2' wx:if='{{itemfans.likeType==4 }}' data-id='{{itemfans.uniqueId}}' catchtap="unfollowbtnFn">相互关注</text>
+    </view>
+  </block>
+</view>

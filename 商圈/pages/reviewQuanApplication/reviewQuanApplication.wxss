@@ -1,0 +1,73 @@
+/* pages/reviewQuanApplication/reviewQuanApplication.wxss */
+
+page {
+  background: #fff;
+}
+
+.view-contanier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 58rpx;
+  font-size: 28rpx;
+  color: #4d4d4d;
+}
+
+.view-contanier image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-bottom: 20rpx;
+}
+
+.view-info {
+  margin: 20rpx;
+}
+
+.view-info text:nth-child(1) {
+  font-size: 22rpx;
+  color: #999;
+  margin-right: 10rpx;
+}
+
+.view-info text {
+  font-size: 22rpx;
+  color: #707070;
+  margin-left: 10rpx;
+}
+
+.view-word {
+  width: 686rpx;
+  padding: 20rpx;
+  background: rgba(241, 242, 246, 1);
+  opacity: 1;
+  border-radius: 31px;
+}
+.view-status{
+  width: 686rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.view-status button::after{
+  border: none;
+}
+.view-status button{
+width:328rpx;
+height:88rpx;
+margin-top: 56rpx;
+color:#FFFFFF;
+font-size: 28rpx;
+line-height: 88rpx;
+border-radius:10px;
+}
+.view-status button:nth-child(1){
+  background: #D7000F
+}
+.view-status button:nth-child(2){
+  background: #DBDBDB
+}
+.view-status-ok,.view-status-no{
+  color:#999999;
+  margin-top: 52rpx;
+}

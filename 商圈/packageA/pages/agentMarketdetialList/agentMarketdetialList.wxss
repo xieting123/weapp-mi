@@ -1,0 +1,68 @@
+/* packageA/pages/agentMarketdetialList/agentMarketdetialList.wxss */
+@import '../../pages/agentMarketdetial/agentMarketdetial.wxss';
+
+.storeinfo-box {
+  padding: 32rpx;
+}
+
+.goodsData-container {
+  padding: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.goodsData-container-left {
+  display: flex;
+}
+
+.goodsData-container image {
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 32rpx;
+}
+
+.goodsData-container-right-name {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  width: 460rpx;
+
+}
+
+.goodsData-container-right-price text:nth-child(1),
+.goodsData-container-right-profitMoney text:nth-child(1) {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+}
+
+.goodsData-container-right-price text:nth-child(2) {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 40rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.goodsData-container-right-profitMoney text:nth-child(2) {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 40rpx;
+  color: rgba(215, 0, 15, 1);
+}
+
+.agentFlagImg {
+  width: 44rpx !important;
+  height: 44rpx !important;
+}

@@ -1,0 +1,41 @@
+/* packageA/pages/myCoinInfo/myCoinInfo.wxss */
+
+.coinInfo-container {
+  padding: 32rpx;
+  background: #fff;
+}
+
+.coinInfo-container-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32rpx 0;
+  border-bottom: 1px solid #eee;
+}
+
+.coinInfo-container-left view:nth-child(1) {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 70rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.coinInfo-container-left view:nth-child(2) {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+}
+
+.coinInfo-container-right {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(215, 0, 15, 1);
+  opacity: 1;
+}

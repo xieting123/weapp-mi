@@ -1,0 +1,5 @@
+/* packageA/pages/myalbum/myalbum.wxss */
+@import '../../../pages/PublishingDynamics/PublishingDynamics.wxss';
+.publish-album{
+  color:#D7000F
+}

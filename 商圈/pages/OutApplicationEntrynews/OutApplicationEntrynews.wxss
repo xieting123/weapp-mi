@@ -1,0 +1,2 @@
+/* pages/OutApplicationEntrynews/OutApplicationEntrynews.wxss */
+@import '../ApplicationEntrynews/ApplicationEntrynews.wxss'

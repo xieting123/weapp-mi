@@ -1,0 +1,23 @@
+<view class='notice-list'>
+  <block wx:for="{{datainfo}}" wx:for-item="item">
+    <navigator url='../publicNoticeDetail/publicNoticeDetail?notifyId={{item.notifyId}}&circleId={{item.circleId}}&createTime={{item.createTime}}' hover-class="none">
+      <view class='notice-list-item' id='{{item.notifyId}}'>
+        <view class='notice-content'>
+          <text class='content'>{{item.notifyContent}}</text>
+          <image src='{{item.imageList[0].thumb}}' mode='aspectFill'></image>
+        </view>
+        <view class='notice-info'>
+          <text>圈主-{{item.user.name?item.user.name:item.user.nickname}}</text>
+          <text>{{item.createTime}}</text>
+        </view>
+      </view>
+    </navigator>
+  </block>
+  <view>
+    <view wx:if="{{adminFlag=='true'}}">
+      <navigator url='../publishNotice/publishNotice?circleId={{circleId}}' hover-class="none">
+        <image class='publish-editor' src='../../image/bottom_button@3x.png'></image>
+      </navigator>
+    </view>
+  </view>
+</view>

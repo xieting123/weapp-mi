@@ -1,0 +1,159 @@
+<!--packageA/pages/PublishingArticledetail/PublishingArticledetail.wxml-->
+<import src="../../../wxParse/wxParse.wxml" />
+<view class='dynamic-container-list'>
+  <view class='article-title content'>{{articleData.title}}</view>
+  <view class='dynamic-user'>
+    <view class='dynamic-user-top'>
+        <view class='dynamic-userImg'>
+          <image class='user-img' src='{{articleData.user.avatar}}' data-id='{{articleData.user.uniqueId}}' catchtap="topersonal" mode="aspectFit"></image>
+          <image class='user-identify' src='../../image/icon_v@3x.png' wx:if="{{articleData.user.verifyStatus==2}}"></image>
+        </view>
+        <view class='dynamic-userInfo'>
+          <view class='dynamic-name'>
+            <text>{{articleData.user.nickname}}</text>
+            <image class='identify' wx:if="{{articleData.user.verifyStatus==2}}" src='../../image/icon_shirenrengzheng@3x.png'></image>
+          </view>
+          <text wx:if='{{articleData.user.company}}' class='dynamic-company'>{{articleData.user.company}}</text>
+          <view wx:if='{{articleData.user.position}}' class='dynamic-position'>
+            <text>{{articleData.user.position}}</text>
+            <image wx:if="{{articleData.user.workVerify==2}}" class='identify' src='../../image/zhiwurenzheng75@3x.png'></image>
+          </view>
+        </view>
+      </view>
+
+          <button size='mini'  wx:if="{{articleData.user.likeType==0}}" data-id='{{articleData.user.uniqueId}}' catchtap="followbtnFn">+关注</button>
+                    <button size='mini' wx:if="{{articleData.user.likeType==1}}" data-id='{{articleData.user.uniqueId}}' catchtap="myselffn">+关注</button>
+                    <button size='mini'  wx:if="{{articleData.user.likeType==2}}" data-id='{{articleData.user.uniqueId}}' catchtap="unfollowbtnFn">已关注</button>
+                    <button size='mini' wx:if="{{articleData.user.likeType==4}}" data-id='{{articleData.user.uniqueId}}' catchtap="unfollowbtnFn">相互关注</button>
+  </view>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>
+<!-- 弹框 -->
+<view class="modals modals-bottom-dialog" hidden="{{hideModal}}">
+  <view class="modals-cancel" bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+    <view>
+      <button class='modals-button' open-type="share" style="height:90rpx;">
+        <image src='../../../image/icon_fasonghapyou@2x.png'></image>
+        <text style='margin-top:-32rpx;'>发送给好友</text>
+      </button>
+    </view>
+    <view bindtap="show">
+      <image src='../../../image/icon_shengchengfenxiangkapian@2x.png'></image>
+      <text> 生成分享卡片</text>
+    </view>
+    <view>
+      <image src='../../../image/mengzuban1175@2x.png'></image>
+      <text>商蜜</text>
+    </view>
+    <view wx:if='{{articleData.meFlag}}'>
+      <image src='../../../image/icon_sheweizhiding@3x.png'></image>
+      <text>设为置顶</text>
+    </view>
+    <view bindtap="routerToeditor">
+      <image src='../../../image/icon_bianji@3x.png'></image>
+      <text>编辑</text>
+    </view>
+    <view wx:if='{{articleData.meFlag}}' bindtap="delarticlefn" data-id='{{articleData.id}}'>
+      <image src='../../../image/icon_detele@2x.png'></image>
+      <text>删除</text>
+    </view>
+    <button class='modals-bottom-dialog-cancle' bindtap="hideModal">取消</button>
+  </view>
+</view>
+
+<!-- 评论框 -->
+<view class='dynamic-comment-container-menu'>
+  <navigator url='../PublishingArticleComment/PublishingArticleComment?nikename={{articleData.user.nickname}}&content={{articleData.content}}&trendsId={{trendsId}}&id={{articleData.id}}&replyType=2' hover-class="none">
+    <input placeholder="写评论..." placeholder-class="commentpinlun" disabled="true" />
+  </navigator>
+  <view class='dynamic-comment-container-like-menu'>
+    <image src='../../../image/icon_pinlun.png'></image>
+    <image wx:if="{{zanFlag}}" src='../../../image/icon_dianzanxuanzhong.png' data-id="{{articleData.id}}"  bindtap="changeZanfn" ></image>
+    <image wx:else src='../../../image/icon_dianzanmoren@3x.png' data-id="{{articleData.id}}" bindtap="changeZanfn"></image>
+    <image src='../../../image/icon_zhuanfa.png' bindtap="showModal"></image>
+  </view>
+</view>
+
+<!-- 打赏评论区 -->
+<view class='dynamic-payandcomment-container'>
+  <view class='dynamic-pay-container'>
+    <text class='dynamic-like-list-payinfo'>你的支持是作者最大的动力</text>
+    <view class='dynamic-like-list-payinfo-flex'>
+
+      <view class='dynamic-payinfo-button dynamic-payinfo-button-one' data-id="{{articleData.id}}" bindtap="toZanlist">
+        <image wx:if="{{zanFlag}}" src='../../../image/icon_dianzanxuanzhong.png'></image>
+         <image wx:else src='../../../image/icon_dianzanmoren@3x.png'></image>
+        <text>点赞</text>
+      </view>
+
+      <navigator url='../../../pages/PublishingDynamicsDetailReward/PublishingDynamicsDetailReward?avatar={{articleData.user.avatar}}&nickname={{articleData.user.nickname}}&trendsId={{id}}' hover-class="none">
+        <view class='dynamic-payinfo-button'>
+          <image src='../../../image/icon_dasang.png'></image>
+          <text>打赏</text>
+        </view>
+      </navigator>
+    </view>
+
+    <!-- 打赏人数 -->
+    <view class='dynamic-payinfo-memberCount' wx:if='{{articleData.rewardCount}}'>
+      <image src='../../../image/icon_gong@3x.png'></image>
+      <text bindtap="torewardlist" data-id="{{articleData.id}}">等{{articleData.rewardCount}}人已打赏></text>
+    </view>
+  </view>
+  <!-- 评论列表 -->
+  <!-- 暂无人评论 -->
+  <view class='dynamic-comment-container' wx:if="{{commenTotalCount==0}}">
+    <image src='../../../image/icon_pinlunkong.png'></image>
+    <text>还没有人评论，赶快发表高见</text>
+  </view>
+  <!-- 展示评论的信息 -->
+  <view class='dynamic-comments-container' wx:else>
+    <text class='all-comment-count'>全部{{commenTotalCount}}条评论</text>
+    <block wx:for="{{commentlist}}" wx:item="item" wx:key="item.id">
+      <view class='dynamic-comments-content-box-wxfor'>
+        <view>
+          <view class='dynamic-comments-container-item'>
+            <image catchtap="topersonal" data-id="{{item.user.uniqueId}}" src='{{item.user.avatar}}'></image>
+            <text>{{item.user.nickname}}{{item.user.company?" · "+item.user.company:''}}{{item.user.position?" · "+item.user.position:""}}</text>
+          </view>
+          <view class='dynamic-comments-content-box'>
+            <view class='dynamic-comments-content-see-imgs-box-content'>
+              <view class='dynamic-comments-content-see-imgs-box' wx:if="{{item.imageInfo.source}}" bindtap="previewImage" data-source='{{item.imageInfo.source}}'>
+                <image class='dynamic-comments-content-see-imgs' src='../../../image/icon_pinlunxinxi@3x.png'></image>
+                <text>查看图片</text>
+              </view>
+              <navigator style='display:inline-block' url='../allReplyArticle/allReplyArticle?nikename={{item.user.nickname}}&trendsId={{item.trendsId}}&id={{item.id}}' hover-class="none">
+                <!-- <text class='dynamic-comments-content'>{{item.content}}</text> -->
+                <rich-text class='dynamic-comments-content title' nodes="{{item.content}}"></rich-text>
+              </navigator>
+            </view>
+            <!-- 回复被回复展示 -->
+            <navigator url='../allReplyArticle/allReplyArticle?nikename={{item.user.nickname}}&content={{item.content}}&trendsId={{item.trendsId}}&id={{item.id}}' hover-class="none">
+              <view class='dynamic-comments-content-list' wx:if="{{item.userReplyList.length}}">
+                <view>
+                  <text class='dynamic-comments-content-list-keyword'>{{item.userReplyList[0].user.nickname}}</text> 回复
+                  <text class='dynamic-comments-content-list-keyword'>{{item.userReplyList[0].toUser.nickname}}：</text>
+                  <!-- <text>{{item.userReplyList[0].content}}</text> -->
+                  <rich-text class='dynamic-comments-content title' nodes="{{item.userReplyList[0].content}}"></rich-text>
+                </view>
+                <view>
+                  <text class='dynamic-comments-content-list-keyword'>{{item.userReplyList[0].user.nickname}} </text>等人
+                  <text class='dynamic-comments-content-list-keyword'>共{{item.replyCount}}条回复></text>
+                </view>
+              </view>
+            </navigator>
+
+            <text class='dynamic-comments-content-time'>{{item.createTime}}</text>
+            <text class='dynamic-comments-content-del' bindtap="delDynamicsfn" data-id='{{item.id}}'>删除</text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <view class='dynamic-comment-container'>
+      <text>没有更多评论</text>
+    </view>
+
+  </view>
+</view>

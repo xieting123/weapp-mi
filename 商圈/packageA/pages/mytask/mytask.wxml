@@ -1,0 +1,49 @@
+<view class='task-item'>
+  <view class='task-item-left'>
+    <view>每日签到</view>
+    <text class='task-item-left-reward'>奖励</text>
+    <text class='task-item-left-reward-get'> +{{coinNumData.signCoinNum}} 蜜币</text>
+  </view>
+  <view class='task-item-right' bindtap="signUserCoinfn" wx:if="{{!signFlag}}">签到</view>
+   <view class='task-item-right-done' bindtap="signUserCoinfn" wx:if="{{signFlag}}">已签到</view>
+</view>
+<view class='task-item'>
+  <view class='task-item-left'>
+    <view>创建商圈</view>
+    <text class='task-item-left-reward'>奖励</text>
+    <text class='task-item-left-reward-get'> +{{coinNumData.circleCoinNum}} 蜜币</text>
+  </view>
+  <view class='task-item-right' bindtap="goback">去完成</view>
+</view>
+<view class='task-item'>
+  <view class='task-item-left'>
+    <view>发布动态</view>
+    <text class='task-item-left-reward'>奖励</text>
+    <text class='task-item-left-reward-get'> +{{coinNumData.trendsCoinNum}} 蜜币</text>
+  </view>
+  <view class='task-item-right' bindtap="goback">去完成</view>
+</view>
+<view class='task-item'>
+  <view class='task-item-left'>
+    <view>跟帖评论</view>
+    <text class='task-item-left-reward'>奖励</text>
+    <text class='task-item-left-reward-get'> +{{coinNumData.commentCoinNum}} 蜜币</text>
+  </view>
+  <view class='task-item-right' bindtap="goback">去完成</view>
+</view>
+<view class='task-item'>
+  <view class='task-item-left'>
+    <view>发布文章</view>
+    <text class='task-item-left-reward'>奖励</text>
+    <text class='task-item-left-reward-get'> +{{coinNumData.articleCoinNum}} 蜜币</text>
+  </view>
+  <view class='task-item-right' bindtap="goback">去完成</view>
+</view>
+<view class='task-item'>
+  <view class='task-item-left'>
+    <view>阅读文章</view>
+    <text class='task-item-left-reward'>奖励</text>
+    <text class='task-item-left-reward-get'> +{{coinNumData.seeArticleCoinNum}} 蜜币</text>
+  </view>
+  <view class='task-item-right' bindtap="goback">去完成</view>
+</view>

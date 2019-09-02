@@ -1,0 +1,38 @@
+/* pages/PublishingDynamicsComment/PublishingDynamicsComment.wxss */
+@import '../PublishingDynamics/PublishingDynamics.wxss';
+@import '../publishNotice/publishNotice.wxss';
+
+.replay-content {
+  padding: 0 32rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+  box-sizing: border-box;
+  margin-top: 28rpx;
+}
+
+.replay-content-name {
+  color: #456693;
+}
+
+.content {
+  -webkit-line-clamp: 3;
+}
+
+.img-list {
+  padding: 30rpx;
+}
+
+.publish-img-container-emoji {
+  height: 60rpx;
+  width: 60rpx;
+  position: absolute;
+  left: 280rpx;
+  top: 190rpx;
+}
+
+.publish-img-container-all {
+  position: relative;
+}

@@ -1,0 +1,102 @@
+<view class='publish-dynamics-container'>
+  <view class='publish-dynamics-head'>
+    <text catchtap="cancleQuan">取消</text>
+    <text wx:if='{{!trendsId}}' catchtap="createInCircle">发布</text>
+    <text wx:else catchtap="editordynamis">发布</text>
+  </view>
+  <view>
+    <textarea bindinput="getInput" value="{{content}}" maxlength="{{maxlength}}" placeholder='说点什么...' placeholder-class="placeholderstyle"></textarea>
+  </view>
+  <!-- 发布链接 -->
+  <view class='publish-dynamics-box' wx:if='{{linksrc}}' bindtap="linktoweb">
+    <view>{{linkurltitle}}</view>
+    <view class='publish-dynamics-linkimg'>
+      <image wx:if="{{!linkimageUrl}}" src='../../image/icon_lianjiexuanzhong.png'></image>
+      <image wx:else  src='{{linkimageUrl}}'></image>
+    </view>
+    <image class='publish-dynamics-linkimg-cancle' src='../../image/icon_yichulinajie.png' catchtap="closelink"></image>
+  </view>
+
+  <view class='publish-dynamics-box-photo'>
+    <!-- 发布照片 -->
+    <view class='publish-img-container' wx:if="{{photoShow}}">
+      <view class='img-list'>
+        <block wx:for="{{imgurl}}" wx:key="index">
+          <view class='img-item'>
+            <!-- 删除照片-->
+            <image class='publish-detial' bindtap='clearImg' data-index="{{index}}" src='../../image/icon_yichutupian.png'></image>
+            <image src='{{item.thumb}}' data-thumb="{{item.thumb}}" bindtap='showImg' mode='aspectFill' data-id='{{index}}'></image>
+          </view>
+        </block>
+        <view wx:if='{{imgurl.length<9}}' class='chooseimg' bindtap='uploadDetailImage'>
+          <image src='../../image/img_add.png'></image>
+        </view>
+      </view>
+    </view>
+    <!-- 发布视频 -->
+    <view class="image-plus image-plus-nb" wx:if="{{videoShow}}">
+      <view hidden="{{videoUrl}}" class='chooseimg' bindtap="chooseVideo" data-index="{{index}}">
+        <image src='../../image/img_add.png'></image>
+      </view>
+      <!-- 后台返回给前端的链接 -->
+      <view class='publish-video-container-info' hidden="{{!videoUrl}}">
+        <video object-fit='cover' src="{{videoUrl}}" class="video" id="prew_video" autoplay="fasle" muted="{{!playVideo}}" bindfullscreenchange="bindVideoScreenChange"></video>
+        <image class="publish-video-container-info-delete" bindtap="bindDeleteVideo" src="../../image/icon_yichutupian.png"></image>
+        <image src='{{videoimageUrl}}' mode='aspectFill'></image>
+        <image class="publish-video-container-info-play" bindtap="bindPreviewVideo" src="../../image/icon_video.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部菜单栏  定位 -->
+  <view class='publish-dynamics-position-fixed'>
+    <!-- 获取位置 -->
+    <view class='publish-dynamics-position' bindtap="btnClick">
+      <image wx:if='{{address}}' src='../../image/icon_weizhixuanzhong.png'></image>
+      <image wx:else src='../../image/icon_weizhi-moren.png'></image>
+      <text class=' {{address?"address":"publish-dynamics-position-fize"}}'>{{address?address:"添加定位地点"}}</text>
+    </view>
+    <!-- 底部菜单 -->
+    <view class='publish-dynamics-meuns'>
+      <image catchtap="photoShowfn" wx:if="{{!photoShow && !linksrc && !videoShow}}" src='../../image/icon_tupianmoren.png'></image>
+      <image catchtap="photoShowfn" wx:if="{{photoShow}}" src='../../image/icon_tupianxuanzhong.png'></image>
+      <!-- 图片禁止 -->
+      <image wx:if="{{linksrc || videoShow}}" src='../../image/icon_tupianjinzhi.png'></image>
+      <!-- <image catchtap="emojiShowHide" src='../../image/icon_biaoqingmoren.png'></image> -->
+      <image bindtap="linkto" wx:if='{{!photoShow && !linksrc && !videoShow}}' src='../../image/icon_lianjiemoren.png'></image>
+      <image bindtap="linkto" wx:if='{{linksrc}}' src='../../image/icon_lianjiexuanzhong.png'></image>
+      <!-- 链接禁止 -->
+      <image wx:if="{{photoShow || videoShow}}" src='../../image/icon_lianjiejinzhi.png'></image>
+      <image catchtap="viedoShowfn" wx:if="{{!photoShow && !linksrc && !videoShow}}" src='../../image/icon_shipinmoren.png'></image>
+      <image catchtap="viedoShowfn" wx:if="{{videoShow}}" src='../../image/icon_shipingxuanzhong.png'></image>
+      <!-- 视频禁止 -->
+      <image wx:if="{{photoShow || linksrc}}" src='../../image/icon_shipinjinzhi.png'></image>
+      <image class='publish-dynamics-meuns-gongxufn' catchtap="gongxufn" src='../../image/icon_gongxumoren@3x.png'></image>
+
+
+
+    </view>
+  </view>
+
+  <!--emoji表情盒子-->
+  <!-- 解决蒙层点透的问题 -->
+  <view class="cf-bg" catchtap="cemojiCfBg" style="display:{{cfBg ? 'block' : 'none'}}">
+  </view>
+  <view class="comment-fixed">
+    <view class="emoji-box {{isShow ? 'emoji-move-in' : 'emoji-move-out'}} {{isLoad ? 'no-emoji-move' : ''}}">
+      <scroll-view scroll-y="true" bindscroll="emojiScroll" style="height:200px">
+        <block wx:for="{{emojis}}" wx:for-item="e" wx:key="">
+          <view class="emoji-cell">
+            <image class="touch-active" catchtap="emojiChoose" src="https://soupu.oss-cn-shanghai.aliyuncs.com/emoji/{{e.emoji}}.png" data-emoji="{{e.char}}" data-oxf="{{e.emoji}}"></image>
+          </view>
+        </block>
+        <!-- <block wx:for="{{bb}}" wx:item='item'>
+         <view class="emoji-cell">
+              <image src="../../emoji/emoji_001({{index+1}}).png@3x.png" catchtap="emojiChoose2" data-imgindex="{{index+1}}" data-emojistr="{{item.emojistr}}"></image>   
+         </view>
+        </block> -->
+      </scroll-view>
+    </view>
+  </view>
+
+</view>

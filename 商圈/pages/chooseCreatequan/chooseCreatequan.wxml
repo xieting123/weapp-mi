@@ -1,0 +1,69 @@
+<!-- 选择付费免费 -->
+<view class='choose'>
+  <text class='choose-tip'>创建成功后不可更改属性</text>
+  <view class='choose-container'>
+    <view class='choose-one' bindtap='choosefree' wx:if="{{!payFlag }}">
+      <image src='../../image/img_mianfeiquna@3x.png'></image>
+      <view class='choose-yes'>
+        <image src='../../image/icon_duigoufufei@3x.png'></image>
+        <text>免费</text>
+      </view>
+    </view>
+        <view class='choose-one' bindtap='choosefree' wx:else>
+      <image src='../../image/img_mianfeimoren@3x.png'></image>
+      <view class='choose-no'>
+        <image src='../../image/icon_duigou_morenfufei@3x.png'></image>
+        <text>免费</text>
+      </view>
+    </view>
+    <view class='choose-one' bindtap='choosemoney' wx:if="{{!payFlag}}">
+      <image src='../../image/img_fufei_moren@3x.png'></image>
+      <view class='choose-no'>
+        <image src='../../image/icon_duigou_morenfufei@3x.png'></image>
+        <text>付费</text>
+      </view>
+    </view>
+        <view class='choose-one' bindtap='choosemoney' wx:else>
+      <image src='../../image/img_fufei_xuanzhong@3x.png'></image>
+      <view class='choose-yes'>
+        <image src='../../image/icon_duigoufufei@3x.png'></image>
+        <text>付费</text>
+      </view>
+    </view>
+  </view>
+  <!-- 模态框 -->
+  <view class='modal-container' style='display:{{display}}'>
+    <view class='modal-container-son'>
+      <view class='modal-top'>
+        <image src='../../image/icon_fufeitiaokuan@3x.png'></image>
+        <image bindtap='closeModal' class='modal-close' src='../../image/cancle.png'></image>
+      </view>
+      <view class='modal-tip'>
+        <image src='../../image/icon_duigou_morenfufei@3x.png' wx:if='{{isSure}}' bindtap='ischoose'></image>
+        <image src='../../image/icon_duigoufufei@3x.png' wx:if='{{!isSure}}' bindtap='ischoose'></image>
+        <text>我已阅读并同意</text>
+        <text class='modal-detial'>《商蜜服务条款》</text>
+      </view>
+      <view class='modal-word'>
+        <view class='modal-word-son'>
+          <text>请认真仔细阅读创建商圈及圈主相关规则，若所创建商圈包含时政、低俗、色情、暴力等违法内容传播，将立即封停商圈和账号。</text>
+          <text class='modal-word-sondetial'>>>查看详情</text>
+        </view>
+
+      </view>
+      <view wx:if="{{!isSure}}">
+        <!-- <navigator hover-class="none" url='../CreatequanMoney/CreatequanMoney?payFlag={{payFlag}} '> -->
+        <button catchtap="torouter">确认</button>
+        <!-- </navigator> -->
+
+      </view>
+      <view wx:else>
+        <button>确认</button>
+      </view>
+    </view>
+
+
+  </view>
+
+  <button class='button-next' bindtap='openModal' style='display:{{btnDisplay}}'>下一步</button>
+</view>

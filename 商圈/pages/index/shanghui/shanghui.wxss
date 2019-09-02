@@ -1,0 +1,67 @@
+/* pages/index/shanghui/shanghui.wxss */
+
+page {
+  background: #f1f2f6;
+}
+
+.shangquan-container {
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background: #fff;
+  margin-bottom: 16rpx;
+}
+
+.shangquan-container image {
+  height: 120rpx;
+  width: 120rpx;
+  margin-right: 16rpx;
+  border-radius: 10rpx;
+}
+
+image.shanghui-toquan {
+  height: 22rpx;
+  width: 12rpx;
+}
+
+.shangquan-name {
+  font-size: 28rpx;
+  color: #333;
+  width: 224px;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 28px;
+  opacity: 1;
+}
+
+.shangquan-describe, .shangquan-nums {
+  color: #999;
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 28px;
+  opacity: 1;
+}
+
+.shangquan-info {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+}
+
+.shangquan-describe {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 490rpx;
+}
+
+.shangquan-nums text:nth-child(1) {
+  color: red;
+}

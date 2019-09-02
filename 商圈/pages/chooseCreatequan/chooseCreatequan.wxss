@@ -1,0 +1,130 @@
+/* pages/chooseCreatequan/chooseCreatequan.wxss */
+page{
+  background: #F1F2F6
+}
+.choose{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+.choose-container{
+  width:86%;
+  margin:  30rpx auto;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.choose-tip{
+  color:#B8B8B8;
+  font-size: 28rpx;
+  margin-top:30rpx;
+}
+.choose-one{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.choose-one image{
+  width: 315rpx;
+  height: 315rpx;
+}
+.choose-yes image,.choose-no image{
+  width: 35rpx;
+  height:35rpx;
+  margin-right:10rpx;
+}
+.choose-yes{
+  color:#D7000F;
+}
+.choose-no{
+  color:#999999
+}
+.choose-yes,.choose-no{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.choose .button-next{
+  position: absolute;
+  bottom:32rpx;
+  width: 686rpx;
+  height:88rpx;
+  background:linear-gradient(90deg,rgba(255,170,128,1) 0%,rgba(255,76,76,1) 100%);
+  opacity:1;
+  border-radius:44rpx; 
+  color:#fff;
+  line-height: 88rpx;  
+}
+.modal-container{
+  height: 587rpx;
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  bottom:0;
+  box-shadow:0px -1px 10px rgba(0,0,0,0.16);
+
+}
+.modal-container-son{
+  width:90%;
+  margin: 0 auto;
+    display: flex;
+  flex-direction: column;
+}
+.modal-top{
+  width: 98%;
+  text-align: center;
+  margin: 30rpx auto;
+  border-bottom:1px solid #E6E6E6
+  
+}
+.modal-container .modal-top image{
+width:120rpx;
+height:120rpx;
+}
+.modal-container .modal-top .modal-close{
+  width: 30rpx;
+  height:30rpx;
+  float: right;
+}
+.modal-tip{
+  display: flex;
+  align-items: center;
+}
+.modal-tip {
+  font-size: 28rpx;
+  color:#333;
+}
+.modal-tip image{
+  width:22rpx;
+  height:22rpx;
+  margin-right:10rpx;
+}
+.modal-tip .modal-detial,.modal-word-sondetial{
+  color:#297ACC
+}
+.modal-word{
+  width: 100%;
+  height:160rpx;
+  line-height:40rpx;
+  margin-top: 32rpx;
+  background: #F5F5F5;
+  color:#4D4D4D;
+  font-size: 24rpx;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.modal-word-son{
+  width: 94%;
+}
+.modal-word-sondetial{
+  float: right
+}
+.modal-container button{
+height:88rpx;
+border-radius:44px;
+background:rgba(215,0,15,1);
+color:#fff;
+margin-top: 30rpx;
+}

@@ -1,0 +1,23 @@
+<!--pages/createQuan/createQuan.wxml-->
+<view class='create-quan'>
+  <view>
+    <image wx:if='{{image.length==0}}' src='{{dataInfo.circlePhoto.thumb}}' catchtap='chooseImg'></image>
+    <image wx:if='{{image.length>0}}' src='{{image}}' mode="aspectFill" catchtap='chooseImg'></image>
+  </view>
+  <view class='create-info'>
+    <view class='create-info-name'>
+      <text>商圈名称</text>
+      <input class='inputplace' value='{{inputvalue}}' placeholder='设置商会名称' placeholder-style="color:#707070,margin-left:30rpx;" bindinput='formName'></input>
+    </view>
+    <view class='create-info-des'>
+      <text>商圈介绍</text>
+      <textarea class='textplace' value='{{textvalue}}' placeholder='填写商圈介绍，让商友们更了解该商圈' placeholder-style="color:#707070;" bindinput='textformName'></textarea>
+    </view>
+  </view>
+
+  <navigator hover-class="none" open-type='switchTab' url='../index/index'>
+      <button catchtap='editorqunaData'>确认</button>
+    </navigator>
+
+
+</view>

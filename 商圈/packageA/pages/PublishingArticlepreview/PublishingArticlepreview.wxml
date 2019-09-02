@@ -1,0 +1,17 @@
+<import src="../../../wxParse/wxParse.wxml"/> 
+  <view class='publish-dynamics-head'>
+    <text catchtap="cancleArticle">取消</text>
+    <picker mode="selector" range='{{mingcheng}}' value='{{index}}' range-key="{{'name'}}"
+        bindchange='bindPickerChange' class='picker1'  >
+    <!-- <text catchtap="publishArticle">发布</text> -->
+       <text>发布</text>
+</picker>
+
+    <!-- <text wx:else catchtap="editordynamis">预览</text> -->
+  </view>
+  <view class='title-box'>
+  <text class='content'>{{title}}</text>
+  </view>
+  <view class='template-box'>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>  
+  </view>

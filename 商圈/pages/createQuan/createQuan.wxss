@@ -1,0 +1,56 @@
+page{
+  background: #fff;
+}
+.create-quan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx;
+  margin: 60rpx auto;
+}
+
+.create-quan image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.create-info {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  width: 100%;
+}
+
+.create-info-name, .create-info-des text {
+  color: #4d4d4d;
+}
+
+.inputplace {
+  height: 100rpx;
+  padding-left: 30rpx;
+}
+
+.textplace {
+  height: 200rpx;
+  padding: 30rpx;
+}
+
+.inputplace, .textplace {
+  margin-top: 30rpx;
+  width: 100%;
+  background: rgba(241, 242, 246, 1);
+  color: #333;
+  box-sizing: border-box;
+}
+
+.create-info-des {
+  margin-top: 56rpx;
+}
+
+.create-quan button {
+  width: 680rpx;
+  height: 88rpx;
+  border-radius: 44px;
+  background: rgba(215, 0, 15, 1);
+  color: #fff;
+margin-top: 300rpx;
+}

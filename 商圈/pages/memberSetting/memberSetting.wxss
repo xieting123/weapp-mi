@@ -1,0 +1,121 @@
+/* pages/memberSetting/memberSetting.wxss */
+/* pages/news/news.wxss */
+.news-list {
+  display: flex;
+  flex-direction: column;
+ padding: 0 30rpx;
+  background: #fff;
+  margin-bottom: 16rpx;
+
+}
+
+.news-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
+}
+.news-left{
+  color:#4D4D4D;
+  font-size: 28rpx;
+}
+
+.news-list-item .news-left image {
+  height: 80rpx;
+  width: 80rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+/* 箭头 */
+.news-right image{
+  width: 12rpx;
+  height: 22rpx;
+}
+.news-right text{
+vertical-align: middle;
+margin-right:10rpx;
+background: #D7000F;
+padding:10rpx;
+min-width:20rpx;
+text-align: center;
+font-size: 20rpx;
+color:#fff;
+border-radius: 10px;
+display: inline-block;
+height:20rpx;
+line-height: 20rpx;
+}
+
+/* 商圈成员及商圈介绍描述 */
+
+.quan-intruduce, .quan-member {
+  width: 100%;
+  background: #fff;
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.member-container .member-list-item {
+  display: flex;
+  margin-bottom: 32rpx;
+}
+.member-list-item{
+  align-items: center;
+  justify-content: space-between;
+}
+.member-list-item-left{
+  display: flex;
+  align-items: center;
+}
+.member-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-info text:nth-child(1) {
+  font-size: 28rpx;
+  color: #4d4d4d;
+}
+.member-laber .laber-create,.laber-admin{
+background:#E6A15C;
+font-size:18rpx;
+padding: 5rpx 10rpx;
+color:#fff;
+margin-left:8rpx; 
+}
+.laber-laber{
+  background:#5CC0E6;
+  font-size:18rpx;
+  padding: 5rpx 10rpx;
+  color:#fff;
+  margin-left:8rpx; 
+}
+.member-job {
+  font-size: 22rpx;
+  color: #999;
+  margin-top: 12rpx;
+  
+}
+
+.member-image {
+  position: relative;
+  margin-right: 16rpx;
+}
+
+.user-identify {
+  position: absolute;
+  top: 50rpx;
+  left: 50rpx;
+}
+.member-settingImg image{
+  width:44rpx;
+  height: 44rpx;
+}
+.member-laber{
+  display: flex;
+  align-items: center;
+}

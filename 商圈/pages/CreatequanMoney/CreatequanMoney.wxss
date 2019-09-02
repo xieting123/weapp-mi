@@ -1,0 +1,30 @@
+/* pages/CreatequanMoney/CreatequanMoney.wxss */
+.create-money{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top:300rpx;
+}
+.create-pay{
+  display: flex;
+  color:#707070;
+  border-bottom: 1px solid #707070;
+  font-size: 36rpx;
+  align-items: center;
+
+}
+.placeInput{
+  width: 220rpx;
+  height:100rpx;
+  font-size: 80rpx;
+  color:#D7000F;
+  text-align: center;
+}
+.create-money button{
+    width:686rpx;
+height:88rpx;
+border-radius:44px;
+background:rgba(215,0,15,1);
+color:#fff;
+margin-top: 130rpx;
+}

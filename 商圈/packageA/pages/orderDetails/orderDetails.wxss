@@ -1,0 +1,73 @@
+/* packageA/pages/orderDetails/orderDetails.wxss */
+@import '../ShoppingCartPay/ShoppingCartPay';
+.orderdetails-box {
+  background: #fff;
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+
+.orderdetails-box .orderdetails-box-right-img {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 16rpx;
+}
+
+.orderdetails-box-right {
+  display: flex;
+  align-items: center;
+  padding: 32rpx 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.orderdetails-box-time {
+  width: 600rpx;
+}
+
+.orderdetails-box-time text:nth-child(1) {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.orderdetails-box-right-bottom {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.orderdetails-box-right-bottom text:nth-child(2) {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(255, 170, 128, 1);
+  opacity: 1;
+}
+.address-info{
+  border-top: 16rpx solid #F1F2F6;
+}
+.progress-box-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 30rpx;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+  margin-top: 32rpx;
+}
+
+.progress-box {
+  margin-top: 32rpx;
+  padding: 32rpx;
+  box-sizing: border-box;
+}

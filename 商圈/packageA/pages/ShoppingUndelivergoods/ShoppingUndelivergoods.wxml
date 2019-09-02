@@ -1,0 +1,70 @@
+<!--packageA/pages/orderDetails/orderDetails.wxml-->
+<view class='orderdetails-box'>
+  <view class='orderdetails-box-right'>
+    <image class='orderdetails-box-right-img' src='../../../image/dingdanzhifu.png'></image>
+    <view class='orderdetails-box-time'>
+      <text>订单状态：等待商家发货</text>
+    </view>
+  </view>
+  <!-- 导航进度条 -->
+  <view class='progress-box'>
+    <progress percent="10" color="red" />
+    <view class='progress-box-status'>
+      <text>买家付款</text>
+      <text>商家发货</text>
+      <text>交易完成</text>
+    </view>
+  </view>
+</view>
+<!-- 地址栏 -->
+<view class='address-info'>
+  <view class='address-info-left'>
+    <image class='address-icon' src='../../../image/icon_weizhi-moren.png'></image>
+    <view wx:if="{{proviceInfo.isDefault}}" class='proviceInfo-box'>
+      <view class='address-info-left-top'>
+        <text>{{proviceInfo.consigneeName}}</text>
+        <text>{{proviceInfo.consigneePhone}}</text>
+      </view>
+      <view class='address-info-left-bottom'>
+        {{proviceInfo.provinceName}}{{proviceInfo.cityName}}{{proviceInfo.consigneeDetail}}
+      </view>
+    </view>
+    <text wx:else bindtap="toaddress">新建收货地址</text>
+  </view>
+  <image wx:if="{{!proviceInfo.isDefault}}" class='toaddaddress-icon' src='../../../image/6.png'></image>
+</view>
+<!-- 商品列表 -->
+<view class='order-containerBox'>
+  <view class='shoppling-item'>
+    <view class='shoppling-top'>
+      <image class='shopIcon' src='../../../img/icon_dianputubiao@3x.png'></image>
+      <text>{{orderInfo.store.name}}</text>
+      <image class='toshoplistIcon' src='../../../image/6.png'></image>
+    </view>
+    <block wx:for-items="{{orderInfo.orderItemList}}" wx:for-item="items" wx:key="*item">
+      <view class='shoppling-list'>
+        <view class='off-self-box' style="position:relative;">
+          <image src='{{items.productCoverInfo.thumb}}'></image>
+        </view>
+        <view>
+          <view class='shoppling-list-name'>{{items.productName}}</view>
+          <view class='shoppling-list-price'>
+            <text>￥{{items.price}}</text>
+            <text>X {{items.quantity}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class='shoppling-bottom'>
+      <text>共{{orderInfo.quantity}}件，合计： </text>
+      <text> ￥{{orderInfo.price}}</text>
+    </view>
+  </view>
+</view>
+<!-- 订单信息 -->
+<view class='order-info'>
+  <text>支付方式：微信支付</text>
+  <text>订单号：{{orderInfo.payOrderNo}}</text>
+  <text>创建时间：{{orderInfo.createTime}}</text>
+  <text>付款时间：{{orderInfo.expiredTime}}</text>
+</view>

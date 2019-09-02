@@ -1,0 +1,51 @@
+/* pages/viewQuan/viewQuan.wxss */
+page{
+  background: #fff;
+}
+.editor-container{
+display: flex;
+flex-direction: column;
+text-align: center;
+padding: 30rpx;
+}
+.editor-info image{
+width: 200rpx;
+height:200rpx;
+padding: 10rpx;
+border: 1px solid #E6E6E6;
+border-radius:10rpx;
+}
+.editor-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.editor-info .editor-info-name{
+  font-size:36rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:#707070;
+padding-bottom: 30rpx;
+}
+.editor-info .editor-info-introduce{
+  font-size:28rpx;
+font-weight:400;
+line-height:42rpx;
+padding-top: 30rpx;
+border-top: 1px solid #E6E6E6;
+}
+.editor-btn{
+  margin-top: 200rpx;
+}
+.editor-btn button::after{
+  border: none;
+}
+.editor-btn button{
+width:686rpx;
+height:88rpx;
+background:linear-gradient(90deg,rgba(255,170,128,1) 0%,rgba(255,76,76,1) 100%);
+opacity:1;
+border-radius:44rpx;color:#FFFFFF;
+font-size: 28rpx;
+line-height: 88rpx;
+}

@@ -1,0 +1,292 @@
+<view class='dynamic-container'>
+  <!-- 弹框 -->
+  <view class="modals modals-bottom-dialog" hidden="{{hideModal}}">
+    <view class="modals-cancel" bindtap="hideModal"></view>
+    <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+      <view>
+        <button class='modals-button' open-type="share" style="height:90rpx;">
+          <image src='../../image/icon_fasonghapyou@2x.png'></image>
+          <text style='margin-top:-32rpx;'>发送给好友</text>
+        </button>
+      </view>
+      <view bindtap="show">
+        <image src='../../image/icon_shengchengfenxiangkapian@2x.png'></image>
+        <text> 生成分享卡片</text>
+      </view>
+      <view>
+        <image src='../../image/mengzuban1175@2x.png'></image>
+        <text>商蜜</text>
+      </view>
+      <view wx:if='{{detailinfoData.meFlag}}' bindtap="setTop">
+        <image src='../../image/icon_sheweizhiding@3x.png'></image>
+        <text>设为置顶</text>
+      </view>
+      <navigator wx:if='{{detailinfoData.meFlag}}' hover-class="none" url='../PublishingDynamics/PublishingDynamics?trendsId={{trendsId}}'>
+        <view>
+          <image src='../../image/icon_bianji@3x.png'></image>
+          <text>编辑</text>
+        </view>
+      </navigator>
+      <view wx:if='{{detailinfoData.meFlag}}'>
+        <image src='../../image/icon_detele@2x.png'></image>
+        <text>删除</text>
+      </view>
+      <button class='modals-bottom-dialog-cancle' bindtap="hideModal">取消</button>
+    </view>
+  </view>
+
+  <view class='dynamic-container-list'>
+    <view class='dynamic-user'>
+      <view class='dynamic-user-top'>
+        <view class='dynamic-userImg'>
+          <image class='user-img' src='{{detailinfoData.user.avatar}}' data-id='{{detailinfoData.user.uniqueId}}' catchtap="topersonal" mode="aspectFit"></image>
+          <image class='user-identify' src='../../image/icon_v@3x.png' wx:if="{{detailinfoData.user.verifyStatus==2}}"></image>
+        </view>
+        <view class='dynamic-userInfo'>
+          <view class='dynamic-name'>
+            <text>{{detailinfoData.user.nickname}}</text>
+            <image class='identify' wx:if="{{detailinfoData.user.verifyStatus==2}}" src='../../image/icon_shirenrengzheng@3x.png'></image>
+          </view>
+          <text wx:if='{{detailinfoData.user.company}}' class='dynamic-company'>{{detailinfoData.user.company}}</text>
+          <view wx:if='{{detailinfoData.user.position}}' class='dynamic-position'>
+            <text>{{detailinfoData.user.position}}</text>
+            <image wx:if="{{detailinfoData.user.workVerify==2}}" class='identify' src='../../image/zhiwurenzheng75@3x.png'></image>
+          </view>
+        </view>
+      </view>
+
+      <button size='mini' wx:if="{{detailinfoData.user.likeType==0}}" data-id='{{detailinfoData.user.uniqueId}}' catchtap="followbtnFn">+关注</button>
+      <button size='mini' wx:if="{{detailinfoData.user.likeType==1}}" data-id='{{detailinfoData.user.uniqueId}}' catchtap="myselffn">+关注</button>
+      <button size='mini' wx:if="{{detailinfoData.user.likeType==2}}" data-id='{{detailinfoData.user.uniqueId}}' catchtap="unfollowbtnFn">已关注</button>
+      <button size='mini' wx:if="{{detailinfoData.user.likeType==4}}" data-id='{{detailinfoData.user.uniqueId}}' catchtap="unfollowbtnFn">相互关注</button>
+    </view>
+    <!-- 动态内容 -->
+    <view class='dynamic-content'>
+      <!-- <text class='dynamic-content-text'>{{detailinfoData.content}}</text> -->
+      <!-- <text class='dynamic-all'>全文</text> -->
+      <rich-text class='dynamic-content-text title' nodes="{{detailinfoData.content}}"></rich-text>
+    </view>
+    <!-- 动态内容 -->
+    <!-- 图片内容 -->
+    <view class='dynamic-imgs' wx:if="{{detailinfoData.type==1}}">
+      <view class='dynamic-image'>
+        <block wx:for="{{detailinfoData.imagesInfo}}" wx:for-item="items">
+          <view class='dynamic-image-type'>
+            <image src='{{items.thumb}}' mode='aspectFill' bindtap='topic_preview' data-id='{{index}}' data-url='{{items.source}}'></image>
+            <text wx:if="{{items.islongomg}}">{{items.islongomg}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <!-- type=2 发视频 -->
+    <view class='dynamic-imgs-video' wx:if="{{detailinfoData.type==2}}">
+      <view class='dynamic-image-video publish-video-container-info'>
+        <video object-fit='cover' src="{{detailinfoData.videoInfo.videoUrl}}" class="video" id="prew_video" autoplay="true" muted="{{!playVideo}}" bindfullscreenchange="bindVideoScreenChange"></video>
+        <view class='dynamic-imgs-videoimageUrl' bindtap="bindPlayVideo" data-video-src="{{detailinfoData.videoInfo.videoUrl}}">
+          <image src='{{detailinfoData.videoInfo.imageUrl}}' mode="aspectFill"></image>
+          <image class="publish-video-container-info-play" src="../../image/icon_video.png"></image>
+        </view>
+      </view>
+    </view>
+    <!-- type=3 发链接 -->
+    <view class='dynamic-imgs' wx:if="{{detailinfoData.type==3}}" catchtap="linkweb" data-url="{{detailinfoData.linkInfo.url}}">
+      <view class='dynamic-linkto'>
+        <text class='content'>{{detailinfoData.linkInfo.title}} </text>
+        <image src='{{tools.sub(detailinfoData.linkInfo.imageUrl)}}'></image>
+      </view>
+    </view>
+    <!-- type=5 发文章 -->
+    <view class='dynamic-imgs' wx:if="{{detailinfoData.type==5}}">
+      <view class='dynamic-linkto'>
+        <text class='content'>{{detailinfoData.shangmiArticle.title}} </text>
+        <image wx:if='{{detailinfoData.shangmiArticle.imageArr.length}}' src='{{detailinfoData.shangmiArticle.imageArr[0]}}'></image>
+      </view>
+    </view>
+    <!-- type=4 转发 -->
+    <view class='dynamic-zhuanfa-box' wx:if="{{detailinfoData.type==4}}">
+      <view class='dynamic-zhuanfa-box-toUser'>
+        <!-- type=0 只发文字 -->
+        <view class='dynamic-content'>
+          <!-- <text class='dynamic-content-text'> {{item.content}}   </text> -->
+          <rich-text class='dynamic-content-text' nodes="{{detailinfoData.trUserForward.composeTrends.content}}"></rich-text>
+          <navigator hover-class="none" url='../PublishingDynamicsDetail/PublishingDynamicsDetail?id={{detailinfoData.id}}'>
+            <!-- <text class='dynamic-all'>全文</text> -->
+          </navigator>
+        </view>
+        <!-- type=1 发图片 -->
+        <!-- 图片内容 -->
+        <view class='dynamic-imgs' wx:if="{{detailinfoData.trUserForward.composeTrends.type==1}}">
+          <view class='dynamic-image'>
+            <block wx:for="{{detailinfoData.trUserForward.composeTrends.imagesInfo}}" wx:for-item="items">
+              <view class='dynamic-image-type'>
+                <image src='{{items.thumb}}' mode='aspectFill' bindtap='topic_preview' data-id='{{index}}' data-dynimacId="{{detailinfoData.trUserForward.composeTrends.id}}" data-url='{{items.source}}' data-type="{{detailinfoData.type}}"></image>
+                <text wx:if="{{items.islongomg}}">{{items.islongomg}}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+        <!-- type=2 发视频 -->
+        <view class='dynamic-imgs-video' wx:if="{{detailinfoData.trUserForward.composeTrends.type==2}}">
+          <view class='dynamic-image-video publish-video-container-info'>
+            <video object-fit='cover' src="{{playVideoSrc}}" class="video" id="prew_video" autoplay="true" muted="{{!playVideo}}" bindfullscreenchange="bindVideoScreenChange"></video>
+            <view class='dynamic-imgs-videoimageUrl' bindtap="bindPlayVideo" data-video-src="{{detailinfoData.trUserForward.composeTrends.videoInfo.videoUrl}}">
+              <image src='{{detailinfoData.trUserForward.composeTrends.videoInfo.imageUrl}}' mode="aspectFill"></image>
+              <image class="publish-video-container-info-play" src="../../image/icon_video.png"></image>
+            </view>
+
+          </view>
+        </view>
+        <!-- type=3 发链接 -->
+        <view class='dynamic-imgs' wx:if="{{detailinfoData.trUserForward.composeTrends.type==3}}" catchtap="linkweb" data-url="{{detailinfoData.trUserForward.composeTrends.linkInfo.url}}">
+          <view class='dynamic-linkto'>
+            <text class='content'>{{detailinfoData.trUserForward.composeTrends.linkInfo.title}} </text>
+            <image src='{{tools.sub(detailinfoData.trUserForward.composeTrends.linkInfo.imageUrl)}}'></image>
+          </view>
+        </view>
+              <!-- composeType=2 发文章 -->
+      <view class='dynamic-imgs' wx:if="{{detailinfoData.trUserForward.composeType==2}}" catchtap="toArticle" data-id="{{detailinfoData.targetId}}">
+        <view class='dynamic-linkto'>
+          <text class='content'>{{detailinfoData.trUserForward.composeArticle.title}} </text>
+          <image wx:if="{{detailinfoData.trUserForward.composeTrends.imageInfo.length}}" src='{{detailinfoData.trUserForward.composeTrends.imageInfo[0]}}'></image>
+        </view>
+
+      </view>
+      </view>
+
+    </view>
+    <!-- 供需 -->
+    <view class='dynamic-imgs'>
+      <view class='dynamic-supply' wx:if="{{detailinfoData.supplyInfo.length}}">
+        <image src='../../image/icon_gong@3x.png'></image>
+        <view class='dynamic-supply-content'>
+          <text>{{detailinfoData.supplyInfo}}     </text>
+        </view>
+      </view>
+      <view class='dynamic-need' wx:if="{{detailinfoData.demandInfo.length}}">
+        <image src='../../image/icon_xu@3x.png'></image>
+        <view class='dynamic-need-content'>
+          <text>{{detailinfoData.demandInfo}} </text>
+        </view>
+      </view>
+      <view class='dynamic-position-where '>
+        <image wx:if='{{detailinfoData.locationInfo.address}}' src='../../image/icon_weizhixuanzhong.png'></image>
+        <text>{{detailinfoData.locationInfo.address}}</text>
+      </view>
+      <view class='dynamic-linkto-container'>
+        <view class='dynamic-linkto-item' data-id="{{detailinfoData.id}}" bindtap="changeZanfn">
+          <image wx:if="{{zanFlag}}" src='../../image/icon_dianzanxuanzhong.png'></image>
+          <image wx:else src='../../image/icon_dianzanmoren@3x.png'></image>
+          <text>{{detailinfoData.likeCount}}</text>
+        </view>
+        <view class='dynamic-linkto-item'>
+          <image src='../../image/icon_pinlun.png'></image>
+          <text>{{detailinfoData.commentCount}}</text>
+        </view>
+        <view class='dynamic-linkto-item'>
+          <image src='../../image/icon_dashangmoren@3x.png'></image>
+          <text>{{detailinfoData.rewardCount}}</text>
+        </view>
+        <view class='dynamic-linkto-item'>
+          <image src='../../image/read.png'></image>
+          <text>{{detailinfoData.readingCount}}</text>
+        </view>
+        <text>{{detailinfoData.createTime}}</text>
+      </view>
+
+      <view class='dynamic-like-list one' data-id="{{detailinfoData.id}}" bindtap="toZanlist" wx:if='{{zanList.length}}'>
+        <image src='../../image/icon_dianzanliebiao@3x.png'></image>
+        <block wx:for="{{zanList}}" wx:item="item">
+          <text>{{item.nickname}}</text>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <!-- 打赏评论区 -->
+  <view class='dynamic-payandcomment-container'>
+    <view class='dynamic-pay-container'>
+      <text class='dynamic-like-list-payinfo'>你的支持是作者最大的动力</text>
+      <navigator url='../PublishingDynamicsDetailReward/PublishingDynamicsDetailReward?avatar={{detailinfoData.user.avatar}}&nickname={{detailinfoData.user.nickname}}&trendsId={{trendsId}}' hover-class="none">
+        <view class='dynamic-payinfo-button'>
+          <image src='../../image/icon_dasang.png'></image>
+          <text>打赏</text>
+        </view>
+      </navigator>
+
+      <!-- 打赏人数 -->
+      <view class='dynamic-payinfo-memberCount' wx:if="{{detailinfoData.rewardCount}}">
+        <image src='{{detailinfoData.rewardList[0].avatar}}'></image>
+        <text bindtap="torewardlist" data-id="{{detailinfoData.id}}">等{{detailinfoData.rewardCount}}人已打赏></text>
+      </view>
+    </view>
+    <!-- 评论列表 -->
+    <!-- 暂无人评论 -->
+    <view class='dynamic-comment-container' wx:if="{{commentlist==0}}">
+      <image src='../../image/icon_pinlunkong.png'></image>
+      <text>还没有人评论，赶快发表高见</text>
+    </view>
+    <!-- 展示评论的信息 -->
+    <view class='dynamic-comments-container' wx:else>
+      <text class='all-comment-count'>全部{{commenTotalCount}}条评论</text>
+      <block wx:for="{{commentlist}}" wx:item="item" wx:key="item.id">
+        <view class='dynamic-comments-content-box-wxfor'>
+          <view>
+            <view class='dynamic-comments-container-item'>
+              <image src='{{item.user.avatar}}'></image>
+              <text>{{item.user.nickname}}{{item.user.company?" · "+item.user.company:''}}{{item.user.position?" · "+item.user.position:""}}</text>
+            </view>
+            <view class='dynamic-comments-content-box'>
+              <view class='dynamic-comments-content-see-imgs-box-content'>
+                <view class='dynamic-comments-content-see-imgs-box' wx:if="{{item.imageInfo.source}}" bindtap="previewImage" data-source='{{item.imageInfo.source}}'>
+                  <image class='dynamic-comments-content-see-imgs' src='../../image/icon_pinlunxinxi@3x.png'></image>
+                  <text>查看图片</text>
+                </view>
+                <navigator style='display:inline-block' url='../allReplyDynamics/allReplyDynamics?nikename={{item.user.nickname}}&trendsId={{item.trendsId}}&id={{item.id}}' hover-class="none">
+                  <!-- <text class='dynamic-comments-content'>{{item.content}}</text> -->
+                  <rich-text class='dynamic-comments-content title' nodes="{{item.content}}"></rich-text>
+                </navigator>
+              </view>
+              <!-- 回复被回复展示 -->
+              <navigator url='../allReplyDynamics/allReplyDynamics?nikename={{item.user.nickname}}&content={{item.content}}&trendsId={{item.trendsId}}&id={{item.id}}' hover-class="none">
+                <view class='dynamic-comments-content-list' wx:if="{{item.userReplyList.length}}">
+                  <view>
+                    <text class='dynamic-comments-content-list-keyword'>{{item.userReplyList[0].user.nickname}}</text> 回复
+                    <text class='dynamic-comments-content-list-keyword'>{{item.userReplyList[0].toUser.nickname}}：</text>
+                    <!-- <text>{{item.userReplyList[0].content}}</text> -->
+                    <rich-text class='dynamic-comments-content title' nodes="{{item.userReplyList[0].content}}"></rich-text>
+                  </view>
+                  <view>
+                    <text class='dynamic-comments-content-list-keyword'>{{item.userReplyList[0].user.nickname}} </text>等人
+                    <text class='dynamic-comments-content-list-keyword'>共{{item.replyCount}}条回复></text>
+                  </view>
+                </view>
+              </navigator>
+
+              <text class='dynamic-comments-content-time'>{{item.createTime}}</text>
+              <text class='dynamic-comments-content-del' bindtap="delDynamicsfn" data-id='{{item.id}}'>删除</text>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class='dynamic-comment-container'>
+        <text>没有更多评论</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 画图卡片一键分享 -->
+<canvas-share bindclose="close" canvasdetailinfoData="{{canvasdetailinfoData}}" visible="{{visible}}" />
+
+
+<!-- 评论框 -->
+<view class='dynamic-comment-container-menu'>
+  <navigator url='../PublishingDynamicsComment/PublishingDynamicsComment?nikename={{detailinfoData.user.nickname}}&content={{detailinfoData.content}}&trendsId={{trendsId}}&id=&replyType=' hover-class="none">
+    <input placeholder="写评论..." placeholder-class="commentpinlun" disabled="true" />
+  </navigator>
+  <view class='dynamic-comment-container-like-menu'>
+    <image src='../../image/icon_pinlun.png'></image>
+    <image wx:if="{{zanFlag}}" src='../../image/icon_dianzanxuanzhong.png'></image>
+    <image wx:else src='../../image/icon_dianzanmoren@3x.png'></image>
+    <image src='../../image/icon_zhuanfa.png' bindtap="showModal"></image>
+  </view>
+</view>

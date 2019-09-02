@@ -1,0 +1,42 @@
+<view class='zanlist-contaner'>
+  <block wx:for="{{replaylist}}" wx:item='item'>
+    <!-- <navigator hover-class="none" url='../../../pages/PublishingDynamicsDetail/PublishingDynamicsDetail?id={{item.trUserComment.composeTrends.id}}'> -->
+      <view class='zanlist-item'>
+        <view class='zanlist-item-box'>
+          <image src="{{item.user.avatar}}" data-id='{{item.user.uniqueId}}' catchtap="topersonal"></image>
+          <view class='zanlist-item-box-user'>
+            <text>{{item.user.nickname}}</text>
+            <text wx:if="{{item.user.company}}">{{item.user.company}}.{{item.user.position}}</text>
+          </view>
+        </view>
+        <view class='zanlist-contaner-bottom zanlist-contaner-bottom-zantips'>
+          <view>
+            <view class='dynamic-comments-content-see-imgs-box'  wx:if="{{item.imageInfo.source}}" data-source='{{item.imageInfo.source}}'>
+              <image class='dynamic-comments-content-see-imgs' src='../../../image/icon_pinlunxinxi@3x.png'></image>
+              <text style='font-size:24rpx'>查看图片</text>
+            </view>
+            <rich-text style="display: inline-block;" class='zanlist-contaner-bottom-zantips title' nodes="{{item.content}}"></rich-text>
+            <text style='color:#456693'>// @{{item.toUser.nickname}} :</text>
+         <rich-text style="display: inline-block;" nodes="{{item.trUserComment.content}}"></rich-text>
+          </view>
+
+          <view class='zanlist-contaner-bottom-content-box' bindtap="todetail" data-type="{{item.trUserComment.composeType}}" data-id="{{item.trUserComment.composeId}}">
+            <view class='zanlist-contaner-bottom-content content' wx:if="{{item.trUserComment.composeTrends}}" >
+              <rich-text style="display: inline-block;"  nodes="{{item.trUserComment.composeTrends.content}}"> </rich-text>
+              <text wx:if="{{item.trUserComment.composeTrends.type==4}}" style='color:#456693'>//@{{item.trUserComment.composeTrends.trUserForward.toUser.nickname}}:</text>
+              <rich-text style="display: inline-block;"  wx:if="{{item.trUserComment.composeTrends.type==4}}" nodes="{{item.trUserComment.composeTrends.trUserForward.composeTrends.content}}"> </rich-text>
+            </view>
+                        <view wx:if="{{item.trUserComment.composeArticle}}" class='zanlist-contaner-bottom-content-box-article'>
+            <rich-text class='zanlist-contaner-bottom-content content'  nodes="{{item.trUserComment.composeArticle.title}}"> </rich-text>
+            <image src='{{item.trUserComment.composeArticle.imageArr[0]}}' style="width:60rpx;height:60rpx;"></image>            
+            </view>
+          </view>
+
+          <text class='zanlist-contaner-bottom-createTime'>{{item.createTime}}</text>
+        </view>
+
+      </view>
+    <!-- </navigator> -->
+  </block>
+
+</view>

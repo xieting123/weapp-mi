@@ -1,0 +1,19 @@
+<view class='view-contanier'>
+  <image src='{{avatar}}'></image>
+  <text>{{name}}</text>
+  <view class='view-info'>
+    <text>{{createTime}}</text>
+    <text>申请加入</text>
+    <text>{{circleName}}</text>
+  </view>
+  <view class='view-word'>
+    <text>附加消息：</text>
+    <text>{{reviewContent}}</text>
+  </view>
+  <view wx:if="{{reviewStatus==0}}" class='view-status'>
+    <button bindtap="Pass">同意</button>
+    <button bindtap="updateNotPass">拒绝</button>
+  </view>
+  <view wx:if="{{reviewStatus==1}}"  class='view-status-ok'>已同意该申请</view>
+  <view wx:if="{{reviewStatus==2}}"  class='view-status-no'>已拒绝该申请</view>
+</view>

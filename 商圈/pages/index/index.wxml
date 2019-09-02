@@ -1,0 +1,23 @@
+<view>
+  <view class='create-quan' bindtap="toCreate">
+    <image src='../../image/icon_chuangjianshangquan+@3x.png'></image>
+    <text> 创建商圈</text>
+  </view>
+  <block wx:for="{{quanlist}}" wx:item="item">
+    <navigator hover-class="none" url='../inQuan/inQuan?circleId={{item.circleId}}&createTime={{item.createTime}}'>
+      <view class='shangquan-container' id="{{item.circleId}}">
+        <image src='{{item.circlePhoto.thumb}}'></image>
+        <view class='shangquan-info'>
+          <text class='shangquan-name'>{{item.circleName}}</text>
+          <text class='shangquan-describe'>{{item.circleInfo}}</text>
+
+          <view class='shangquan-nums'>
+            <!-- <text>{{item.cost}}元/年</text> -->
+            <text>成员{{item.userCount>99?item.userCount+'+':item.userCount}}</text>
+          </view>
+        </view>
+        <image class='shanghui-toquan' src='../../image/6.png'></image>
+      </view>
+    </navigator>
+  </block>
+</view>

@@ -1,0 +1,12 @@
+<view class='publishDynamic-link-container'>
+<view class='publishDynamic-link'>
+  <text>添加链接</text>
+  <text>可在此添加各类网站链接，解析后更直观</text>
+</view>
+
+  <view class='publishDynamic-link-input'>
+    <input placeholder='请输入链接'  placeholder-class="placeholderclass"  value="{{url}}"  type='text' readonly="text"  bindinput="urlfn"/>
+    <image src='../../image/cancle.png' bindtap="linkcancle"></image> 
+  </view>
+  <button bindtap="linkcontent">添加</button>
+</view>

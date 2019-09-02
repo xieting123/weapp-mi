@@ -1,0 +1,67 @@
+<!-- 轮播图 -->
+<view class='person-contanier'>
+  <swiper class='carousel_swiper' circular='true' indicator-dots="true" indicator-color="#f4f4f4" indicator-active-color="#4eb8b8">
+    <block wx:for="{{goodsData.coverImagesInfo}}" wx:key="item.id" wx:item='item'>
+      <swiper-item bindtap='chomeCarouselClick' data-url='{{item.thumb}}'>
+        <image class="carouselImg" src='{{item.thumb}}' mode='aspectFill'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='goodsData-infobox'>
+  <text class='goodsData-infobox-name'>{{goodsData.name}}</text>
+  <view class='goodsData-infobox-price'>
+    <view class='goodsData-infobox-price-left' wx:if="{{goodsData.allowConsignmentFlag}}">
+      <view class='goodsData-infobox-price-left-onebox'>
+        <text>利润 </text>
+        <text>¥{{goodsData.profitMoney}}</text>
+      </view>
+      <view class='goodsData-infobox-price-left-twobox'>
+        <text>供货价 </text>
+        <text>¥{{goodsData.costPrice}}</text>
+      </view>
+    </view>
+    <view class='goodsData-infobox-price-right'>包邮</view>
+  </view>
+  <view class='storeinfo-box' data-id='{{goodsData.id}}' data-storeId="{{goodsData.storeId}}" data-avatarInfo="{{goodsData.storeAvatarInfo.thumb}}" data-storeName="{{goodsData.storeName}}" data-productCount="{{goodsData.productCount}}" data-agentStoreCount="{{goodsData.agentStoreCount}}"
+    bindtap="toAgentlist">
+    <view class='storeinfo-box-left'>
+      <image class='storeinfo-box-storeAvatarInfo' src='{{goodsData.storeAvatarInfo.thumb}}'></image>
+      <view class='storeinfo-box-right'>
+        <text class='storeinfo-box-right-storeName'>{{goodsData.storeName}}</text>
+        <view class='storeinfo-box-right-price'>
+          <text>商品数 {{goodsData.productCount}}    </text>
+          <text>代理商 {{goodsData.agentStoreCount}}</text>
+        </view>
+      </view>
+    </view>
+    <image src='../../../image/6.png' style='width:12rpx;height:22rpx;'></image>
+  </view>
+  <view class='storeinfo-box-recommend'>
+    <text class='storeinfo-box-recommend-text'>商品评价</text>
+    <view class='storeinfo-box-recommend-right'>
+      <text>查看全部</text>
+      <image src='../../../image/6.png' style='width:12rpx;height:22rpx;'></image>
+    </view>
+  </view>
+</view>
+
+<view class='detialImg-box'>
+  <view class='detialImg-box-box'>
+    <view class='detialImg-box-title'>图文详情</view>
+    <text class='detialImg-box-title-left'>代理说明</text>
+    <view class='detialImg-box-title-consignmentIntroduction'>{{goodsData.consignmentIntroduction}}</view>
+    <view class='detailImagesInfo-box'>
+      <block wx:for="{{goodsData.detailImagesInfo}}">
+        <image src='{{item.thumb}}' class='detailImagesInfo' mode="widthFix"></image>
+      </block>
+    </view>
+    <text class='detialImg-box-title-left'>温馨提示</text>
+    <view class='detialImg-box-title-consignmentIntroduction'>{{goodsData.tips}}</view>
+  </view>
+</view>
+
+<view class='person-contanier-bottom-btn'>
+<text bindtap="addshop">加入购物车</text>
+<text bindtap="topay">立即购买</text>
+</view>

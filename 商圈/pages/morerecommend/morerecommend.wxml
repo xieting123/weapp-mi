@@ -1,0 +1,37 @@
+<view class='find-all'>
+
+    <view>
+      <!-- <template is='shanghui'></template> -->
+      <block wx:for="{{quanlist}}" wx:item="item">
+        <navigator wx:if="{{!item.joinFlag}}" hover-class="none" url='../goingQuan/goingQuan?circleId={{item.circleId}}'>
+          <view class='shangquan-container' id="{{item.circleId}}">
+            <image src='{{item.circlePhoto.thumb}}'></image>
+            <view class='shangquan-info'>
+              <text class='shangquan-name'>{{item.circleName}}</text>
+              <text class='shangquan-describe'>{{item.circleInfo}}</text>
+              <view class='shangquan-nums'>
+                <text>{{item.cost==0?'免费':item.cost+'元/年'}}</text>
+                <text> | 成员{{item.userCount>99?item.userCount+'+':item.userCount}}</text>
+              </view>
+            </view>
+            <image class='shanghui-toquan' src='../../image/6.png'></image>
+          </view>
+        </navigator>
+        <navigator wx:else hover-class="none" url='../inQuan/inQuan?circleId={{item.circleId}}'>
+          <view class='shangquan-container' id="{{item.circleId}}">
+            <image src='{{item.circlePhoto.thumb}}'></image>
+            <view class='shangquan-info'>
+              <text class='shangquan-name'>{{item.circleName}}</text>
+              <text class='shangquan-describe'>{{item.circleInfo}}</text>
+              <view class='shangquan-nums'>
+                <text>{{item.cost==0?'免费':item.cost+'元/年'}}</text>
+                <text> | 成员{{item.userCount>99?item.userCount+'+':item.userCount}}</text>
+              </view>
+            </view>
+            <image class='shanghui-toquan' src='../../image/6.png'></image>
+          </view>
+        </navigator>
+      </block>
+
+    </view>
+  </view>

@@ -1,0 +1,40 @@
+<view class='selfgood-add-head'>
+  <view class='selfgood-add-head-one'>
+    <text bindtap="goback">取消</text>
+    <text wx:if="{{handlerType && organizationName && uniformCodeCertificate &&uniformCodeCertificateImg }}" bindtap="linktoNext" style='color:#D7000F'>下一步</text>
+    <text wx:else>下一步</text>
+  </view>
+  <view class='selfgood-add-head-two'>
+    <text>机构名称</text>
+    <input placeholder="填写机构名称" placeholder-class="phcolor" bindinput="organizationNamefn" value="{{organizationName}}" placeholder-style='text-align:right'></input>
+  </view>
+  <view class='selfgood-add-head-three'>
+    <text>统一代码证</text>
+    <input placeholder="填写统一代码证" placeholder-class="phcolor" placeholder-style='text-align:right' type="number" value="{{uniformCodeCertificate}}" bindinput="handleInput"></input>
+
+  </view>
+  <view class='selfgood-add-head-five'>
+    <text>经办人类型</text>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio class="radio" color="#D7000F" value="{{item.type}}" checked="{{item.checked}}" disabled="{{item.disabled}}" />{{item.value}}
+      </label>
+    </radio-group>
+  </view>
+  <view class='selfgood-add-head-sixbox'>
+    <text>上传证件</text>
+    <view class='selfgood-add-head-six-img'>
+      <image wx:if='{{uniformCodeCertificateImg}}' class='delImg' src='../../../img/icon_delzhengjain@3x.png' catchtap="delImgfn"></image>
+      <!--3中是缩放模式
+    scaleToFill 不保持纵横比缩放图片，使图片的宽高完全拉伸至填满image元素
+    aspectFit   保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。
+    aspectFill  保持纵横比缩放图片，只保证图片的短边能完全显示出来
+
+-->
+      <image wx:if='{{!uniformCodeCertificateImg}}' src='../../../img/icon_shangchuanzhengjian@3x.png' mode='aspectFill' bindtap="chooseImage"></image>
+      <image src='{{uniformCodeCertificateImg}}' mode='aspectFill' bindtap="chooseImage"></image>
+
+    </view>
+  </view>
+
+</view>

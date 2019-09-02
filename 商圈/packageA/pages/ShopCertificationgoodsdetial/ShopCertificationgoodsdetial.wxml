@@ -1,0 +1,45 @@
+<view class='shopDetial-top-container'>
+  <view class='shopDetial-top'>
+    <image src='{{goodsData.coverImagesInfo[0].thumb}}' mode='acspectfill'></image>
+    <text class='good-consignmentIntroduction'>{{goodsData.name}}</text>
+  </view>
+  <view class='shopDetial-top-bottom'>
+    <view class='shopDetial-top-bottom-left'>
+      <text>售价</text>
+      <text>￥{{goodsData.price}}</text>
+    </view>
+    <text class='shopDetial-top-bottom-right'>销量 {{goodsData.commentCount}}</text>
+  </view>
+</view>
+
+  <view class='shopmanagement-menubox'>
+    <text class='shopmanagement-menubox-title'>管理操作</text>
+    <view class='shopmanagement-container-bottom'>
+      <view class='shopmanagement-container-bottom-menu' catchtap="toeditor">
+        <image src='../../../img/icon­­_bianj@3x.png'></image>
+        <text>编辑</text>
+      </view>
+          <view class='shopmanagement-container-bottom-menu' bindtap="toeditorgoods" wx:if='{{shelfFlag}}'>
+      <image src='../../../img/icon­­_xiajia@3x.png'></image>
+      <text>下架</text>
+    </view>
+    <view wx:else class='shopmanagement-container-bottom-menu' bindtap="toeditorgoods">
+      <image src='../../../img/icon­­_shangjia@3x.png'></image>
+      <text>上架</text>
+    </view>
+      <view class='shopmanagement-container-bottom-menu' bindtap="togoodsdetial">
+        <image src='../../../img/icon­­_chakanshangpinyemian@3x.png'></image>
+        <text>查看商品页面</text>
+      </view>
+      <view class='shopmanagement-container-bottom-menu'>
+        <image src='../../../img/icon­­_tuiguangshezhi@3x.png' bindtap="todistributionMoneysetting"></image>
+        <text>推广设置</text>
+      </view>
+      <view class='shopmanagement-container-bottom-menu'>
+        <image src='../../../img/icon­­_dalishnag@3x.png'></image>
+        <text>代理商</text>
+      </view>
+
+
+    </view>
+  </view>

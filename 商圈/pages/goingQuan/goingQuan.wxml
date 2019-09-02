@@ -1,0 +1,149 @@
+<!--pages/goingQuan/goingQuan.wxml-->
+<view>
+  <view class='quan-top'>
+    <view>
+      <image src='{{dataInfo.circlePhoto.thumb}}'></image>
+    </view>
+    <view class='quan-info'>
+      <view class='quan-name'>{{dataInfo.circleName}}</view>
+      <view class='quan-ID'>
+        <text>商圈ID：{{dataInfo.circleId}}</text>
+        <!-- <button size='mini'>复制</button> -->
+      </view>
+    </view>
+    <view class='quan-list'>
+      <view class='quan-list-item'>
+        <text>231</text>
+        <text>动态</text>
+      </view>
+      <view class='quan-list-item'>
+        <text>1314</text>
+        <text>文章</text>
+      </view>
+      <view class='quan-list-item'>
+        <text>36</text>
+        <text>提问</text>
+      </view>
+      <view class='quan-list-item'>
+        <text>31</text>
+        <text>活动</text>
+      </view>
+    </view>
+  </view>
+  <!-- 商圈介绍 -->
+  <view class='quan-intruduce'>
+    <view class='quan-title'>
+      <text>商圈介绍</text>
+    </view>
+    <text class='quan-content'>{{dataInfo.circleInfo}}
+</text>
+  </view>
+  <!-- 商圈成员 -->
+  <view class='quan-member'>
+    <view class='quan-title'>
+      <text>商圈成员({{dataInfo.userCount}})</text>
+    </view>
+    <!-- 成员列表 -->
+    <view class='member-container'>
+      <block wx:for="{{meberdataInfo}}" wx:item='item'>
+        <view class='member-list-item'>
+          <view class='member-image'>
+            <image class='user-img' src='{{item.user.avatar}}'></image>
+            <image class='user-identify' src='../../image/icon_v@3x.png' wx:if="{{item.user.verifyStatus==2}}"></image>
+          </view>
+          <view class='member-info'>
+            <text>{{item.showNameFlag&&item.user.name?item.user.name:item.user.nickname}}</text>
+            <text wx:if="{{item.user.company||item.user.position}}">{{item.user.company}}.{{item.user.position}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view>
+      <!-- 加入商圈按钮 -->
+      <button wx:if='{{!dataInfo.payFlag&&dataInfo.enterCircleFlag}}' class='free-toquan' catchtap='openModal'>免费 申请加入</button>
+      <button wx:if='{{!dataInfo.payFlag&&!dataInfo.enterCircleFlag}}' class='free-toquan' catchtap='openModal'>免费 加入商圈</button>
+      <button wx:if='{{dataInfo.payFlag&&dataInfo.enterCircleFlag}}' class='free-toquan' catchtap='openModal'>￥{{dataInfo.cost}}/年 申请加入</button>
+      <button wx:if='{{dataInfo.payFlag&&!dataInfo.enterCircleFlag}}' class='free-toquan' catchtap='openModal'>￥{{dataInfo.cost}}/年 加入商圈</button>
+    </view>
+  </view>
+  <!-- 免费/付费弹框 -->
+  <view class='modal-container {{display=="block" ? indexFixed:""}} ' style="display:{{display}}">
+    <view class='modal-top'>
+      <view class='modal-top-info'>
+        <view>
+          <image class='modal-quanImg' src='{{dataInfo.circlePhoto.thumb}}'></image>
+        </view>
+        <view class='modal-info'>
+          <text>价格：{{dataInfo.cost==0?'免费':'￥'+dataInfo.cost}}</text>
+          <text>{{dataInfo.circleName}}</text>
+        </view>
+      </view>
+
+      <view>
+        <image bindtap='closeModal' class='modal-close' src='../../image/cancle.png'></image>
+      </view>
+    </view>
+    <!-- 申请理由 -->
+    <view class='modal-reason' wx:if='{{dataInfo.enterCircleFlag}}'>
+      <text>申请理由</text>
+      <input bindinput="wxSearchInput" name='inputs' placeholder='请填写加入理由' placeholder-class='placeholder-class' value="{{reviewContent}}"></input>
+    </view>
+    <!-- 付费须知 -->
+    <view class='modal-konw'>
+      <text>付费须知</text>
+      <view class='modal-konw-list'>
+        <text>1、付费成功后,请耐心等待审核,审核通过后可在商圈中参与互动</text>
+        <text class='model-list-two'>2、有效期:{{dataInfo.payFlag?'一年':'永久'}}</text>
+        <view class='model-list-three'>
+          <text>3、付费后原则上不予退款,如有争议,参见   </text>
+          <text class='modal-xieyi'>《商蜜用户协议》</text>
+        </view>
+
+        <text>4、发现违反法律法规的商圈,请勿加入。</text>
+      </view>
+      <view>
+        <button class='red-bottton' catchtap='toPay'>支付</button>
+      </view>
+    </view>
+
+  </view>
+  <!-- 付费邀请弹框  邀请码 -->
+  <view class='modal-container' style="display:{{display2}}">
+    <view class='modal-top'>
+      <view class='modal-top-info'>
+        <view>
+          <image class='modal-quanImg' src='{{dataInfo.circlePhoto.thumb}}'></image>
+        </view>
+        <view class='modal-info'>
+          <text>价格：{{dataInfo.cost==0?'免费':'￥'+dataInfo.cost}}</text>
+          <text>{{dataInfo.circleName}}</text>
+        </view>
+      </view>
+
+      <view>
+        <image bindtap='closeModal' class='modal-close' src='../../image/cancle.png'></image>
+      </view>
+    </view>
+    <!-- 邀请码 -->
+    <view class='modal-reason'>
+      <text>邀请码</text>
+      <input placeholder='填写邀请码' placeholder-class='placeholder-class' bindinput="yqmInput" value="{{inviteCode}}"></input>
+    </view>
+    <!-- 邀请码须知 -->
+    <view class='modal-konw'>
+      <text>付费须知</text>
+      <view class='modal-konw-list'>
+        <text>1、验证邀请码后方可进行下一步操作</text>
+        <view>
+          <text class='model-list-two'>2、没有邀请码请联系管理员 </text>
+          <text class='modal-xieyi'> 132****2323</text>
+        </view>
+
+      </view>
+      <view>
+        <button class='red-bottton' catchtap='toyz'>验证</button>
+      </view>
+    </view>
+
+  </view>
+</view>

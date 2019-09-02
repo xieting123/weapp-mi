@@ -1,0 +1,61 @@
+<view>
+  <view class='storeinfo-box'>
+    <view class='storeinfo-box-left'>
+      <image class='storeinfo-box-storeAvatarInfo' src='{{avatarinfo}}'></image>
+      <view class='storeinfo-box-right'>
+        <text class='storeinfo-box-right-storeName'>{{storename}}</text>
+        <view class='storeinfo-box-right-price'>
+          <text>商品数 {{productcount}}    </text>
+          <text>代理商 {{agentstorecount}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <block wx:for="{{goodsData}}">
+    <view class='goodsData-container' wx:if="{{item.productType==0}}">
+      <view class='goodsData-container-left'>
+        <image src='{{item.coverImageInfo.thumb}}'></image>
+        <view class='goodsData-container-right'>
+          <text class='goodsData-container-right-name'>{{item.name}}</text>
+          <view class='goodsData-container-right-price' wx:if='{{item.allowConsignmentFlag}}'>
+            <text>供货价</text>
+            <text>￥{{item.price}}</text>
+          </view>
+          <view class='goodsData-container-right-price' wx:else>
+            <text>销售价</text>
+            <text>￥{{item.price}}</text>
+          </view>
+          <view class='goodsData-container-right-profitMoney' wx:if='{{item.allowConsignmentFlag}}'>
+            <text>利润</text>
+            <text>￥{{item.profitMoney}}</text>
+          </view>
+        </view>
+      </view>
+      <image class='agentFlagImg' wx:if="{{!item.agentFlag}}" data-id="{{item.id}}" catchtap="toagent" src='../../../img/icon­­_weidaili@3x.png'></image>
+      <image class='agentFlagImg' wx:else src='../../../img/icon­­_yidaili@3x.png' data-id="{{item.id}}" catchtap="tocancledetial"></image>
+    </view>
+    <view class='goodsData-container' wx:else>
+      <view class='goodsData-container-left'>
+        <image src='{{item.agentProduct.coverImageInfo.thumb}}'></image>
+        <view class='goodsData-container-right'>
+          <text class='goodsData-container-right-name'>{{item.agentProduct.name}}</text>
+          <view class='goodsData-container-right-price' wx:if='{{item.agentProduct.allowConsignmentFlag}}'>
+            <text>供货价</text>
+            <text>￥{{item.agentProduct.price}}</text>
+          </view>
+          <view class='goodsData-container-right-price' wx:else>
+            <text>销售价</text>
+            <text>￥{{item.agentProduct.price}}</text>
+          </view>
+          <view class='goodsData-container-right-profitMoney' wx:if='{{item.allowConsignmentFlag}}'>
+            <text>利润</text>
+            <text>￥{{item.agentProduct.profitMoney}}</text>
+          </view>
+        </view>
+      </view>
+      <image class='agentFlagImg' wx:if="{{!item.agentProduct.agentFlag}}" data-id="{{item.id}}" catchtap="toagent" src='../../../img/icon­­_weidaili@3x.png'></image>
+      <image class='agentFlagImg' wx:else src='../../../img/icon­­_yidaili@3x.png' data-id="{{item.agentProduct.id}}" catchtap="tocancledetial"></image>
+    </view>
+  </block>
+
+</view>

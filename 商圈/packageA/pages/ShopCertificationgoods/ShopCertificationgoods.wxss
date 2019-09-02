@@ -1,0 +1,136 @@
+/* packageA/pages/ShopCertificationgoods/ShopCertificationgoods.wxss */
+@import '../selfGood/selfGood.wxss';
+
+page {
+  background: #fff;
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+.goodlist-item{
+  padding: 32rpx 0;
+}
+.static-news-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.tabs {
+  width: 150rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  display: inline-block;
+}
+
+.goodlist-item .goodlist-top {
+  display: flex;
+  align-items: center;
+}
+
+.goodlist-top-right {
+  width: 504rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.goodlist-top-right-center {
+  display: flex;
+  align-items: center;
+}
+
+.goodlist-top-right-name {
+font-size:28rpx;
+font-family:PingFang SC;
+font-weight:400;
+line-height:36px;
+color:rgba(77,77,77,1);
+opacity:1;
+}
+
+.goodlist-top-right-center-icon {
+  width: 56rpx;
+  height: 28rpx;
+  text-align: center;
+  background: rgba(69, 102, 147, 1);
+  border-radius: 2px;
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 28rpx;
+  color: rgba(255, 255, 255, 1);
+  opacity: 1;
+}
+
+.goodlist-top-right-center-pricetip {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.goodlist-top-right-center-price {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 36rpx;
+  color: rgba(215, 0, 15, 1);
+  opacity: 1;
+}
+
+.goodlist-top-right-center-costprice {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.goodlist-top-right-num {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.goodlist-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30rpx;
+}
+
+.goodlist-bottom text:nth-child(1) {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+}
+.goodlist-top image{
+  margin-right: 38rpx;
+}
+.goodlist-bottom text:nth-child(2) {
+  width: 180rpx;
+  height: 60rpx;
+  text-align: center;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(215, 0, 15, 1);
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 60rpx;
+  color: rgba(215, 0, 15, 1);
+  opacity: 1;
+}
+.goodlist-top-right-center text{
+  margin-right: 8rpx;
+}

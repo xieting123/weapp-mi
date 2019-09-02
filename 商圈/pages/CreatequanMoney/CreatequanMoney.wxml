@@ -1,0 +1,12 @@
+<!--pages/CreatequanMoney/CreatequanMoney.wxml-->
+<view class='create-money'>
+  <view class='create-pay'>
+    <text>￥</text>
+  <input bindinput='formName' value='{{cost}}'  class='placeInput'></input>
+  <text>/年</text>
+  </view>
+  <navigator hover-class="none" url='../createQuan/createQuan?cost={{cost}}&payFlag={{payFlag}}'>
+    <button>确定</button>
+  </navigator>
+
+</view>

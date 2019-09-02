@@ -1,0 +1,31 @@
+<view class='labersetting'>
+  <view class='member-list-item-left member-head'>
+    <view class='member-image'>
+      <image class='user-img' src='{{avatar}}'></image>
+      <image class='user-identify' src='../../image/icon_v@3x.png'></image>
+    </view>
+    <view class='member-info'>
+      <text>{{name?name:nickname}}</text>
+      <text wx:if="{{company||position}}">{{company}}.{{position}}</text>
+    </view>
+  </view>
+  <view class='laber-container'>
+    <view class='laber-header'>
+      <text class='laber-choose'>选择标签</text>
+      <navigator url='../Labelmanagement/Labelmanagement?circleId={{circleId}}' hover-class="none">
+      <text class='label-management'>标签管理</text>
+      </navigator>
+    </view>
+    <view class='labers' wx:if='{{datainfo.length}}'>
+      <block wx:for="{{datainfo}}" wx:item='item' wx:key='index'>
+        <text class="{{ currentTab == index ? 'active' : 'noactive' }}" data-tagId="{{item.tagId}}"  bindtap="changeStyle" id='{{index}}'>{{item.tagName}} </text>
+      </block>
+    </view>
+    <navigator wx:else url='../Labelmanagement/Labelmanagement?circleId={{circleId}}' hover-class="none">
+    <view class='lable-add'>
+    + 添加标签
+    </view>
+    </navigator>
+  </view>
+  <button bindtap='sureBtn'>确认</button>
+</view>

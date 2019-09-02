@@ -1,0 +1,38 @@
+<view class='distributionlog-container'>
+<view class='distributionlog-container-item'>
+  <view class='distributionlog-container-item-head'>
+    <view>
+      <text class='distributionlog-container-item-head-name'>李丹丹</text>
+      <text class='distributionlog-container-item-head-tel'>18911069265</text>
+    </view>
+    <view class='distributionlog-container-item-head-order'>DDH77dd65355342</view>
+  </view>
+
+  <view class='distributionlog-container-item-bottom'>
+    <text class='distributionlog-container-item-bottom-time'>2019 06-13 16:31</text>
+    <view class='distributionlog-container-item-bottom-money'>
+      <text>佣金 | </text>
+      <text>￥23.00</text>
+    </view>
+
+  </view>
+</view>
+<view class='distributionlog-container-item'>
+  <view class='distributionlog-container-item-head'>
+    <view>
+      <text class='distributionlog-container-item-head-name'>李丹丹</text>
+      <text class='distributionlog-container-item-head-tel'>18911069265</text>
+    </view>
+    <view class='distributionlog-container-item-head-order'>DDH77dd65355342</view>
+  </view>
+
+  <view class='distributionlog-container-item-bottom'>
+    <text class='distributionlog-container-item-bottom-time'>2019 06-13 16:31</text>
+    <view class='distributionlog-container-item-bottom-money'>
+      <text>佣金 | </text>
+      <text>￥23.00</text>
+    </view>
+
+  </view>
+</view>
+</view>

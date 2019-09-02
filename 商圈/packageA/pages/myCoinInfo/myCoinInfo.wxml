@@ -1,0 +1,13 @@
+
+<view class='coinInfo-container'>
+<block wx:for="{{datainfo}}" wx:item='item'>
+<view class='coinInfo-container-item'>
+  <view class='coinInfo-container-left'>
+    <view>{{item.content}}</view>
+    <view>{{item.createTime}}</view>
+  </view>
+  <text class='coinInfo-container-right'>+ {{item.coinNum}}蜜币</text>
+</view>
+</block>
+
+</view>

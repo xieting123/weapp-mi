@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "动态详情",
+  "usingComponents": {
+    "canvas-share": "../../components/canvas-share/index"
+  }
+}

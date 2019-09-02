@@ -1,0 +1,22 @@
+/* packageA/pages/PublishingArticle/PublishingArticle/PublishingArticletext.wxss */
+page{
+  background: #fff;
+}
+.publish-article-placeholderClass{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:400;
+line-height:20px;
+color:rgba(153,153,153,1);
+opacity:1;
+}
+textarea{
+  width: 100%;
+  height:1000rpx;
+}
+.publish-article-placeholderClass-box{
+padding: 32rpx;
+}
+.place-holder {
+    font-size: 12px;
+}

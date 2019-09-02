@@ -1,0 +1,55 @@
+/* pages/shipAddress/shipAddress.wxss */
+.shipAddress-content{
+  width: 100%;
+  background-color: white;
+  margin-bottom: 15rpx;
+}
+.shipAddress{
+  padding: 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+  border-bottom: 10rpx solid #f3f7f9;
+}
+.shipAddress .tops{
+  width: 100%;
+  font-size: 30rpx;
+}
+.shipAddress .tops .name{
+  padding-right: 50rpx;
+}
+.shipAddress .address{
+  line-height: 80rpx;
+  font-size: 26rpx;
+}
+.shipAddress .editor{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.shipAddress .editor .input{
+  font-size: 26rpx;
+}
+.shipAddress .editor .text{
+  font-size: 28rpx;
+  color: #6d6a6a;
+}
+.shipAddress .editor .text view{
+  display: inline-block;
+  padding-left: 5px;
+}
+.shipAddress .editor .text view image{
+  width: 38rpx;
+  height: 38rpx;
+  vertical-align: middle;
+}
+.add-address{
+  width: 710rpx;
+  margin: 30rpx auto;
+  background-color: #e70012;
+  line-height: 85rpx;
+  font-size: 30rpx;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+}

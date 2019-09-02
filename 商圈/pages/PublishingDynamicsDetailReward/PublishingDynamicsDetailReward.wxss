@@ -1,0 +1,118 @@
+/* pages/PublishingDynamicsDetailReward/PublishingDynamicsDetailReward.wxss */
+@import '../PublishingDynamicsDetail/PublishingDynamicsDetail.wxss';
+
+page {
+  background: #fff;
+}
+
+.dynamic-reward-container {
+  padding: 32rpx;
+}
+
+.dynamic-reward-money-input {
+  width: 622rpx;
+  border: 1px solid #707070;
+  border-radius: 12px;
+  margin-top: 32rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17rpx 32rpx;
+}
+
+.dynamic-reward-container input {
+  width: 500rpx;
+  text-align: right;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(215, 0, 15, 1);
+  padding: 8rpx;
+}
+
+.dynamic-reward-money-input-cost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dynamic-reward-container 
+input {
+  outline: none;
+  list-style: none;
+}
+
+.dynamic-reward-choosemoney {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 56rpx;
+}
+
+.dynamic-reward-choosemoney button {
+  width: 164rpx;
+  height: 60rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(230, 230, 230, 1);
+  opacity: 1;
+  border-radius: 12px;
+  margin-bottom: 16rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 60rpx;
+  color: rgba(153, 153, 153, 1);
+  padding-left: 0rpx;
+padding-right: 0rpx;
+
+}
+
+.dynamic-reward-choosemoney button::after {
+  border: none;
+}
+
+.dynamic-reward-money-input-tips {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 30px;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+  margin-top: 56rpx;
+}
+
+.dynamic-reward-money-input-tips-link {
+  color: #456693;
+}
+
+.dynamic-reward-money-pay {
+  width: 686rpx;
+  height: 88rpx;
+  background: linear-gradient(90deg, rgba(255, 170, 128, 1) 0%, rgba(255, 76, 76, 1) 100%);
+  opacity: 1;
+  border-radius: 10px;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 88rpx;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  bottom: 32rpx;
+}
+
+.dynamic-reward-money-pay::after {
+  border: none;
+}
+
+/* 点击选择按钮 */
+
+.dynamic-reward-choosemoney .active {
+  border: 1px solid rgba(215, 0, 15, 1);
+  opacity: 1;
+  border-radius: 12px;
+  color: rgba(215, 0, 15, 1);
+}

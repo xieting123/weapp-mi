@@ -1,0 +1,7 @@
+/* packageA/pages/myReplay/myReplay.wxss */
+@import '/packageA/pages/myZanlist/myZanlist.wxss';
+.zanlist-contaner-bottom-content-box-article{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

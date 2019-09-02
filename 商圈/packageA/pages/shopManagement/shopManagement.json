@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+      "action-sheet": "../../components/sheet/index"
+    },
+  "navigationBarTitleText": "店铺管理"
+}

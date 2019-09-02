@@ -1,0 +1,69 @@
+<!-- 引入公共组件 -->
+<import src='../index/shanghui/shanghui.wxml' />
+<view>
+<navigator url='../SearchCircle/SearchCircle' hover-class="none">
+  <view class="find-search">
+    <input placeholder="搜索"  placeholder-class="place-holder"  disabled='true' />
+  </view>
+</navigator>
+  <!-- 推荐 -->
+  <view class='find-Recommend'>
+    <view class='find-more'>
+      <text>推荐商圈</text>
+      <text bindtap="tomore">全部推荐</text>
+    </view>
+    <view class='find-scroll'>
+
+      <scroll-view scroll-x>
+        <block wx:for="{{Recommendquanlist}}" wx:item='item'>
+          <view class='find-item' id='{{item.circleId}}' data-join="{{item.joinFlag}}"  bindtap="routerlink">
+            <image src='{{item.circlePhoto.thumb}}' mode="aspectFill"></image>
+            <view class='find-item-name'>{{item.circleName}}</view>
+          </view>
+        </block>
+      </scroll-view>
+
+    </view>
+
+  </view>
+  <!-- 全部商圈 -->
+  <view class='find-all'>
+    <view class='find-all-title'>
+      <text>全部商圈</text>
+    </view>
+    <view>
+      <!-- <template is='shanghui'></template> -->
+      <block wx:for="{{quanlist}}" wx:item="item">
+        <navigator wx:if="{{!item.joinFlag}}" hover-class="none" url='../goingQuan/goingQuan?circleId={{item.circleId}}'>
+          <view class='shangquan-container' id="{{item.circleId}}">
+            <image src='{{item.circlePhoto.thumb}}'></image>
+            <view class='shangquan-info'>
+              <text class='shangquan-name'>{{item.circleName}}</text>
+              <text class='shangquan-describe'>{{item.circleInfo}}</text>
+              <view class='shangquan-nums'>
+                <text>{{item.cost==0?'免费':item.cost+'元/年'}}</text>
+                <text> | 成员{{item.userCount>99?item.userCount+'+':item.userCount}}</text>
+              </view>
+            </view>
+            <!-- <image class='shanghui-toquan' src='../../image/6.png'></image> -->
+          </view>
+        </navigator>
+        <navigator wx:else hover-class="none" url='../inQuan/inQuan?circleId={{item.circleId}}'>
+          <view class='shangquan-container' id="{{item.circleId}}">
+            <image src='{{item.circlePhoto.thumb}}'></image>
+            <view class='shangquan-info'>
+              <text class='shangquan-name'>{{item.circleName}}</text>
+              <text class='shangquan-describe'>{{item.circleInfo}}</text>
+              <view class='shangquan-nums'>
+                <text>{{item.cost==0?'免费':item.cost+'元/年'}}</text>
+                <text> | 成员{{item.userCount>99?item.userCount+'+':item.userCount}}</text>
+              </view>
+            </view>
+            <!-- <image class='shanghui-toquan' src='../../image/6.png'></image> -->
+          </view>
+        </navigator>
+      </block>
+
+    </view>
+  </view>
+</view>

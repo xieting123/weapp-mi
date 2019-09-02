@@ -1,0 +1,128 @@
+<view>
+  <action-sheet actionShow="{{showStatus}}" closeText="关闭" bind:actionHide="onActionHide">
+    <!-- slot ActionSheet 菜单项 只能是button 或 navigator -->
+    <button bindtap="handleBtn">
+      普通商品</button>
+    <button bindtap="handleBtn2" style="color:#D7000F">电子商品</button>
+  </action-sheet>
+  <!-- 模态框 -->
+  <view wx:if='{{showModal}}'>
+    <view class='mask_layer' bindtap='modal_click_Hidden' />
+    <view class='modal_box'>
+      <view class="title">提示</view>
+      <view class='content'>
+        <text class='modalMsg'>{{modalMsg}}</text>
+      </view>
+      <view class='btn1'>
+        <view bindtap='modal_click_Hidden' class='cancel'>取消</view>
+        <view bindtap='Sure' class='Sure'>去认证</view>
+      </view>
+    </view>
+  </view>
+  <view class='selfgood-add-head'>
+    <view class='selfgood-add-head-one'>
+      <text>取消</text>
+      <text>保存</text>
+    </view>
+    <view class='selfgood-add-head-two'>
+      <text>商品名称</text>
+      <input placeholder="商品名称" placeholder-class="phcolor" value="{{name}}" bindinput="handleInputOne" placeholder-style='text-align:right'></input>
+    </view>
+    <view class='selfgood-add-head-three'>
+      <text>销售价</text>
+      <input placeholder="请输入商品销售价" placeholder-class="phcolor" placeholder-style='text-align:right' type="number" value="{{price}}" bindinput="handleInput"></input>
+
+    </view>
+    <!-- <view class='selfgood-add-head-four' bindtap="choosesheet">
+      <text>商品分类</text>
+      <view>
+        <text style='margin-right:8rpx;font-size:28rpx;color:#999999;'>选择</text>
+        <image src='../../../image/6.png'></image>
+      </view>
+    </view> -->
+    <view class='selfgood-add-head-five'>
+      <text>上架设置</text>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{items}}">
+          <radio class="radio" color="#D7000F" value="{{item.name}}" checked="{{item.checked}}" disabled="{{item.disabled}}" />{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <view class='selfgood-add-head-six'>
+      <view class='selfgood-add-head-six-left'>
+        <text>平台代销</text>
+        <image src='../../../img/icon_chakanguize@3x.png' style='margin:0 8rpx'></image>
+        <text style='color:#456693'>查看规则</text>
+      </view>
+      <radio-group class="radio-group">
+        <label class="radio" bindtap="radioChange2">
+          <radio class="radio" color="#D7000F" checked="{{allowConsignmentFlag}}" />同步至平台代销市场
+        </label>
+      </radio-group>
+    </view>
+    <view class='selfgood-add-head-three' wx:if='{{allowConsignmentFlag}}'>
+      <text>供货价</text>
+      <input placeholder="请输入商品成本价" placeholder-class="phcolor" placeholder-style='text-align:right' type="number" value="{{costPrice}}" bindinput="handleInput2"></input>
+
+    </view>
+  </view>
+  <!-- 商品信息 -->
+  <!-- 商品封面 -->
+  <view>
+    <view class='good-box-one'>
+      <view class='good-box-title'>
+        <text>商品封面图片</text>
+        <text>（最多上传12张，图片需为正方形）</text>
+      </view>
+      <view class='good-box-one-imgbox'>
+        <block wx:for="{{coverImages}}">
+          <view class='good-box-one-imgbox-item'>
+            <!-- 删除照片-->
+            <image class='publish-detial' bindtap='clearImg' data-index="{{index}}" data-type='1' src='../../../image/icon_yichutupian.png'></image>
+            <image src='{{item.thumb}}' data-thumb="{{item.thumb}}" bindtap='showImg' data-type='1' mode='aspectFill' data-id='{{index}}'></image>
+          </view>
+
+        </block>
+        <view wx:if='{{coverImages.length<12}}' class='chooseimg' bindtap='uploadDetailImage1'>
+          <image src='../../../image/img_add.png'></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <!-- 商品描述 -->
+  <view class='good-box-two'>
+    <view class='good-box-title'>
+      <text>文字</text>
+      <text>（文字会固定位置排版） </text>
+    </view>
+    <textarea placeholder="请输入文字..." value="{{introduction}}" bindinput="textHandleInput"></textarea>
+  </view>
+  <!-- 商品详情 -->
+  <view class='good-box-three'>
+    <view class='good-box-title'>
+      <text>商品详情图片</text>
+      <text>（图片会根据顺序显示）</text>
+    </view>
+          <view class='good-box-one-imgbox'>
+        <block wx:for="{{detailImages}}">
+          <view class='good-box-one-imgbox-item'>
+            <!-- 删除照片-->
+            <image class='publish-detial' bindtap='clearImg' data-type='2' data-index="{{index}}" src='../../../image/icon_yichutupian.png'></image>
+            <image src='{{item.thumb}}' data-thumb="{{item.thumb}}" bindtap='showImg' data-type='2' mode='aspectFill' data-id='{{index}}'></image>
+          </view>
+
+        </block>
+        <view wx:if='{{detailImages.length<12}}' class='chooseimg' bindtap='uploadDetailImage2'>
+          <image src='../../../image/img_add.png'></image>
+        </view>
+      </view>
+  </view>
+  <!-- 温馨提示 -->
+  <view class='good-box-four'>
+    <textarea placeholder="购买温馨提示，选填" placeholder-style="font-size:28rpx" value="{{tips}}" bindinput="textHandleInput2"></textarea>
+  </view>
+  <view class='good-btn'>
+    <view bindtap="tankuangShow" bindtap="addProduct">立即发布</view>
+  </view>
+</view>

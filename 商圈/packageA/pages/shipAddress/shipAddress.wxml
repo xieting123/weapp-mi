@@ -1,0 +1,31 @@
+<!--pages/shipAddress/shipAddress.wxml-->
+<view class='shipAddress-content'>
+  <radio-group bindchange="radioChange">
+    <view class='shipAddress' wx:for='{{getAddressListLim}}' wx:key='index'>
+      <view class='tops'>
+        <text class='name'>{{item.consigneeName}}</text>
+        <text class='tels'>{{item.consigneePhone}}</text>
+      </view>
+      <view class='address'>
+        <text>{{item.provinceName}}、{{item.cityName}}、{{item.consigneeDetail}}</text>
+      </view>
+      <view class='editor'>
+        <view class='input'>
+          <label class="radio" >
+            <radio name='setDef' value='{{item.id}}' checked='{{item.isDefault}}' color='#e70012'/>设为默认
+          </label>
+        </view>
+        <view class='text'>
+          <view data-id='{{item.id}}' bindtap='modAddressFn'>
+            <image src='../../../img/icon_bianji@3x.png'></image> 编辑</view>
+          <view data-id='{{item.id}}' bindtap='deltAddress'>
+            <image src='../../../img/icon_shancu@3x.png'></image> 删除</view>
+        </view>
+      </view>
+    </view>
+  
+  </radio-group>
+</view>
+<view class='add-address' bindtap='addAddressFn'>
+  <text>添加新地址</text>
+</view>

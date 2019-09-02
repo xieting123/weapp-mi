@@ -1,0 +1,115 @@
+<!-- 消息列表 -->
+<view class='news-container'>
+  <view class='news-list'>
+    <navigator url='../helplist/helplist' hover-class="none">
+      <view class='news-list-item'>
+        <view class='news-left'>
+          <image src='../../image/icon_tongzhizushou@3x.png'></image>
+          <text>通知助手</text> </view>
+        <view class='news-right'>
+          <text class='news-num' wx:if="{{datainfo.viewhelp}}">{{datainfo.viewhelp}}</text>
+          <image src='../../image/6.png' class='news-go'></image>
+        </view>
+      </view>
+    </navigator>
+    <!-- <view class='news-list-item'>
+      <view class='news-left'>
+        <image src='../../image/icon_liuyanxiaoxi@3x.png'></image>
+        <text>留言信息</text> </view>
+      <view class='news-right'>
+        <text class='news-num'  wx:if="{{datainfo.toMyLeaveMessageCount}}">{{datainfo.toMyLeaveMessageCount}}</text>
+        <image src='../../image/6.png' class='news-go'></image>
+      </view>
+    </view> -->
+    <!-- <view class='news-list-item'>
+      <view class='news-left'>
+        <image src='../../image/icon_tiwenxiaoxi@3x.png'></image>
+        <text>提问消息</text> </view>
+      <view class='news-right'>
+        <text class='news-num'>1</text>
+        <image src='../../image/6.png' class='news-go'></image>
+      </view>
+    </view> -->
+    <!-- <view class='news-list-item'>
+      <view class='news-left'>
+        <image src='../../image/icon_huodongxiaoxi@3x.png'></image>
+        <text>活动消息</text> </view>
+      <view class='news-right'>
+        <text class='news-num'>2</text>
+        <image src='../../image/6.png' class='news-go'></image>
+      </view>
+    </view> -->
+    <view class='news-list-item'>
+      <view class='news-left'>
+        <image src='../../image/icon_shnagpindingdan@3x.png'></image>
+        <text>商品订单</text> </view>
+      <image src='../../image/6.png' class='news-go'></image>
+    </view>
+    <navigator url='../ApplicationEntrynews/ApplicationEntrynews' hover-class="none">
+      <view class='news-list-item'>
+        <view class='news-left'>
+          <image src='../../image/icon_ruquanshenqin@3x.png'></image>
+          <text>入圈申请</text> </view>
+        <view class='news-right'>
+          <text wx:if="{{datainfo.circleReviewCount}}" class='news-num'>{{datainfo.circleReviewCount}}</text>
+          <image src='../../image/6.png' class='news-go'></image>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='../../packageA/pages/myComment/myComment' hover-class="none">
+      <view class='news-list-item'>
+        <view class='news-left'>
+          <image src='../../image/icon_pinglunhuifu@3x.png'></image>
+          <text>评论</text> </view>
+        <view class='news-right'>
+          <text class='news-num' wx:if="{{datainfo.toMyCommentQueryCount}}">{{datainfo.toMyCommentQueryCount}}</text>
+          <image src='../../image/6.png' class='news-go'></image>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='../../packageA/pages/myReplay/myReplay' hover-class="none">
+      <view class='news-list-item'>
+        <view class='news-left'>
+          <image src='../../image/icon_huifu@3x.png'></image>
+          <text>回复</text> </view>
+        <view class='news-right'>
+          <text class='news-num' wx:if="{{datainfo.toMyReplyQueryCount}}">{{datainfo.toMyReplyQueryCount}}</text>
+          <image src='../../image/6.png' class='news-go'></image>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='../../packageA/pages/myZanlist/myZanlist' hover-class="none">
+      <view class='news-list-item'>
+        <view class='news-left'>
+          <image src='../../image/icon_dianzan@3x.png'></image>
+          <text>点赞</text> </view>
+        <view class='news-right'>
+          <text class='news-num' wx:if="{{datainfo.toMyZanQueryCount}}">{{datainfo.toMyZanQueryCount}}</text>
+          <image src='../../image/6.png' class='news-go'></image>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='../../packageA/pages/myReward/myReward' hover-class="none">
+      <view class='news-list-item'>
+        <view class='news-left'>
+          <image src='../../image/icon_dashang@3x.png'></image>
+          <text>打赏</text> </view>
+        <view class='news-right'>
+          <text class='news-num' wx:if="{{datainfo.toMyRewardQueryCount}}">{{datainfo.toMyRewardQueryCount}}</text>
+          <image src='../../image/6.png' class='news-go'></image>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='../../packageA/pages/myfriendlist/myfriendlist' hover-class="none">
+      <view class='news-list-item'>
+        <view class='news-left'>
+          <image src='../../image/icon_guanzhu@3x.png'></image>
+          <text>关注</text> </view>
+        <view class='news-right'>
+          <text class='news-num' wx:if="{{datainfo.toMyUserLikeLogCount}}">{{datainfo.toMyUserLikeLogCount}}</text>
+          <image src='../../image/6.png' class='news-go'></image>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

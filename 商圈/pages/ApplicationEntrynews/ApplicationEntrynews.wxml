@@ -1,0 +1,25 @@
+
+<view class='shenqing-container'>
+<block wx:for="{{dataInfo}}" wx:item='item'>
+<navigator url='../reviewQuanApplication/reviewQuanApplication?reviewId={{item.reviewId}}&avatar={{item.user.avatar}}&name={{item.user.name?item.user.name:item.user.nickname}}&circleName={{item.circleName}}&reviewContent={{item.reviewContent}}&updateTime={{item.updateTime}}&reviewStatus={{item.reviewStatus}}' hover-class="none">
+<view class='shenqing-list-item' id='{{item.reviewId}}'>
+  <view class='shenqing-top'>
+    <image src='{{item.user.avatar}}' data-id="{{item.user.uniqueId}}" bindtap="topersonal"></image>
+    <text>{{item.user.name?item.user.name:item.user.nickname}}</text>
+    <text class='shenqing-join'>申请加入</text>
+    <text>{{item.circleName}}</text>
+  </view>
+  <text class='shenqing-reviewContent'>
+附加消息：{{item.reviewContent}}
+</text>
+  <view class='shenqing-bottom'>
+    <text>{{item.createTime}}</text>
+    <text class='shenqing-wait' wx:if="{{item.reviewStatus===0}}">代查看</text>
+    <text wx:if="{{item.reviewStatus===1}}">已同意</text>
+    <text wx:if="{{item.reviewStatus===2}}">已拒绝</text>
+  </view>
+</view>
+</navigator>
+</block>
+</view>
+

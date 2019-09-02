@@ -1,0 +1,2 @@
+/* packageA/pages/myReward/myReward.wxss */
+@import '/packageA/pages/myZanlist/myZanlist.wxss'

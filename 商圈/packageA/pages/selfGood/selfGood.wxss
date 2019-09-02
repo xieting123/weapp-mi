@@ -1,0 +1,175 @@
+/* packageA/pages/selfGood/selfGood.wxss */
+@import '../../../pages/Labelmanagement/Labelmanagement.wxss';
+
+.radio-group {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  text-align: right;
+}
+
+.radio {
+  height: 28rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+  margin-left: 8rpx;
+}
+
+.selfgood-add-head {
+  background: #fff;
+  padding: 0 32rpx;
+}
+
+.selfgood-add-head-four image {
+  width: 12rpx;
+  height: 22rpx;
+}
+
+.selfgood-add-head-six image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.selfgood-add-head-one, .selfgood-add-head-two, .selfgood-add-head-three,
+.selfgood-add-head-four, .selfgood-add-head-five, .selfgood-add-head-six {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
+}
+
+.selfgood-add-head-six-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selfgood-add-head-one {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+}
+
+.phcolor {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.selfgood-add-head-two text, .selfgood-add-head-three text,
+.selfgood-add-head-four text, .selfgood-add-head-five text,
+.selfgood-add-head-six text {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.good-box-one, .good-box-two, .good-box-three, .good-box-four {
+  background: #fff;
+  width: 686rpx;
+  margin-left: 32rpx;
+  padding: 32rpx;
+  box-sizing: border-box;
+  margin-top: 17rpx;
+}
+
+.good-box-four {
+  margin-bottom: 154rpx;
+}
+
+.good-box-title text:nth-child(1) {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 54rpx;
+  color: #333;
+  opacity: 1;
+}
+
+.good-box-title text:nth-child(2) {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 54rpx;
+  color: #999;
+  opacity: 1;
+}
+
+.good-box-one image, .good-box-three image {
+  width: 144rpx;
+  height: 144rpx;
+  display: block;
+}
+
+.good-box-one-imgbox-item:nth-child(4n) {
+  margin-right: 0;
+}
+
+.good-box-one-imgbox-item {
+  position: relative;
+  margin: 0 16rpx 16rpx 0;
+}
+
+.publish-detial {
+  width: 32rpx !important;
+  height: 32rpx !important;
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+}
+
+.good-box-one-imgbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.good-btn {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 98rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.16);
+  opacity: 1;
+}
+
+/* .good-btn view:nth-child(1) {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 98rpx;
+  color: rgba(215, 0, 15, 1);
+  opacity: 1;
+  width: 375rpx;
+  height: 98rpx;
+  text-align: center;
+} */
+
+.good-btn view{
+  width: 750rpx;
+  height: 98rpx;
+  background: rgba(215, 0, 15, 1);
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 98rpx;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+}
+
+.Sure {
+  color: rgba(215, 0, 15, 1) !important;
+}

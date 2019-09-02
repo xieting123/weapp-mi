@@ -1,0 +1,25 @@
+<view class='selfgood-add-head-one'>
+  <text bindtap="goback">取消</text>
+  <text bindtap="distributionMoneyfn">保存</text>
+</view>
+<view class='shopDetial-top-container'>
+  <view class='shopDetial-top'>
+    <image src='{{goodsData.coverImagesInfo[0].thumb}}' mode='acspectfill'></image>
+    <text class='good-consignmentIntroduction'>{{goodsData.name}}</text>
+  </view>
+  <view class='shopDetial-top-bottom'>
+    <view class='shopDetial-top-bottom-left'>
+      <text>售价</text>
+      <text>￥{{goodsData.price}}</text>
+    </view>
+    <text class='shopDetial-top-bottom-right'>销量 {{goodsData.commentCount}}</text>
+  </view>
+</view>
+
+<view class='distributionMoney-bottombox'>
+<view class='distributionMoney-bottombox-smallbox'>
+  <text>设置佣金</text>
+  <input placeholder="请输入金额 " placeholder-class="phcolor" value="{{distributionMoney}}" bindinput="handleInputOne" placeholder-style='text-align:right'></input>
+</view>
+
+</view>

@@ -1,0 +1,3 @@
+/* packageA/pages/mystoreOrderstatusList/mystoreOrderstatusList.wxss */
+@import '../ShoppingCart/ShoppingCart.wxss';
+@import '../OrderstatusList/OrderstatusList.wxss';

@@ -1,0 +1,109 @@
+<view class='setting-container'>
+
+  <view class='setting-item'>
+    <view class='setting-left'>
+      <text>禁止新用户加入</text>
+    </view>
+    <view class="body-view">
+      <switch style='zoom:0.5' checked='{{forbidUserFlag}}' bindchange="switch1Change" />
+    </view>
+  </view>
+  <view class='setting-item'>
+    <view class='setting-left'>
+      <text>入圈审核</text>
+      <text>开启后，新用户加入需要提交申请</text>
+    </view>
+    <view class="body-view">
+      <switch style='zoom:0.5' checked="{{enterCircleFlag}}" bindchange="switch2Change" />
+    </view>
+  </view>
+  <view class='setting-item'>
+
+    <view class='setting-left'>
+      <text>入圈需邀请码</text>
+      <text>开启后，新用户加入需要提交邀请码</text>
+    </view>
+    <view class="body-view">
+      <switch style='zoom:0.5' checked="{{inviteCodeFlag}}" bindchange="switch3Change" />
+    </view>
+  </view>
+  <navigator url='../settingcode/settingcode?circleId={{circleId}}' hover-class='none' wx:if="{{inviteCodeFlags||inviteCodeFlag}}">
+    <view class='setting-item'>
+
+      <view class='setting-left'>
+        <text>去设置邀请码</text>
+      </view>
+      <view class="body-view">
+        <image class='jantou' src='../../image/6.png'></image>
+      </view>
+    </view>
+
+  </navigator>
+  <view class='setting-item'>
+
+    <view class='setting-left'>
+      <text>用户是否需实名</text>
+      <text>开启后，商圈中的用户必须实名后才能操作</text>
+    </view>
+    <view class="body-view">
+      <switch style='zoom:0.5' checked="{{userVerifyFlag}}" bindchange="switch4Change" />
+    </view>
+  </view>
+  <view class='setting-item'>
+
+    <view class='setting-left'>
+      <text>显示真实姓名</text>
+      <text>开启后，商圈中的用户将强制显示真实姓名</text>
+    </view>
+    <view class="body-view">
+      <switch style='zoom:0.5' checked="{{showNameFlag}}" bindchange="switch5Change" />
+    </view>
+  </view>
+  <navigator url='../blockQuan/blockQuan?circleId={{circleId}}' hover-class="none">
+    <view class='setting-item'>
+      <view class='setting-left'>
+        <text>版块导航</text>
+        <text>提示文字</text>
+      </view>
+      <view class="body-view">
+        <image class='jantou' src='../../image/6.png'></image>
+      </view>
+    </view>
+  </navigator>
+  <navigator url='../Distributionsetting/Distributionsetting?circleId={{circleId}}&thumb={{thumb}}&circleName={{circleName}}&cost={{cost}}' hover-class="none">
+    <view class='setting-item'>
+
+      <view class='setting-left'>
+        <text>设置加入费用</text>
+      </view>
+      <view class="body-view">
+        <image class='jantou' src='../../image/6.png'></image>
+      </view>
+    </view>
+  </navigator>
+</view>
+
+<view class='setting-container setting-two'>
+  <navigator url='../Labelmanagement/Labelmanagement?circleId={{circleId}}' hover-class="none">
+    <view class='setting-item'>
+      <view class='setting-left'>
+        <text>标签管理</text>
+        <text>管理用户的标示</text>
+      </view>
+      <view class="body-view">
+        <image class='jantou' src='../../image/6.png'></image>
+      </view>
+    </view>
+  </navigator>
+
+  <navigator url='../Distributionsetting/Distributionsetting?circleId={{circleId}}&thumb={{thumb}}&circleName={{circleName}}&cost={{cost}}' hover-class="none">
+    <view class='setting-item'>
+      <view class='setting-left'>
+        <text>商圈分销设置</text>
+      </view>
+      <view class="body-view">
+        <image class='jantou' src='../../image/6.png'></image>
+      </view>
+    </view>
+  </navigator>
+</view>

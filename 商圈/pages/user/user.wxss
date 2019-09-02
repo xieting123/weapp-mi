@@ -1,0 +1,124 @@
+/* pages/user/user.wxss */
+page{
+  background: #F1F2F6;
+}
+.user-head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+   position: relative;
+   background: #fff;
+   height: 144rpx;
+   padding: 0 32rpx;
+
+}
+.user-identify{
+  position:absolute;
+  left:80rpx;
+  top:80rpx;
+}
+/* 授权 */
+.user-login{
+margin-left:0;
+}
+.user-login::after{
+border: none!important
+}
+/* 签到 */
+.task-item-right {
+  width: 100rpx;
+  height: 40rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(215, 0, 15, 1);
+  opacity: 1;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 40rpx;
+  color: rgba(215, 0, 15, 1);
+}
+
+.task-item-right-done {
+  color: #e6e6e6;
+  width: 100rpx;
+  height: 40rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid #e6e6e6;
+  opacity: 1;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 40rpx;
+}
+
+.user-info {
+  width:60%;
+  color:#4D4D4D;
+  font-size: 28rpx;
+}
+
+.user-money {
+  height: 300rpx;
+  margin:16rpx 0;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff;
+}
+
+.user-money-num {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  padding:0 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.user-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
+}
+.user-list-item .user-money-num{
+  font-size: 24rpx;
+  color:#333333;
+  font-weight:bold;
+    line-height:36rpx;
+}
+.user-money-num text:nth-child(2)
+{
+  color:#999999;
+}
+
+.user-list-item image {
+  height: 32rpx;
+  width: 32rpx;
+  margin-right: 20rpx;
+
+}
+.user-left{
+  font-size: 28rpx;
+  color: #4D4D4D;
+  display: flex;
+  align-items: center;
+}
+
+.user-list-item .user-go {
+  height: 22rpx;
+  width: 12rpx;
+}

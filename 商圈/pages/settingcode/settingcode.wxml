@@ -1,0 +1,18 @@
+<view>
+  <view class='setting-codes'>
+    <view class='setting-codes-item'>{{inviteCode}}</view>
+    <view class='setting-codes-btns'>
+    <button bindtap='onClick'>复制</button>
+    <button catchtap="settingcode">刷新</button>
+    </view>
+   
+  </view>
+  <view class='code-info'>
+    <view class='code-info-item'>
+    <text> 邀请码说明：</text>
+    <text>2、一周内有效</text>
+    <text>3、邀请码可以进行刷新，以保持验证码的不唯一性。</text>
+    <text> 4、发现违反法律法规的商圈,请勿加入。</text>
+    </view>
+  </view>
+</view>

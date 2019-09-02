@@ -1,0 +1,71 @@
+/* packageA/pages/mytask/mytask.wxss */
+
+page {
+  box-sizing: border-box;
+}
+
+.task-item {
+  padding: 32rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f2f6;
+}
+
+.task-item-left view {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 40rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.task-item-left-reward {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+}
+
+.task-item-left-reward-get {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(215, 0, 15, 1);
+  opacity: 1;
+}
+
+.task-item-right {
+  width: 100rpx;
+  height: 40rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(215, 0, 15, 1);
+  opacity: 1;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 40rpx;
+  color: rgba(215, 0, 15, 1);
+}
+
+.task-item-right-done {
+  color: #e6e6e6;
+  width: 100rpx;
+  height: 40rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid #e6e6e6;
+  opacity: 1;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 40rpx;
+}

@@ -1,0 +1,14 @@
+/* packageA/pages/shopSetting/shopSetting.wxss */
+@import '../selfGood/selfGood.wxss';
+@import '../ShopCertification/ShopCertification.wxss';
+input{
+  width:400rpx;
+}
+.store-describle textarea{
+width:686rpx;
+height:200rpx;
+background:rgba(241,242,246,1);
+opacity:1;
+margin-top: 30rpx;
+padding: 32rpx;
+}

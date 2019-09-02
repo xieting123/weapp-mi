@@ -1,0 +1,29 @@
+/**index.wxss**/
+@import 'shanghui/shanghui.wxss';
+
+.create-quan {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  height: 100rpx;
+  font-size: 28rpx;
+  color: #999;
+  margin-bottom:16rpx;
+}
+
+.create-quan image {
+  height: 28rpx;
+  width: 28rpx;
+  margin-right: 20rpx;
+}
+
+.shangquan-nums text:nth-child(1) {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 28rpx;
+  color: rgba(153, 153, 153, 1) !important;
+  opacity: 1;
+}

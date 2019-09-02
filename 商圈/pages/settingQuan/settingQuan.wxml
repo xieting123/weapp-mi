@@ -1,0 +1,62 @@
+<view>
+  <view class='setting-quan'>
+    <view class='setting-quan-img'>
+      <image src='{{dataInfo.circlePhoto.thumb}}' mode='aspectFill'></image>
+    </view>
+
+    <view class='setting-info'>
+      <text>{{dataInfo.circleName}}</text>
+      <navigator hover-class="none" url='../viewQuan/viewQuan?circleId={{dataInfo.circleId}}'>
+        <text class='routerlink'>点击查看商圈资料</text>
+      </navigator>
+    </view>
+
+  </view>
+  <!-- 设置的列表 -->
+  <view class='setting-quan-list'>
+    <navigator url='../settingcontrolQuan/settingcontrolQuan?circleId={{dataInfo.circleId}}&adminFlag={{dataInfo.adminFlag}}&thumb={{dataInfo.circlePhoto.thumb}}&circleName={{dataInfo.circleName}}&cost={{dataInfo.cost}}' hover-class='none'>
+      <view class='setting-quan-item' wx:if="{{dataInfo.adminFlag}}">
+        <text>商圈设置</text>
+        <image class='jantou' src='../../image/6.png'></image>
+      </view>
+    </navigator>
+    <navigator url='../memberSetting/memberSetting?circleId={{dataInfo.circleId}}&adminFlag={{dataInfo.adminFlag}}&createFlag={{dataInfo.createFlag}}' hover-class='none'>
+      <view class='setting-quan-item'>
+        <text>商圈成员</text>
+        <view>
+          <text class='setting-quan-item-member'>{{dataInfo.userCount}}</text>
+          <image class='jantou' src='../../image/6.png'></image>
+        </view>
+      </view>
+    </navigator>
+    <view class='setting-quan-item' wx:if="{{dataInfo.adminFlag}}">
+      <text>活动管理</text>
+      <image class='jantou' src='../../image/6.png'></image>
+    </view>
+    <navigator url='../../packageA/pages/shopManagement/shopManagement?circleId={{dataInfo.circleId}}&adminFlag={{dataInfo.adminFlag}}&createFlag={{dataInfo.createFlag}}' hover-class='none'>
+    <view class='setting-quan-item' wx:if="{{dataInfo.adminFlag}}">
+      <text>店铺管理</text>
+      <image class='jantou' src='../../image/6.png'></image>
+    </view>
+    </navigator>
+    <navigator url='../publicNotice/publicNotice?circleId={{dataInfo.circleId}}&adminFlag={{dataInfo.adminFlag}}&createFlag={{dataInfo.createFlag}}' hover-class='none'>
+      <view class='setting-quan-item' wx:if="{{dataInfo.adminFlag}}">
+        <text>发布通告</text>
+        <image class='jantou' src='../../image/6.png'></image>
+      </view>
+    </navigator>
+    <navigator url='../trDistributionLog/trDistributionLog?circleId={{dataInfo.circleId}}' hover-class='none'>
+        <view class='setting-quan-item'>
+      <text>商圈分销记录</text>
+      <image class='jantou' src='../../image/6.png'></image>
+    </view>
+    </navigator>
+  </view>
+
+  <!-- 退出商圈按钮 -->
+  <view class='Sign-out'>
+    <button hover-class='none'>退出商圈</button>
+  </view>
+
+
+</view>

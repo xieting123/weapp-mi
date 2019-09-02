@@ -1,0 +1,117 @@
+<view>
+  <!-- tab导航栏 -->
+  <!-- scroll-left属性可以控制滚动条位置 -->
+  <!-- scroll-with-animation滚动添加动画过渡 -->
+  <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+    <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+      <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">{{navItem.text}}</view>
+    </block>
+  </scroll-view>
+  <!-- 页面内容 -->
+  <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">
+    <swiper-item class="tab-content">
+    <!-- 全部 -->
+      <block wx:for="{{goodStatusList}}" wx:for-item='items' wx:key='sn'>
+        <view class='goodStatusList-container' bindtap='togoodsDetail' data-status="{{items.orderStatus}}">
+          <view class='shoppling-top'>
+            <view class='shoppling-top-left'>
+              <image class='shopIcon' src='../../../img/icon_dianputubiao@3x.png'></image>
+              <text>{{items.store.name}}</text>
+              <image class='toshoplistIcon' src='../../../image/6.png'></image>
+            </view>
+            <!-- orderStatus  订单状态: 0: 等待付款    1: 等待发货  2: 已发货  3: 已收货 4 已完成 5: 已取消 6: 已失败 -->
+            <text class='shoppling-top-right' wx:if='{{items.orderStatus===0}}'>等待买家付款</text>
+            <text class='shoppling-top-right' wx:if='{{items.orderStatus===1}}'>等待发货</text>
+            <text class='shoppling-top-right' wx:if='{{items.orderStatus===2}}'>商家已发货</text>
+            <text class='shoppling-top-right' wx:if='{{items.orderStatus===3}}'>已收货</text>
+            <text class='shoppling-top-right' wx:if='{{items.orderStatus===4}}'>已完成</text>
+            <text class='shoppling-top-right' wx:if='{{items.orderStatus===5}}'>已取消</text>
+          </view>
+          <text class='shoppling-top-code'>订单号：{{items.sn}}</text>
+          <view class='orderItemList-bigbox'>
+            <!-- 商品封面图片 一张图布局-->
+            <view class='orderItemList-img'>
+              <block wx:for='{{items.orderItemList}}' wx:for-item="itemImgs">
+                <image src='{{itemImgs.productCoverInfo.thumb}}'></image>
+                <text class='orderItemList-bigbox-productName' wx:if="{{items.orderItemList.length==1}}">{{itemImgs.productName}}  </text>
+              </block>
+            </view>
+            <view class='shoppling-count-right'>
+              <view>￥{{items.price}}</view>
+              <view>共{{items.quantity}}件</view>
+            </view>
+          </view>
+        </view>
+
+      </block>
+
+    </swiper-item>
+    <swiper-item class="tab-content">
+      <block wx:for="{{goodStatusList}}" wx:for-item='items' wx:key='sn'>
+        <view class='goodStatusList-container' wx:if="{{items.orderStatus===0}}">
+          <view class='shoppling-top'>
+            <view class='shoppling-top-left'>
+              <image class='shopIcon' src='../../../img/icon_dianputubiao@3x.png'></image>
+              <text>{{items.store.name}}</text>
+              <image class='toshoplistIcon' src='../../../image/6.png'></image>
+            </view>
+            <!-- orderStatus  订单状态: 0: 等待付款    1: 等待发货  2: 已发货  3: 已收货 4 已完成 5: 已取消 6: 已失败 -->
+            <text class='shoppling-top-right'>等待买家付款</text>
+          </view>
+          <text class='shoppling-top-code'>订单号：{{items.sn}}</text>
+          <view class='orderItemList-bigbox'>
+            <!-- 商品封面图片 一张图布局-->
+            <view class='orderItemList-img'>
+              <block wx:for='{{items.orderItemList}}' wx:for-item="itemImgs">
+                <image src='{{itemImgs.productCoverInfo.thumb}}'></image>
+                <text class='orderItemList-bigbox-productName' wx:if="{{items.orderItemList.length==1}}">{{itemImgs.productName}}  </text>
+              </block>
+            </view>
+            <view class='shoppling-count-right'>
+              <view>￥{{items.price}}</view>
+              <view>共{{items.quantity}}件</view>
+            </view>
+          </view>
+          <view class='shoppling-bottom-btn'>
+            <text>取消订单</text>
+            <text>去支付</text>
+          </view>
+        </view>
+
+      </block>
+
+    </swiper-item>
+    <swiper-item class="tab-content">
+      <block wx:for="{{goodStatusList}}" wx:for-item='items' wx:key='sn'>
+        <view class='goodStatusList-container' wx:if="{{items.orderStatus===1}}" bindtap="todeliverdetial" data-id='{{items.sn}}'>
+          <view class='shoppling-top'>
+            <view class='shoppling-top-left'>
+              <image class='shopIcon' src='../../../img/icon_dianputubiao@3x.png'></image>
+              <text>{{items.store.name}}</text>
+              <image class='toshoplistIcon' src='../../../image/6.png'></image>
+            </view>
+            <!-- orderStatus  订单状态: 0: 等待付款    1: 等待发货  2: 已发货  3: 已收货 4 已完成 5: 已取消 6: 已失败 -->
+            <text class='shoppling-top-right'>等待发货</text>
+          </view>
+          <text class='shoppling-top-code'>订单号：{{items.sn}}</text>
+          <view class='orderItemList-bigbox'>
+            <!-- 商品封面图片 一张图布局-->
+            <view class='orderItemList-img'>
+              <block wx:for='{{items.orderItemList}}' wx:for-item="itemImgs">
+                <image src='{{itemImgs.productCoverInfo.thumb}}'></image>
+                <text class='orderItemList-bigbox-productName' wx:if="{{items.orderItemList.length==1}}">{{itemImgs.productName}}  </text>
+              </block>
+            </view>
+            <view class='shoppling-count-right'>
+              <view>￥{{items.price}}</view>
+              <view>共{{items.quantity}}件</view>
+            </view>
+          </view>
+        </view>
+
+      </block>
+    </swiper-item>
+    <swiper-item class="tab-content">全部</swiper-item>
+    <swiper-item class="tab-content">代付款</swiper-item>
+  </swiper>
+</view>

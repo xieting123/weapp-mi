@@ -1,0 +1,194 @@
+/* packageA/pages/agentMarketdetial/agentMarketdetial.wxss */
+@import '../../pages/personCenter/personCenter.wxss';
+
+page {
+  background: #fff;
+}
+
+.goodsData-infobox {
+  padding: 32rpx;
+}
+
+.goodsData-infobox-name {
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 40rpx;
+  color: rgba(51, 51, 51, 1);
+  opacity: 1;
+}
+
+.goodsData-infobox-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.goodsData-infobox-price-left-onebox text:nth-child(1),
+.goodsData-infobox-price-left-twobox text:nth-child(1) {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.goodsData-infobox-price-left-onebox text:nth-child(2) {
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 40rpx;
+  color: rgba(215, 0, 15, 1);
+  opacity: 1;
+}
+
+.goodsData-infobox-price-left-twobox text:nth-child(2) {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 40rpx;
+  color: rgba(51, 51, 51, 1);
+  opacity: 1;
+}
+
+.goodsData-infobox-price-right {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+}
+
+.storeinfo-box, .storeinfo-box-recommend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32rpx 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.storeinfo-box-storeAvatarInfo {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 16rpx;
+}
+
+.storeinfo-box-right-storeName {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.storeinfo-box-right-price {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+}
+
+.storeinfo-box-left {
+  display: flex;
+  align-items: center;
+}
+
+.storeinfo-box-recommend-text {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.storeinfo-box-recommend-right {
+  display: flex;
+  align-items: center;
+}
+
+.storeinfo-box-recommend-right text {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+  margin-right: 8rpx;
+}
+
+.detialImg-box {
+  background: #f1f2f6;
+}
+
+.detialImg-box-box {
+  margin-top: 16rpx;
+  background: #fff;
+  padding: 32rpx;
+}
+
+.detialImg-box-title {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 40rpx;
+  color: rgba(69, 102, 147, 1);
+  opacity: 1;
+  /* display: inline-block; */
+  text-align: center;
+}
+
+.detialImg-box-title-left {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 40rpx;
+  color: rgba(51, 51, 51, 1);
+  opacity: 1;
+}
+
+.detialImg-box-title-consignmentIntroduction {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+  margin: 32rpx auto 100rpx;
+}
+
+.detailImagesInfo {
+  width: 100%;
+}
+
+.person-contanier-bottom-btn {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+}
+
+.person-contanier-bottom-btn text:nth-child(1),
+.person-contanier-bottom-btn text:nth-child(2) {
+  text-align: center;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 98rpx;
+  color: rgba(255, 255, 255, 1);
+  opacity: 1;
+  width: 375rpx;
+  height: 98rpx;
+}
+
+.person-contanier-bottom-btn text:nth-child(1) {
+  background: rgba(255, 112, 3, 1);
+}
+
+.person-contanier-bottom-btn text:nth-child(2) {
+  background: #d7000f;
+}

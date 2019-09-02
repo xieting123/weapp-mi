@@ -1,0 +1,78 @@
+page {
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+
+.agentbox {
+  width: 335rpx;
+  background: #fff;
+  display: inline-block;
+  margin-right: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.agentbox-container view:nth-child(2n) {
+  margin-right: 0;
+}
+
+.coverImageInfoimg {
+  width: 335rpx;
+  height: 335rpx;
+}
+
+.agentbox-goods-name {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 200rpx;
+}
+
+.agentbox-price text:nth-child(1), .agentbox-costprice text:nth-child(1) {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.agentbox-price text:nth-child(2) {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 40rpx;
+  color: rgba(51, 51, 51, 1);
+  opacity: 1;
+}
+
+.agentbox-costprice text:nth-child(2) {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 40rpx;
+  color: rgba(215, 0, 15, 1);
+  opacity: 1;
+}
+
+.agentFlagImg {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.agentbox-bottom {
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+
+.agentbox-bottom-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

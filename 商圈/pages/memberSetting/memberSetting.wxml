@@ -1,0 +1,62 @@
+<!-- 消息列表 -->
+<view class='news-container'>
+  <view class='news-list' wx:if="{{adminFlagreally==='true'}}">
+    <navigator url='../OutApplicationEntrynews/OutApplicationEntrynews?circleId={{circleId}}' hover-class="none">
+      <view class='news-list-item'>
+        <view class='news-left'>
+          <image src='../../image/icon_ruquanshenqin@3x.png'></image>
+          <text>入圈申请</text> </view>
+        <view class='news-right'>
+          <text wx:if="{{num}}" class='news-num'>{{num}}</text>
+          <image src='../../image/6.png' class='news-go'></image>
+        </view>
+      </view>
+
+    </navigator>
+
+    <navigator url='../blackList/blackList?circleId={{circleId}}' hover-class="none">
+      <view class='news-list-item'>
+        <view class='news-left'>
+          <image src='../../image/icon_black@3x.png'></image>
+          <text>黑名单</text> </view>
+        <view class='news-right'>
+          <image src='../../image/6.png' class='news-go'></image>
+        </view>
+      </view>
+    </navigator>
+
+  </view>
+  <view class='member-setting'>
+    <view class='member-setting-item'>
+      <!-- 商圈成员 -->
+      <view class='quan-member'>
+        <!-- 成员列表 -->
+        <view class='member-container'>
+          <block wx:for="{{meberdataInfo}}" wx:item='item'>
+            <view class='member-list-item'>
+              <view class='member-list-item-left'>
+                <view class='member-image'>
+                  <image class='user-img' src='{{item.user.avatar}}' data-id="{{item.user.uniqueId}}" bindtap="topersonal"></image>
+                  <image class='user-identify' wx:if="{{item.user.verifyStatus==2}}" src='../../image/icon_v@3x.png'></image>
+                </view>
+                <view class='member-info'>
+                <view class='member-laber'>
+                  <text>{{item.showNameFlag&&item.user.name?item.user.name:item.user.nickname}}</text>
+                  <text class='laber-create' wx:if="{{item.createFlag}}">创建者</text>
+                  <text class='laber-admin' wx:if="{{item.adminFlag&&!item.createFlag}}">管理员</text>
+                  <text class='laber-laber' wx:if="{{item.tagName}}">{{item.tagName}}</text>
+                </view>
+                  <text class='member-job' wx:if="{{item.user.company||item.user.position}}">{{item.user.company}}.{{item.user.position}}</text>
+                </view>
+              </view>
+              <view wx:if="{{adminFlagreally==='true'}}" class='member-settingImg' id='{{item.user.uniqueId}}' data-item="{{item}}" bindtap="openActionsheet">
+                <image src='../../image/icon_moresetting@3x.png'></image>
+              </view>
+              <view wx:else style='color:#D7000F;font-size:24rpx'>+关注</view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

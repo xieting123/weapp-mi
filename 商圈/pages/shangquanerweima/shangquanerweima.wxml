@@ -1,0 +1,35 @@
+
+<view class='erweima-container-box'>
+<view class='erweima-container'>
+  <!-- 头 -->
+  <view class='erweima-container-top'>
+    <image src='../../image/icon_gong@3x.png'></image>
+    <view class='erweima-container-info'>
+      <text>张海林</text>
+      <text>向您推荐了一个商圈</text>
+    </view>
+  </view>
+  <!-- 中间 -->
+  <view class='erweima-container-center'>
+    <image src='../../image/icon_gong@3x.png'></image>
+    <view class='erweima-container-center-text'>
+      <text>北京好大联合商会</text>
+      <text>商圈ID：2019032123</text>
+      <text>该商圈是一群有理想有抱负的商友...</text>
+    </view>
+  </view>
+  <!-- 底部 -->
+  <view class='erweima-container-bottom'>
+    <view class='erweima-container-bottom-left'>
+      <text>商蜜·中国商人互动分享平台</text>
+      <text>长按扫码预览商圈内容</text>
+    </view>
+    <image src='../../image/icon_gong@3x.png'></image>
+  </view>
+
+</view>
+
+  <!-- 保存图片 -->
+  <button class='canvas-btn'>保存</button>
+
+</view>

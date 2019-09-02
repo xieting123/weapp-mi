@@ -1,0 +1,38 @@
+<view class='dynamic-reward-container'>
+  <!-- 打赏top信息 -->
+  <view class='dynamic-user-top'>
+    <view class='dynamic-userImg'>
+      <image class='user-img' src='{{avatar}}' mode="aspectFit"></image>
+      <image class='user-identify' src='../../image/icon_v@3x.png'></image>
+    </view>
+    <view class='dynamic-userInfo'>
+      <view class='dynamic-name'>
+        <text>{{nickname}}</text>
+        <!-- <image class='identify' src='../../image/icon_shirenrengzheng@3x.png'></image> -->
+      </view>
+      <text class='dynamic-company'>您的支持是我继续创作的动力</text>
+    </view>
+  </view>
+
+  <!-- 金额选择 -->
+  <view class='dynamic-reward-choosemoney'>
+  <block wx:for="{{list}}" wx:item='item'>
+  <button class='{{index==activetag?"active":""}}' bindtap="clickedBtn" id='{{item.id}}' data-title='{{item.title}}'  data-id="{{index}}">{{item.title}}</button>
+  </block>
+  </view>
+  <view class='dynamic-reward-money-input'>
+    <text>金额</text>
+    <view class='dynamic-reward-money-input-cost'>
+      <input type="number" placeholder-class="inputblur" disabled="{{disabled}}" bindinput="valuefn" value='{{cost}}'/>
+      <text>元</text>
+    </view>
+  </view>
+<view class='dynamic-reward-money-input-tips'>
+<text>温馨提示:
+1.您的打赏金额将全部由作者获得，鼓励作者创作，商蜜不参与抽成。
+2.您的历史打赏详情可在。</text>
+<text class='dynamic-reward-money-input-tips-link'>我的打赏</text>
+<text>中查看</text>
+</view>
+<button class="dynamic-reward-money-pay" bindtap="paymoney">确认</button>
+</view>

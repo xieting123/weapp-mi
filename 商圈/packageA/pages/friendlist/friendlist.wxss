@@ -1,0 +1,7 @@
+/* packageA/pages/friendlist/friendlist.wxss */
+@import '../personCenter/personCenter.wxss';
+page{
+  background: #fff;
+  padding:32rpx;
+  box-sizing: border-box;
+}

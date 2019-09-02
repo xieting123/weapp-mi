@@ -1,0 +1,22 @@
+<view class='Distributionsetting-container'>
+  <view class='setting-quan'>
+    <view class='setting-quan-img'>
+      <image src='{{thumb}}' mode='aspectFill'></image>
+    </view>
+
+    <view class='setting-info'>
+      <text>{{circleName}}</text>
+    </view>
+
+  </view>
+  <view class='Distributionsetting-container-setting'>
+  <view class='Distributionsetting-container-quancost'>
+  <text>商圈价格：¥50</text>
+  </view>
+    <view class='Distributionsetting-container-settingcost'>
+  <text>设置佣金</text>
+ <text>¥50</text>
+  </view>
+  </view>
+  
+</view>

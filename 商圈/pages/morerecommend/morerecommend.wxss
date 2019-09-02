@@ -1,0 +1,2 @@
+/* pages/morerecommend/morerecommend.wxss */
+@import '../index/shanghui/shanghui.wxss';

@@ -1,0 +1,3 @@
+/* packageA/pages/ShopCertificationNext/ShopCertificationNext.wxss */
+@import '../selfGood/selfGood.wxss';
+@import '../ShopCertification/ShopCertification.wxss'

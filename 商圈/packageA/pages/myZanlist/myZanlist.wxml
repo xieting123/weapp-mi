@@ -1,0 +1,31 @@
+<view class='zanlist-contaner'>
+  <block wx:for="{{zanlist}}" wx:item='item'>
+    <view class='zanlist-item'>
+      <view class='zanlist-item-box'>
+        <image src="{{item.user.avatar}}" data-id='{{item.user.uniqueId}}' catchtap="topersonal"></image>
+        <view class='zanlist-item-box-user'>
+          <text>{{item.user.nickname}}</text>
+          <text wx:if="{{item.user.company}}">{{item.user.company}}.{{item.user.position}}</text>
+        </view>
+      </view>
+      <view class='zanlist-contaner-bottom'>
+        <text class='zanlist-contaner-bottom-zantips' wx:if="{{item.composeType==1}}">给你的动态点赞了</text>
+        <text class='zanlist-contaner-bottom-zantips' wx:if="{{item.composeType==2}}">给你的文章点赞了</text>
+        <view class='zanlist-contaner-bottom-content-box' bindtap="todetial" data-id='{{item.composeId}}' data-composeType='{{item.composeType}}'>
+        <view class='zanlist-contaner-bottom-content content' wx:if="{{item.composeTrends}}">
+       {{item.composeTrends.content}}
+        </view>
+        <view class='zanlist-contaner-bottom-content zanlist-contaner-bottom-article-content content' wx:if="{{item.composeArticle}}">
+       {{item.composeArticle.title}}
+       <image src='{{item.composeArticle.imageArr[0]}}' style="width:60rpx;height:60rpx;"></image>
+        </view>
+        </view>
+        
+        <text class='zanlist-contaner-bottom-createTime'>{{item.createTime}}</text>
+      </view>
+      
+    </view>
+
+  </block>
+
+</view>

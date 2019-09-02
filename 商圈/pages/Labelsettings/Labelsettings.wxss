@@ -1,0 +1,77 @@
+/* pages/Labelsettings/Labelsettings.wxss */
+@import '../memberSetting/memberSetting.wxss';
+
+.member-head {
+  background: #fff;
+  padding: 30rpx;
+}
+
+.laber-container {
+  background: #fff;
+  margin-top: 16rpx;
+  padding: 30rpx;
+}
+
+.laber-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 28rpx;
+}
+
+.laber-header .laber-choose {
+  color: #707070;
+}
+
+.laber-header .label-management {
+  color: #456693;
+}
+
+.labers {
+  padding-top: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.labers text {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  opacity: 1;
+  padding: 10rpx 32rpx;
+  border-radius: 30px;
+  margin: 24rpx;
+  box-sizing: border-box;
+}
+
+.labersetting button {
+  margin-top: 100rpx;
+  width: 686rpx;
+  height: 88rpx;
+  background: linear-gradient(90deg, rgba(255, 170, 128, 1) 0%, rgba(255, 76, 76, 1) 100%);
+  opacity: 1;
+  border-radius: 44px;
+  font-size: 28rpx;
+  line-height: 88rpx;
+  color: #fff;
+}
+
+.lable-add {
+  color: #999;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+
+.active {
+  color: #d7000f;
+  border: 1px solid #d7000f;
+}
+
+.noactive {
+  border: 1px solid rgba(153, 153, 153, 1);
+  color: #999;
+}

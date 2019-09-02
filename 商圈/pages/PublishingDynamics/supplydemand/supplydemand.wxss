@@ -1,0 +1,77 @@
+/* pages/supplydemand/supplydemand.wxss */
+
+page {
+  background: #fff;
+  padding: 30rpx;
+}
+
+.supplydemand-container-header {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 54px;
+}
+
+.supplydemand-container-header image {
+  height: 32rpx;
+  width: 32rpx;
+  margin-right: 8rpx;
+}
+
+.supplydemand-container-header-tip {
+  color: #707070;
+}
+
+.supplydemand-container-header-egxp {
+  color: #456693;
+}
+
+.supplydemand-container-supply, .supplydemand-container-demand {
+  position: relative;
+}
+
+.supplydemand-container-supply text, .supplydemand-container-demand text {
+  position: absolute;
+  right: 100rpx;
+  bottom: 32rpx;
+  width: 80rpx;
+  height: 30rpx;
+  background: rgba(0, 0, 0, 1);
+  opacity: 0.3;
+  border-radius: 15px;
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 30rpx;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+}
+.supplydemand-container-supply textarea{
+color:rgba(254,109,75,1);
+}
+.supplydemand-container-demand textarea{
+color:rgba(172,143,239,1);
+opacity:1;
+}
+.supplydemand-container-supply textarea, .supplydemand-container-demand textarea {
+  height: 300rpx;
+  width: 686rpx;
+  background: rgba(241, 242, 246, 1);
+  opacity: 1;
+  margin-top: 32rpx;
+  padding: 26rpx 30rpx;
+  box-sizing: border-box;
+    font-size:28rpx;
+font-family:PingFang SC;
+font-weight:400;
+}
+
+.oneplaceholder, .twoplaceholder {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 68px;
+  color: rgba(153, 153, 153, 1);
+}

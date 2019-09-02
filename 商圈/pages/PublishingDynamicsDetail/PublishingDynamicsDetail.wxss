@@ -1,0 +1,316 @@
+/* pages/PublishingDynamicsDetail/PublishingDynamicsDetail.wxss */
+@import '../inQuan/inQuan.wxss';
+
+page {
+  background: #fff;
+}
+
+.dynamic-like-list-payinfo {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36px;
+  display: inline-block;
+  color: rgba(153, 153, 153, 1);
+}
+.dynamic-payandcomment-container{
+  padding:0 32rpx;
+}
+.dynamic-pay-container {
+  /* width: 686rpx; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 56rpx;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.dynamic-payinfo-button {
+  width: 170rpx;
+  height: 60rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(230, 230, 230, 1);
+  opacity: 1;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 56rpx auto 60rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36px;
+  color: rgba(77, 77, 77, 1);
+}
+
+.dynamic-payinfo-button image {
+  height: 32rpx;
+  width: 32rpx;
+  margin-right: 16rpx;
+}
+
+.dynamic-payinfo-memberCount {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(69, 102, 147, 1);
+  opacity: 1;
+}
+
+.dynamic-payinfo-memberCount image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 16rpx;
+  border-radius: 50%;
+}
+
+/* 评论区样式开始 */
+
+.dynamic-comment-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 56rpx;
+  margin-bottom: 100rpx;
+}
+
+.dynamic-comment-container text {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 33px;
+  color: rgba(204, 204, 204, 1);
+  opacity: 1;
+}
+
+.dynamic-comment-container image {
+  width: 300rpx;
+  height: 173rpx;
+}
+
+.dynamic-comment-container-like-menu image {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.dynamic-comment-container-menu input {
+  width: 310rpx;
+  height: 60rpx;
+  background: rgba(241, 242, 246, 1);
+  opacity: 1;
+  border-radius: 30px;
+}
+
+.dynamic-comment-container-menu {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 19rpx 32rpx;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.16);
+  position: fixed;
+  bottom: 0;
+}
+
+.dynamic-comment-container-like-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 338rpx;
+}
+
+.commentpinlun {
+  font-size: 24rpx;
+  font-family: Segoe UI;
+  font-weight: 400;
+  line-height: 36px;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+  padding-left: 30rpx;
+}
+
+/* 评论列表展示 */
+
+.dynamic-comments-container {
+  margin-bottom: 100rpx;
+}
+
+.dynamic-comments-container-item {
+  display: flex;
+  align-items: center;
+}
+
+.dynamic-comments-container-item image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+
+.dynamic-comments-container-item text {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 16px;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+}
+
+.all-comment-count {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 36px;
+  color: rgba(77, 77, 77, 1);
+}
+
+.dynamic-comments-content {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #4d4d4d;
+  opacity: 1;
+  /* width: 630rpx; */
+  display: inline-block;
+}
+
+.dynamic-comments-content-box {
+  padding-left: 56rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+}
+
+.dynamic-comments-content-list {
+  /* width: 630rpx; */
+  background: rgba(241, 242, 246, 1);
+  opacity: 1;
+  padding: 16rpx;
+  box-sizing: border-box;
+  margin-top: 17rpx;
+}
+
+.dynamic-comments-content-time {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 16px;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 27rpx;
+}
+
+.dynamic-comments-content-del {
+  float: right;
+  color: rgba(153, 153, 153, 1);
+}
+
+.dynamic-comments-content-list-keyword {
+  color: #456693;
+}
+
+.dynamic-comments-content-box-wxfor {
+  padding: 32rpx 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+/* 弹框样式 */
+
+/*模态框*/
+
+.modals {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modals-cancel {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bottom-dialog-body {
+  position: absolute;
+  z-index: 10001;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30rpx 30rpx 0 30rpx;
+  height: 400rpx;
+  background-color: #fff;
+}
+
+/*动画前初始位置*/
+
+.bottom-pos {
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.bottom-dialog-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.bottom-dialog-body view {
+  width: 220rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-dialog-body text {
+  display: block;
+  font-size: 22rpx;
+  font-family: Segoe UI;
+  color: #999;
+}
+
+.bottom-dialog-body image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.modals-bottom-dialog-cancle {
+  width: 686rpx;
+  height: 60rpx;
+  line-height: 80rpx;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  /* margin-top: 60rpx; */
+  color: #4d4d4d !important;
+  border-top: 1rpx solid rgb(236, 232, 232);
+}
+
+.dynamic-like-list text {
+  margin: 8rpx;
+}
+
+
+.modals-button{
+font-size: 22rpx;
+font-family: Segoe UI;
+color: #999!important;
+font-weight: normal!important
+}

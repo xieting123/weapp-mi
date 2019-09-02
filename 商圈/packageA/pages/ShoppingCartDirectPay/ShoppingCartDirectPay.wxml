@@ -1,0 +1,55 @@
+<view class='address-info'>
+  <view class='address-info-left'>
+    <image class='address-icon' src='../../../image/icon_weizhi-moren.png'></image>
+    <view wx:if="{{proviceInfo.isDefault}}">
+      <view class='address-info-left-top'>
+        <text>{{proviceInfo.consigneeName}}</text>
+        <text>{{proviceInfo.consigneePhone}}</text>
+      </view>
+      <view class='address-info-left-bottom'>
+        {{proviceInfo.provinceName}}{{proviceInfo.cityName}}{{proviceInfo.consigneeDetail}}
+      </view>
+    </view>
+    <text wx:else bindtap="toaddress">新建收货地址</text>
+  </view>
+  <image wx:if="{{!proviceInfo.isDefault}}" class='toaddaddress-icon' src='../../../image/6.png'></image>
+</view>
+<view class='address-info-bottom'>
+  <image src='../../../img/img_xinjiandizhi@3x.png'></image>
+</view>
+<view class='shoplist-containerBox'>
+
+    <!-- 外层循环的是店铺 -->
+    <view class='shoppling-item'>
+      <view class='shoppling-top'>
+        <image class='shopIcon' src='../../../img/icon_dianputubiao@3x.png'></image>
+        <text>{{product.storeName}}</text>
+        <image class='toshoplistIcon' src='../../../image/6.png'></image>
+      </view>
+
+        <view class='shoppling-list'>
+          <view class='off-self-box' style="position:relative;">
+            <image src='{{product.coverImageInfo.thumb}}'></image>
+          </view>
+          <view>
+            <view class='shoppling-list-name'>{{product.name}}</view>
+            <view class='shoppling-list-price'>
+              <text>￥{{product.price}}</text>
+              <text>X {{quantity}}</text>
+            </view>
+          </view>
+        </view>
+
+      <view class='shoppling-bottom'>
+        <text>共{{quantity}}件，合计： </text>
+        <text> ￥{{totalMoney}}</text>
+      </view>
+    </view>
+
+</view>
+
+<view class='payshopping-menu'>
+  <text>合计：</text>
+  <text>￥{{totalMoney}}</text>
+  <text class='checkout-btn' bindtap="payfn">提交订单</text>
+</view>

@@ -1,0 +1,18 @@
+<view class='publish-container'>
+  <textarea placeholder="请写通告" value="{{notifyContent}}" bindinput="notifyfn"></textarea>
+  <view class='publish-img-container'>
+    <view class='img-list'>
+      <block wx:for="{{imgurl}}" wx:key="index">
+        <view class='img-item'>
+          <!-- 删除照片-->
+          <image class='publish-detial' bindtap='clearImg' data-index="{{index}}" src='../../image/icon_yichutupian.png'></image>
+          <image src='{{item.thumb}}' data-thumb="{{item.thumb}}" bindtap='showImg' mode='aspectFill' bindlongpress="bindlongpressimg" data-id='{{index}}'></image>
+        </view>
+      </block>
+      <view wx:if="{{imgurl.length<9}}" class='chooseimg' bindtap='uploadDetailImage'>
+        <image src='../../image/img_add.png'></image>
+      </view>
+    </view>
+  </view>
+  <button class='publish-btn' bindtap="{{notifyId?'editorPublish':'publishBtn'}}" style="background:{{btncolor}}">发布</button>
+</view>

@@ -1,0 +1,32 @@
+<view class='zanlist-contaner'>
+  <block wx:for="{{commentlist}}" wx:item='item'>
+      <view class='zanlist-item'>
+        <view class='zanlist-item-box'>
+          <image src="{{item.user.avatar}}" data-id='{{item.user.uniqueId}}' catchtap="topersonal"></image>
+          <view class='zanlist-item-box-user'>
+            <text>{{item.user.nickname}}</text>
+            <text wx:if="{{item.user.company}}">{{item.user.company}}.{{item.user.position}}</text>
+          </view>
+        </view>
+        <view class='zanlist-contaner-bottom'>
+          <view class='dynamic-comments-content-see-imgs-box' wx:if="{{item.imageInfo.source}}" data-source='{{item.imageInfo.source}}'>
+            <image class='dynamic-comments-content-see-imgs' src='../../../image/icon_pinlunxinxi@3x.png'></image>
+            <text style='font-size:24rpx'>查看图片</text>
+          </view>
+          <rich-text class='zanlist-contaner-bottom-zantips title' nodes="{{item.content}}"></rich-text>
+          <view class='zanlist-contaner-bottom-content-box'  bindtap="todetail" data-type="{{item.composeType}}" data-id="{{item.composeId}}">
+            <rich-text class='zanlist-contaner-bottom-content content' wx:if="{{item.composeTrends.content}}" nodes="{{item.composeTrends.content}}"> </rich-text>
+            <view wx:if="{{item.composeArticle}}" class='zanlist-contaner-bottom-content-box-article'>
+            <rich-text class='zanlist-contaner-bottom-content content'  nodes="{{item.composeArticle.title}}"> </rich-text>
+            <image src='{{item.composeArticle.imageArr[0]}}' style="width:60rpx;height:60rpx;"></image>            
+            </view>
+
+          </view>
+
+          <text class='zanlist-contaner-bottom-createTime'>{{item.createTime}}</text>
+        </view>
+
+      </view>
+  </block>
+
+</view>

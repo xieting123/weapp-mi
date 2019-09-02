@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "action-sheet": "../../components/sheet/index"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor":"#d7000f",
+  "navigationBarTextStyle":"white"
+}

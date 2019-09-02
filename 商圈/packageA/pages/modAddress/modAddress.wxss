@@ -1,0 +1,105 @@
+/* pages/modAddress/modAddress.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.forms{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.section{
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15rpx;
+  position: relative;
+}
+.section::after{
+  content: '';
+  display: inline-block;
+  width: 15rpx;
+  height: 26rpx;
+  background-image: url(https://lg-6spx8ssi-1256702834.cos.ap-shanghai.myqcloud.com/6.png);
+  background-size: 15rpx 26rpx;
+}
+.section_gap::after{
+  background-image: none;
+}
+.section__title{
+  width: 140rpx;
+  font-size: 28rpx;
+}
+.section input,.section text{
+  flex: 1;
+  text-align: right;
+  font-size: 28rpx;
+  padding-right: 10rpx;
+}
+.btn-area{
+  position: absolute;
+  width: 750rpx;
+  bottom: 30px;
+  padding: 30px 20rpx;
+}
+.btn-area button{
+  width: 100%;
+  background-color: #e70012;
+  color: #fff;
+  font-size: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.btn-area button::after{
+  border: none;
+}
+.condition{
+  width: 100%;
+  display: block;
+  height: 580rpx;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 99;
+}
+.condition .title{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  text-align: right;
+  padding-right: 15px;
+}
+.condition .title text{
+  background-color: #ddd;
+  color: #333;
+  padding: 10rpx 25rpx;
+}
+.condition-box{
+  width: 100%;
+  height: 500rpx;
+  overflow-y: auto;
+  display: flex;
+}
+.condition-box view{
+  height: 100%;
+  overflow-y: auto;
+  text-align: center;
+  line-height: 1.8;
+  flex: 1;
+}
+.condition-box view text{
+  display: block;
+  margin: 15rpx auto;
+  font-size: 30rpx;
+}
+.condition-box view text.active{
+  color: #e70012;
+}

@@ -1,0 +1,105 @@
+<view class='selfgood-add-head-one'>
+  <text bindtap="goback">取消</text>
+  <text style='color:#D7000F' bindtap="showtankuang">添加商品</text>
+</view>
+  <action-sheet actionShow="{{showStatus}}" closeText="关闭" bind:actionHide="onActionHide">
+    <!-- slot ActionSheet 菜单项 只能是button 或 navigator -->
+    <button bindtap="handleBtn">
+      代理市场</button>
+    <button bindtap="handleBtn2" style="color:#D7000F">自营商品</button>
+  </action-sheet>
+<view style='padding:0 32rpx;box-sizing: border-box;' class='static-news'>
+  <!-- tab切换开始 -->
+  <scroll-view>
+    <view class='static-news-tabs'>
+      <view class='tabs  {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>销售中</view>
+      <view class='tabs  {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>仓库</view>
+    </view>
+  </scroll-view>
+</view>
+<swiper current="{{currentData}}" class='swiper' style="height:700px;" duration="300" bindchange="bindchange" data-blockId="{{blockId}}">
+  <swiper-item>
+    <block wx:for='{{goodlist}}'>
+      <view class='goodlist-item' wx:if='{{item.productType==0}}'>
+        <view class='goodlist-top'>
+          <image src='{{item.coverImagesInfo[0].thumb}}' style='width:150rpx;height:150rpx;'></image>
+          <view class='goodlist-top-right'>
+            <text class='goodlist-top-right-name'>{{item.name}}</text>
+            <view class='goodlist-top-right-center'>
+              <text wx:if='{{item.allowConsignmentFlag}}' class='goodlist-top-right-center-icon'>代理</text>
+              <text class='goodlist-top-right-center-pricetip'>售价</text>
+              <text class='goodlist-top-right-center-price'> ￥{{item.price}} </text>
+              <text wx:if="{{item.allowConsignmentFlag}}" class='goodlist-top-right-center-costprice'> 供货价 ¥{{item.costPrice}}</text>
+            </view>
+            <text class='goodlist-top-right-num'>销量 {{item.commentCount}}</text>
+          </view>
+        </view>
+        <view class='goodlist-bottom'>
+          <text>{{item.createTime}}</text>
+          <text bindtap="todetial" data-id="{{item.id}}" data-productType='{{item.productType}}' data-controlId='{{item.id}}' >管理</text>
+        </view>
+      </view>
+      <view class='goodlist-item' wx:if='{{item.productType==1}}'>
+        <view class='goodlist-top'>
+          <image src='{{item.agentProduct.coverImagesInfo[0].thumb}}' style='width:150rpx;height:150rpx;'></image>
+          <view class='goodlist-top-right'>
+            <text class='goodlist-top-right-name'>{{item.agentProduct.name}}</text>
+            <view class='goodlist-top-right-center'>
+              <text wx:if='{{item.agentProduct.allowConsignmentFlag}}' class='goodlist-top-right-center-icon'>代理</text>
+              <text class='goodlist-top-right-center-pricetip'>售价</text>
+              <text class='goodlist-top-right-center-price'> ￥{{item.agentProduct.price}} </text>
+              <text wx:if="{{item.allowConsignmentFlag}}" class='goodlist-top-right-center-costprice'> 供货价 ¥{{item.agentProduct.costPrice}}</text>
+            </view>
+            <text class='goodlist-top-right-num'>销量 {{item.agentProduct.commentCount}}</text>
+          </view>
+        </view>
+        <view class='goodlist-bottom'>
+          <text>{{item.createTime}}</text>
+          <text bindtap="todetial" data-id="{{item.agentProduct.id}}" data-productType='{{item.productType}}' data-controlId='{{item.id}}' >管理</text>
+        </view>
+      </view>
+    </block>
+  </swiper-item>
+  <swiper-item>
+    <block wx:for='{{querySkuByStoreList}}'>
+      <view class='goodlist-item' wx:if='{{item.productType==0}}'>
+        <view class='goodlist-top'>
+          <image src='{{item.coverImagesInfo[0].thumb}}' style='width:150rpx;height:150rpx;'></image>
+          <view class='goodlist-top-right'>
+            <text class='goodlist-top-right-name'>{{item.name}}</text>
+            <view class='goodlist-top-right-center'>
+              <text wx:if='{{item.allowConsignmentFlag}}' class='goodlist-top-right-center-icon'>代理</text>
+              <text class='goodlist-top-right-center-pricetip'>售价</text>
+              <text class='goodlist-top-right-center-price'> ￥{{item.price}} </text>
+              <text wx:if="{{item.allowConsignmentFlag}}" class='goodlist-top-right-center-costprice'> 供货价 ¥{{item.costPrice}}</text>
+            </view>
+            <text class='goodlist-top-right-num'>销量 {{item.commentCount}}</text>
+          </view>
+        </view>
+        <view class='goodlist-bottom'>
+          <text>{{item.createTime}}</text>
+           <text bindtap="todetial" data-id="{{item.id}}" data-productType='{{item.productType}}' data-controlId='{{item.id}}' >管理</text>
+        </view>
+      </view>
+      <view class='goodlist-item' wx:if='{{item.productType==1}}'>
+        <view class='goodlist-top'>
+          <image src='{{item.agentProduct.coverImagesInfo[0].thumb}}' style='width:150rpx;height:150rpx;'></image>
+          <view class='goodlist-top-right'>
+            <text class='goodlist-top-right-name'>{{item.agentProduct.name}}</text>
+            <view class='goodlist-top-right-center'>
+              <text wx:if='{{item.agentProduct.allowConsignmentFlag}}' class='goodlist-top-right-center-icon'>代理</text>
+              <text class='goodlist-top-right-center-pricetip'>售价</text>
+              <text class='goodlist-top-right-center-price'> ￥{{item.agentProduct.price}} </text>
+              <text wx:if="{{item.allowConsignmentFlag}}" class='goodlist-top-right-center-costprice'> 供货价 ¥{{item.agentProduct.costPrice}}</text>
+            </view>
+            <text class='goodlist-top-right-num'>销量 {{item.agentProduct.commentCount}}</text>
+          </view>
+        </view>
+        <view class='goodlist-bottom'>
+          <text>{{item.createTime}}</text>
+          <text bindtap="todetial" data-id="{{item.agentProduct.id}}" data-controlId='{{item.id}}' data-productType='{{item.productType}}'>管理</text>
+        </view>
+      </view>
+    </block>
+  </swiper-item>
+</swiper>

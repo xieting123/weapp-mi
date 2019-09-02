@@ -1,0 +1,31 @@
+<view class='setting-container'>
+  <view class='setting-label'>
+    <text class='setting-title'>设置商圈自定义版块</text>
+    <block wx:for="{{objlist}}" wx:item='item'>
+      <view class='setting-shenfen'>
+        <text>{{item.blockName}}</text>
+        <view>
+          <image src='../../image/icon_bianjibankuai@3x.png' id='{{item.id}}' data-name='{{item.blockName}}' bindtap="btnclick2" style="margin-right:32rpx"></image>
+          <image src='../../image/icon_labnedel@3x.png' id='{{item.id}}' bindtap="deleteById"></image>
+        </view>
+      </view>
+    </block>
+    <view class='addlabel' bindtap="btnclick">+点击新建版块</view>
+
+  </view>
+  <!-- 模态框 -->
+  <view wx:if='{{showModal}}'>
+    <view class='mask_layer' bindtap='modal_click_Hidden' />
+    <view class='modal_box'>
+      <view class="title">新建版块名称</view>
+      <view class='content'>
+        <text class='modalMsg'></text>
+        <textarea class='input_show1' bindinput='changeCancelReason' auto-height value='{{modalMsg}}' placeholder='{{modalMsg_placeholder}}'></textarea>
+      </view>
+      <view class='btn1'>
+        <view bindtap='modal_click_Hidden' class='cancel'>取消</view>
+        <view bindtap='Sure' class='Sure'>确定</view>
+      </view>
+    </view>
+  </view>
+</view>

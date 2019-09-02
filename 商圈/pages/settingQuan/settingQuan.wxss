@@ -1,0 +1,64 @@
+/* pages/settingQuan/settingQuan.wxss */
+.setting-quan{
+  width: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  margin: 15rpx 0;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.setting-quan-img image{
+  width:100rpx;
+  height: 100rpx;
+  border-radius:10rpx;
+  margin-right: 12rpx;
+}
+.setting-info{
+  display: flex;
+  flex-direction: column;
+}
+.setting-info{
+  font-size: 36rpx;
+  color:#333333;
+  font-weight:500;
+line-height:40rpx;
+}
+.setting-info .routerlink{
+  font-size: 24rpx;
+  color:#666666;
+}
+/* 列表 */
+.setting-quan-list{
+  background: #fff;
+  width: 100%;
+}
+.setting-quan-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  box-sizing: border-box;
+  color:#4D4D4D;
+  font-size: 28rpx;
+  border-bottom: 1px solid #F1F2F6;
+}
+.setting-quan-item-member{
+  color:#999999;
+  font-size: 28rpx;
+  margin-right:16rpx;
+}
+
+.Sign-out{
+  margin-top: 16rpx;
+font-size: 28rpx;
+  color: #D7000F;
+}
+button::after{
+  border:none;
+}
+button{
+  background: #fff;
+  font-size: 28rpx;
+  color: #D7000F;
+}

@@ -1,0 +1,13 @@
+<view class='editor-container'>
+  <view class='editor-info'>
+  <view><image src='{{dataInfo.circlePhoto.thumb}}' mode='aspectFill	'></image></view>
+    <text class='editor-info-name'>{{dataInfo.circleName}}</text>
+    <text class='editor-info-introduce'>{{dataInfo.circleInfo}}</text>
+  </view>
+  <view class='editor-btn'>
+  <navigator url='../editorQuan/editorQuan?circleId={{dataInfo.circleId}}'>
+      <button hover-class="none">编辑</button>
+  </navigator>
+
+  </view>
+</view>

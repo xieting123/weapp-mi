@@ -1,0 +1,2 @@
+/* pages/blackList/blackList.wxss */
+@import '../memberSetting/memberSetting.wxss'

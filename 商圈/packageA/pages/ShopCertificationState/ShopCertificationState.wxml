@@ -1,0 +1,51 @@
+  <!-- /**  认证状态  0: 未认证  1: 待认证   2: 认证通过   3: 认证失败 */
+private Integer status; -->
+    <view wx:if='{{status==1}}' class='selfgood-status'>
+    <image src='../../../img/icon_renzhnegweitongguo@3x.png' style='width:16rpx;height:16rpx;'></image>
+    <text>认证状态：待认证</text>
+  </view>
+  <view wx:if="{{status==3}}" class='selfgood-status'>
+    <image src='../../../img/icon_renzhnegweitongguo@3x.png' style='width:16rpx;height:16rpx;'></image>
+    <text>认证状态：认证未通过</text>
+  </view>
+    <view wx:if="{{status==2}}" class='selfgood-status2'>
+    <image src='../../../img/icon_renzhnegyitongguo@3x.png' style='width:16rpx;height:16rpx;'></image>
+    <text>认证状态：认证已通过</text>
+  </view>
+<view class='selfgood-add-head'>
+  <view class='selfgood-add-head-two'>
+    <text>机构名称</text>
+    <text>{{organizationName}}</text>
+  </view>
+  <view class='selfgood-add-head-three'>
+    <text>统一代码证</text>
+    <text>{{uniformCodeCertificate}}</text>
+  </view>
+  <view class='selfgood-add-head-three'>
+    <text>法人姓名</text>
+    <text>{{idCardName}}</text>
+  </view>
+  <view class='selfgood-add-head-three'>
+    <text>身份证号码</text>
+    <text>{{idCardNum}}</text>
+  </view>
+  <view class='selfgood-add-head-sixbox'>
+    <text>身份证（正面）</text>
+    <view class='selfgood-add-head-six-img'>
+      <image src='{{idCardFrontPic}}' mode='aspectFill'></image>
+    </view>
+  </view>
+  <view class='selfgood-add-head-sixbox'>
+    <text>身份证（反面）</text>
+    <view class='selfgood-add-head-six-img'>
+      <image src='{{idCardBackPic}}' mode='aspectFill'></image>
+    </view>
+  </view>
+  <view class='selfgood-add-head-sixbox'>
+    <text>营业执照</text>
+    <view class='selfgood-add-head-six-img'>
+      <image src='{{uniformCodeCertificateImg}}' mode='aspectFill'></image>
+    </view>
+  </view>
+  <view class='editor-btn'>信息修改</view>
+</view>

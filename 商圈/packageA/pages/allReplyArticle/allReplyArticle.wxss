@@ -1,0 +1,14 @@
+/* packageA/pages/allReplyArticle/allReplyArticle.wxss */
+@import '../../../pages/PublishingDynamicsDetail/PublishingDynamicsDetail.wxss';
+.dynamic-comments-container{
+  padding: 32rpx;
+}
+.dynamic-comment-container-like-menu{
+  width:138rpx;
+}
+.dynamic-comments-content-replyType{
+  display: inline-block
+}
+.dynamic-comments-content-replyType text{
+  color:#456693
+}

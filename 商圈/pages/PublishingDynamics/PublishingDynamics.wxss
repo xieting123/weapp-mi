@@ -1,0 +1,351 @@
+/* pages/PublishingDynamics/PublishingDynamics.wxss */
+@import '../publishNotice/publishNotice.wxss';
+
+page {
+  background: #fff;
+}
+
+.publish-dynamics-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  padding: 25rpx 32rpx;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.publish-dynamics-head text:nth-child(1) {
+  color: #999;
+}
+
+.publish-dynamics-head text:nth-child(2) {
+  color: #333;
+}
+
+textarea {
+  padding: 32rpx;
+  margin: 0 auto;
+  width: 686rpx;
+}
+
+.placeholderstyle {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 54rpx;
+  color: rgba(153, 153, 153, 1);
+}
+
+
+
+.publish-dynamics-position-fize {
+  color: rgba(153, 153, 153, 1);
+}
+
+/* 获取位置后变色 */
+
+.address {
+  color: #456693;
+}
+
+.publish-dynamics-position image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 8rpx;
+}
+
+.publish-dynamics-position-fixed {
+  position: fixed;
+  bottom: 0rpx;
+}
+/* 获取位置 */
+.publish-dynamics-position {
+  display: flex;
+  align-items: center;
+  padding: 32rpx;
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 54px;
+}
+.publish-dynamics-meuns {
+  padding: 24rpx 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 750rpx;
+  box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.16);
+  box-sizing: border-box;
+}
+
+.publish-dynamics-meuns image {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.publish-dynamics-meuns .publish-dynamics-meuns-gongxufn {
+  height: 50rpx;
+  width: 120rpx;
+}
+
+/* 解析链接 */
+
+.publish-dynamics-box {
+  width: 686rpx;
+  height: 160rpx;
+  background: rgba(241, 242, 246, 1);
+  opacity: 1;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  padding-left: 32rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.publish-dynamics-linkimg {
+  width: 160rpx;
+  height: 160rpx;
+  background: rgba(230, 230, 230, 1);
+  opacity: 1;
+  text-align: center;
+}
+
+.publish-dynamics-linkimg image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 75rpx;
+}
+
+.publish-video-container-info {
+  width: 220rpx;
+  height: 220rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #000;
+}
+
+.publish-video-container-info video {
+  width: 220rpx;
+  height: 220rpx;
+}
+
+.publish-dynamics-linkimg-cancle,
+.publish-video-container-info .publish-video-container-info-delete {
+  height: 48rpx !important;
+  width: 48rpx !important;
+  position: absolute;
+  right: 8rpx;
+  top: 28rpx;
+}
+
+/* 图片上传 */
+
+.publish-dynamics-box-photo {
+  padding: 32rpx;
+  padding-bottom:200rpx; 
+}
+
+.publish-dynamics-box-photo image {
+  width: 220rpx;
+  height: 220rpx;
+}
+
+
+/* 表情盒子处理 */
+
+/* 评论框 */
+
+.comment-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.cf-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  z-index: 99;
+}
+
+.cf-box {
+  padding: 8px 5px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.t-info textarea {
+  background: red;
+  padding: 8px 5px;
+  height: 30px;
+  box-sizing: border-box;
+  width: 100%;
+  display: block;
+}
+
+.cf-content {
+  background-color: #f2f2f2;
+  padding: 8px 5px;
+  font-size: 12px;
+  height: 30px;
+  max-height: 40px;
+  width: 100%;
+}
+
+.cf-send {
+  width: 50px;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 5px;
+  border-radius: 2px;
+  text-align: center;
+  padding: 0 2px !important;
+  font-size: 12px;
+  background-color: #e64340;
+  color: #fff;
+}
+
+.cf-send.touch-active:active {
+  background-color: #b03f3e;
+}
+
+.emoji {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding-top: 2px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.emoji-box {
+  position: relative;
+  height: 200px;
+  padding: 5px 0;
+  box-sizing: border-box;
+  margin-bottom: -200px;
+}
+
+.emoji-cell {
+  width: 9.09%;
+  height: 33px;
+  display: inline-block;
+}
+
+.emoji-cell image {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.emoji-move-in {
+  -webkit-animation: emoji-move-in 0.3s forwards;
+  animation: emoji-move-in 0.3s forwards;
+}
+
+.emoji-move-out {
+  -webkit-animation: emoji-move-out 0.3s forwards;
+  animation: emoji-move-out 0.3s forwards;
+}
+
+.no-emoji-move {
+  -webkit-animation: none;
+  animation: none;
+}
+
+@-webkit-keyframes emoji-move-in {
+  0% {
+    margin-bottom: -200px;
+  }
+
+  100% {
+    margin-bottom: 0;
+  }
+}
+
+@keyframes emoji-move-in {
+  0% {
+    margin-bottom: -200px;
+  }
+
+  100% {
+    margin-bottom: 0;
+  }
+}
+
+@-webkit-keyframes emoji-move-out {
+  0% {
+    margin-bottom: 0;
+  }
+
+  100% {
+    margin-bottom: -200px;
+  }
+}
+
+@keyframes emoji-move-out {
+  0% {
+    margin-bottom: 0;
+  }
+
+  100% {
+    margin-bottom: -200px;
+  }
+}
+
+@-webkit-keyframes pd-left-move {
+  0% {
+    padding-left: 5px;
+  }
+
+  100% {
+    padding-left: 15px;
+  }
+}
+
+@keyframes pd-left-move {
+  0% {
+    padding-left: 5px;
+  }
+
+  100% {
+    padding-left: 15px;
+  }
+}
+
+/* 表情盒子处理结束 */
+
+/* 视频处理   视频播放键*/
+
+.publish-video-container-info-play {
+  width: 32rpx !important;
+  height: 35rpx !important;
+  position: absolute;
+}
+
+/* 坑~ video必须先渲染出来，不然全屏会横屏 */
+
+#prew_video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1rpx;
+  height: 1rpx;
+}

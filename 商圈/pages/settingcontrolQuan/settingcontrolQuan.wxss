@@ -1,0 +1,30 @@
+/* pages/settingcontrolQuan/settingcontrolQuan.wxss */
+.setting-container{
+  background: #fff;
+  padding:0 32rpx;
+  
+}
+.setting-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height:139rpx;
+  border-bottom: 1px solid #E6E6E6
+}
+.setting-item text:nth-child(1){
+  color:#4D4D4D;
+  font-size: 30rpx;
+}
+.setting-item text:nth-child(2){
+color:#999999;
+font-size: 24rpx;
+margin-top: 17rpx;
+}
+
+.setting-left{
+  display: flex;
+  flex-direction: column;
+}
+.setting-two {
+  margin-top: 33rpx;
+}

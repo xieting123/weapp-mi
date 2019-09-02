@@ -1,0 +1,35 @@
+/* pages/helplist/helplist.wxss */
+page{
+  padding:16rpx 32rpx;
+  box-sizing: border-box;
+}
+.help-container-item{
+  background: #fff;
+  padding:16rpx 32rpx;
+  margin-bottom: 16rpx;
+}
+.help-title{
+  font-size:28rpx;
+font-family:PingFang SC;
+font-weight:bold;
+line-height:28px;
+color:rgba(77,77,77,1);
+opacity:1;
+border-bottom: 1px solid #E6E6E6
+}
+.help-content{
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:400;
+line-height:28px;
+color:rgba(77,77,77,1);
+opacity:1;
+}
+.help-time{
+font-size:22rpx;
+font-family:PingFang SC;
+font-weight:400;
+line-height:28px;
+color:rgba(153,153,153,1);
+opacity:1;
+}

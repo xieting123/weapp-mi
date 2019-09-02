@@ -1,0 +1,46 @@
+<view class='selfgood-add-head'>
+  <view class='selfgood-add-head-one'>
+    <text  bindtap="goback">取消</text>
+    <text wx:if="{{handlerType && organizationName && uniformCodeCertificate &&uniformCodeCertificateImg && idCardName && idCardNum && idCardFrontPic && idCardBackPic && storeId }}" bindtap="storeCert" style='color:#D7000F'>提交</text>
+    <text wx:else>提交</text>
+  </view>
+  <view class='selfgood-add-head-two'>
+    <text>法人姓名</text>
+    <input placeholder="请填写法人姓名" placeholder-class="phcolor" value="{{idCardName}}" bindinput="idCardNamefn"placeholder-style='text-align:right'></input>
+  </view>
+  <view class='selfgood-add-head-three'>
+    <text>身份证号码</text>
+    <input placeholder="请填写证件号码" placeholder-class="phcolor" placeholder-style='text-align:right' type="number" value="{{idCardNum}}" bindinput="handleInput" ></input>
+  </view>
+
+  <view class='selfgood-add-head-sixbox'>
+    <text>上传身份证（正面）</text>
+    <view class='selfgood-add-head-six-img'>
+      <image wx:if='{{idCardFrontPic}}' class='delImg' src='../../../img/icon_delzhengjain@3x.png' catchtap="delImgfn"></image>
+      <!--3中是缩放模式
+    scaleToFill 不保持纵横比缩放图片，使图片的宽高完全拉伸至填满image元素
+    aspectFit   保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。
+    aspectFill  保持纵横比缩放图片，只保证图片的短边能完全显示出来
+
+-->
+      <image wx:if='{{!idCardFrontPic}}' src='../../../img/icon_shangchuanzhengjian@3x.png' mode='aspectFill' bindtap="chooseImage1"></image>
+      <image src='{{idCardFrontPic}}' mode='aspectFill' bindtap="chooseImage1"></image>
+
+    </view>
+  </view>
+  <view class='selfgood-add-head-sixbox'>
+    <text>上传身份证（反面）</text>
+    <view class='selfgood-add-head-six-img'>
+      <image wx:if='{{idCardBackPic}}' class='delImg' src='../../../img/icon_delzhengjain@3x.png' catchtap="delbackImgfn"></image>
+      <!--3中是缩放模式
+    scaleToFill 不保持纵横比缩放图片，使图片的宽高完全拉伸至填满image元素
+    aspectFit   保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。
+    aspectFill  保持纵横比缩放图片，只保证图片的短边能完全显示出来
+
+-->
+      <image wx:if='{{!idCardBackPic}}' src='../../../img/icon_shangchuanzhengjian@3x.png' mode='aspectFill' bindtap="chooseImage2"></image>
+      <image src='{{idCardBackPic}}' mode='aspectFill' bindtap="chooseImage2"></image>
+
+    </view>
+  </view>
+</view>

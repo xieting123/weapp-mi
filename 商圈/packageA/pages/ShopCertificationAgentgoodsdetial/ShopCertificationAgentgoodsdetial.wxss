@@ -1,0 +1,45 @@
+/* packageA/pages/ShopCertificationAgentgoodsdetial/ShopCertificationAgentgoodsdetial.wxss */
+@import '../shopManagement/shopManagement.wxss';
+@import '../ShopCertificationgoodsdetial/ShopCertificationgoodsdetial.wxss';
+
+.allowConsignmentFlag {
+  display: inline-block;
+  width: 56rpx;
+  height: 28rpx;
+  line-height: 28rpx !important;
+  background: rgba(69, 102, 147, 1);
+  border-radius: 2px;
+  font-size: 22rpx !important;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1) !important;
+  opacity: 1;
+  text-align: center;
+  margin-right: 18rpx;
+}
+.shopDetial-top-bottom-left{
+  display: flex;
+  align-items: center;
+}
+.agentshopDetial-top-bottom {
+  display: flex;
+}
+
+.agentshopDetial-top-bottom-left {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.agentshopDetial-top-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.agentshopDetial-top-bottom-right text {
+  margin-left: 56rpx;
+}

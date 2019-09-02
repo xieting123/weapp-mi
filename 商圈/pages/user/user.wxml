@@ -1,0 +1,88 @@
+<!-- 头部信息 -->
+<view class='user-container'>
+  <view class='user-head'>
+    <!-- 判断是否授权 未授权则显示登陆按钮 -->
+    <block wx:if="{{canIUse && hasuserinfo}}">
+      <image class='user-img' src='../../image/morentouxiang.png'></image>
+      <button class='user-login' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+    </block>
+
+    <block wx:else>
+      <image class='user-img' bindtap="topersoncenter" src='{{avatarUrl}}'></image>
+      <image class='user-identify' src='../../image/icon_v@3x.png'></image>
+      <view class='user-info'>
+        <text>{{nickName}}</text>
+        <!-- <image class='identify' src='../../image/icon_实人认证@3x.png'></image> -->
+      </view>
+    </block>
+    <view class='task-item-right' bindtap="signUserCoinfn" wx:if="{{!signFlag}}">签到</view>
+    <view class='task-item-right-done' bindtap="signUserCoinfn" wx:if="{{signFlag}}">已签到</view>
+  </view>
+
+
+  <view class='user-money'>
+    <view class='user-money-num'>
+      <text>{{availableAmount}}</text>
+      <text>账户余额</text>
+    </view>
+    <view class='user-money-num'>
+      <text>${{coinNum}}</text>
+      <text>蜜币</text>
+    </view>
+  </view>
+  <!-- 个人中心列表页 -->
+  <view class='user-list'>
+    <navigator url='../../packageA/pages/mywallet/mywallet' hover-class="none">
+      <view class='user-list-item'>
+        <view class='user-left'>
+          <image src='../../image/icon_wodeqianbao@3x.png'></image>
+          <text>我的钱包</text> </view>
+        <image src='../../image/6.png' class='user-go'></image>
+      </view>
+    </navigator>
+    <navigator url='../../packageA/pages/OrderstatusList/OrderstatusList' hover-class="none">
+      <view class='user-list-item'>
+        <view class='user-left'>
+          <image src='../../image/icon_shnagpindingdan.png'></image>
+          <text>商品订单</text> </view>
+        <image src='../../image/6.png' class='user-go'></image>
+      </view>
+    </navigator>
+    <!-- <view class='user-list-item'>
+    <view class='user-left'>
+      <image src='../../images/23.png'></image>
+      <text>活动订单</text> </view>
+    <image src='../../images/6.png' class='user-go'></image>
+  </view> -->
+    <navigator url='../../packageA/pages/shipAddress/shipAddress' hover-class="none">
+      <view class='user-list-item'>
+        <view class='user-left'>
+          <image src='../../image/icon_shouhuodizhi@3x.png'></image>
+          <text>收货地址</text> </view>
+        <image src='../../image/6.png' class='user-go'></image>
+      </view>
+    </navigator>
+    <navigator url='../../packageA/pages/mytask/mytask' hover-class="none">
+      <view class='user-list-item'>
+        <view class='user-left'>
+          <image src='../../image/icon_renwujiangli@3x.png'></image>
+          <text>任务奖励</text> </view>
+        <image src='../../image/6.png' class='user-go'></image>
+      </view>
+    </navigator>
+    <view class='user-list-item'>
+      <view class='user-left'>
+        <image src='../../image/icon_fenxiaozhongxin@3x.png'></image>
+        <text>分销中心</text> </view>
+      <image src='../../image/6.png' class='user-go'></image>
+    </view>
+    <navigator url='../../packageA/pages/myalbum/myalbum' hover-class="none">
+      <view class='user-list-item'>
+        <view class='user-left'>
+          <image src='../../image/icon­_wodexiangce@3x.png'></image>
+          <text>我的相册</text> </view>
+        <image src='../../image/6.png' class='user-go'></image>
+      </view>
+    </navigator>
+  </view>
+</view>

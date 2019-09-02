@@ -1,0 +1,23 @@
+<view class='selfgood-add-head'>
+  <view class='selfgood-add-head-one'>
+    <text bindtap="goback">取消</text>
+    <text style='color:#D7000F' catchtap="editorStore">保存</text>
+  </view>
+  <view class='selfgood-add-head-two'>
+    <text>店铺头像</text>
+    <text>(不更改则显示商圈头像)</text>
+    <image src='{{avatarInfo.thumb}}' style="width:100rpx;height:100rpx;" bindtap="chooseImage"></image>
+  </view>
+  <view class='selfgood-add-head-three'>
+    <text>店铺名称</text>
+    <input placeholder="不填则默认为商圈名称" placeholder-class="phcolor" placeholder-style='text-align:right'  value="{{name}}" bindinput="handleInput"></input>
+  </view>
+  <view class='selfgood-add-head-three'>
+    <text>客服电话</text>
+    <input placeholder="不填则默认为商圈创建者手机号" placeholder-class="phcolor" placeholder-style='text-align:right' type="number" value="{{mobile}}" bindinput="handleInput2"></input>
+  </view>
+  <view class='store-describle'>
+    <textarea placeholder="选填，店铺简介50字以内" placeholder-class="phcolor" value='{{storeIntroduction}}' bindinput="handleInput3"></textarea>
+    <textarea placeholder="代销说明" placeholder-class="phcolor" value='{{consignmentIntroduction}}' bindinput="handleInput5"></textarea>
+  </view>
+</view>

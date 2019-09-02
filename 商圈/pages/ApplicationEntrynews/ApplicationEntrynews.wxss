@@ -1,0 +1,41 @@
+/* pages/ApplicationEntrynews/ApplicationEntrynews.wxss */
+.shenqing-container{
+padding: 17rpx 32rpx;
+}
+.shenqing-list-item{
+  background: #fff;
+    padding:30rpx;
+    margin-bottom: 16rpx;
+}
+.shenqing-top{
+  display: flex;
+  align-items: center;
+}
+.shenqing-top{
+  font-size: 28rpx;
+  color:#4D4D4D;
+  font-weight:bold;
+}
+.shenqing-wait{
+  color:#707070;
+}
+.shenqing-top .shenqing-join,.shenqing-reviewContent{
+  font-size: 24rpx;
+  color:#4D4D4D;
+}
+.shenqing-top .shenqing-join{
+  margin: 0 10rpx;
+}
+.shenqing-top image{
+width: 50rpx;
+height: 50rpx;
+border-radius: 50%;
+margin-right: 8rpx;
+}
+.shenqing-bottom{
+  margin-top: 24rpx;
+  font-size:22rpx;
+  color:#999999;
+  display: flex;
+  justify-content: space-between;
+}

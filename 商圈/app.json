@@ -1,0 +1,142 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/inQuan/inQuan",
+    "pages/user/user",
+    "pages/news/news",
+    "pages/blockQuan/blockQuan",
+    "pages/allReplyDynamics/allReplyDynamics",
+    "pages/PublishingDynamicsDetail/PublishingDynamicsDetail",
+    "pages/shangquanerweima/shangquanerweima",
+    "pages/PublishingDynamicsComment/PublishingDynamicsComment",
+    "pages/PublishingDynamicsDetailReward/PublishingDynamicsDetailReward",
+    "pages/PublishingDynamicslink/PublishingDynamicslink",
+    "pages/out/out",
+    "pages/Distributionsetting/Distributionsetting",
+    "pages/trDistributionLog/trDistributionLog",
+    "pages/PublishingDynamics/PublishingDynamics",
+    "pages/PublishingDynamics/supplydemand/supplydemand",
+    "pages/morerecommend/morerecommend",
+    "pages/helplist/helplist",
+    "pages/SearchCircle/SearchCircle",
+    "pages/publishNotice/publishNotice",
+    "pages/publicNoticeDetail/publicNoticeDetail",
+    "pages/publicNotice/publicNotice",
+    "pages/Labelsettings/Labelsettings",
+    "pages/Labelmanagement/Labelmanagement",
+    "pages/reviewQuanApplication/reviewQuanApplication",
+    "pages/OutApplicationEntrynews/OutApplicationEntrynews",
+    "pages/blackList/blackList",
+    "pages/ApplicationEntrynews/ApplicationEntrynews",
+    "pages/memberSetting/memberSetting",
+    "pages/chooseCreatequan/chooseCreatequan",
+    "pages/viewQuan/viewQuan",
+    "pages/settingcontrolQuan/settingcontrolQuan",
+    "pages/find/find",
+    "pages/CreatequanMoney/CreatequanMoney",
+    "pages/goingQuan/goingQuan",
+    "pages/settingcode/settingcode",
+    "pages/settingQuan/settingQuan",
+    "pages/createQuan/createQuan",
+    "pages/editorQuan/editorQuan",
+    "pages/upload/upload",
+    "pages/aboutMe/aboutMe",
+    "pages/index/shanghui/shanghui",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "商圈",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#bdbdbd",
+    "selectedColor": "#ea101f",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "商圈",
+        "iconPath": "./image/icon_商圈_默认@3x.png",
+        "selectedIconPath": "./image/icon_商圈_选中@3x.png"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "./image/icon_发现_默认@3x.png",
+        "selectedIconPath": "./image/icon_发现_选中@3x.png"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "text": "消息",
+        "iconPath": "./image/icon_消息_默认@3x.png",
+        "selectedIconPath": "./image/icon_消息_选中@3x.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "./image/icon_我的_默认@3x.png",
+        "selectedIconPath": "./image/icon_我的_选中@3x.png"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "packageA",
+      "pages": [
+        "pages/myZanlist/myZanlist",
+        "pages/myReward/myReward",
+        "pages/myComment/myComment",
+        "pages/myReplay/myReplay",
+        "pages/PublishingArticle/PublishingArticle",
+        "pages/PublishingArticle/PublishingArticle/PublishingArticletext",
+        "pages/PublishingArticledetail/PublishingArticledetail",
+        "pages/PublishingArticlepreview/PublishingArticlepreview",
+        "pages/PublishingArticleComment/PublishingArticleComment",
+        "pages/allReplyArticle/allReplyArticle",
+        "pages/personCenter/personCenter",
+        "pages/friendlist/friendlist",
+        "pages/myfriendlist/myfriendlist",
+        "pages/myalbum/myalbum",
+        "pages/zanList/zanList",
+        "pages/rewardList/rewardList",
+        "pages/mywallet/mywallet",
+        "pages/mytask/mytask",
+        "pages/myCoinInfo/myCoinInfo",
+        "pages/shopManagement/shopManagement",
+        "pages/shopSetting/shopSetting",
+        "pages/agentMarket/agentMarket",
+        "pages/agentMarketdetial/agentMarketdetial",
+        "pages/agentMarketdetialList/agentMarketdetialList",
+        "pages/selfGood/selfGood",
+        "pages/distributionMoneysetting/distributionMoneysetting",
+        "pages/ShopCertification/ShopCertification",
+        "pages/ShopCertificationNext/ShopCertificationNext",
+        "pages/ShopCertificationState/ShopCertificationState",
+        "pages/ShopCertificationgoods/ShopCertificationgoods",
+        "pages/ShopCertificationgoodsdetial/ShopCertificationgoodsdetial",
+        "pages/ShopCertificationAgentgoodsdetial/ShopCertificationAgentgoodsdetial",
+        "pages/ShoppingCart/ShoppingCart",
+        "pages/ShoppingCartPay/ShoppingCartPay",
+        "pages/ShoppingCartDirectPay/ShoppingCartDirectPay",
+        "pages/ShoppingUndelivergoods/ShoppingUndelivergoods",
+        "pages/shipAddress/shipAddress",
+        "pages/address/address",
+        "pages/modAddress/modAddress",
+        "pages/orderDetails/orderDetails",
+        "pages/OrderstatusList/OrderstatusList",   
+        "pages/mystoreOrderstatusList/mystoreOrderstatusList"
+        
+      ]
+    },
+    {
+      "root": "packageB",
+      "name": "pack2",
+      "pages": [
+        "pages/apple",
+        "pages/banana"
+      ]
+    }
+  ],
+  "sitemapLocation": "sitemap.json"
+}

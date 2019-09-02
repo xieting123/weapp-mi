@@ -1,0 +1,41 @@
+<!--pages/index/shanghui/shanghui.wxml-->
+<template name='shanghui'>
+  <view class='shangquan-container'>
+    <image src='../../image/icon_成员@3x.png'></image>
+    <view class='shangquan-info'>
+      <text class='shangquan-name'>北京好大联合商会</text>
+      <text class='shangquan-describe'>分享商会美好经验分享商会美好经验分享商会美好经验</text>
+      <view class='shangquan-nums'>
+        <text>99元/年</text>
+        <text>成员99+</text>
+      </view>
+    </view>
+          <image class='shanghui-toquan' src='../../image/6.png'></image>
+  </view>
+
+  <view class='shangquan-container'>
+    <image src='../../image/icon_成员@3x.png'></image>
+    <view class='shangquan-info'>
+      <text class='shangquan-name'>北京好大联合商会</text>
+      <text class='shangquan-describe'>分享商会美好经验分享商会美好经验分享商会美好经验</text>
+      <view class='shangquan-nums'>
+        <text>99元/年</text>
+        <text>成员99+</text>
+      </view>
+    </view>
+          <image class='shanghui-toquan' src='../../image/6.png'></image>
+  </view>
+
+    <view class='shangquan-container'>
+    <image src='../../image/icon_成员@3x.png'></image>
+    <view class='shangquan-info'>
+      <text class='shangquan-name'>北京好大联合商会</text>
+      <text class='shangquan-describe'>分享商会美好经验分享商会美好经验分享商会美好经验</text>
+      <view class='shangquan-nums'>
+        <text>99元/年</text>
+        <text>成员99+</text>
+      </view>
+    </view>
+          <image class='shanghui-toquan' src='../../image/6.png'></image>
+  </view>
+</template>

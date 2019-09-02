@@ -1,0 +1,111 @@
+@import '../index/shanghui/shanghui.wxss';
+
+page {
+  background: #f1f2f6;
+}
+
+.find-search input {
+  border: none;
+  width: 686rpx;
+  height: 60rpx;
+  margin: 20rpx auto;
+  background: #fff;
+  opacity: 0.86;
+  border-radius: 30px;
+  padding-left: 20rpx;
+}
+
+.place-holder {
+  text-align: center;
+  font-size: 30rpx;
+  color: #999;
+}
+
+/* 推荐更多 */
+
+.find-Recommend {
+  width: 100%;
+  height: 400rpx;
+  background: #fff;
+  padding-top: 10rpx;
+}
+
+.find-Recommend .find-more {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 20rpx auto;
+  padding-bottom: 30rpx;
+}
+
+.find-more text:nth-child(1) {
+  color: #333;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 28rpx;
+  opacity: 1;
+}
+
+.find-more text:nth-child(2) {
+  color: #999;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 28rpx;
+  opacity: 1;
+}
+
+.find-item-name {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 28rpx;
+  color: rgba(51, 51, 51, 1);
+  opacity: 1;
+  margin-top: 20rpx;
+}
+
+.find-scroll {
+  /* display: flex;
+  flex-direction: row; */
+  white-space: nowrap;
+}
+
+.scroll-view {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.find-item {
+  padding-left: 24rpx;
+  display: inline-block;
+  width: 198rpx;
+  font-size: 20rpx;
+  overflow: hidden;
+  text-align: center;
+}
+
+.find-item image {
+  height: 198rpx;
+  width: 198rpx;
+  margin-right: 24rpx;
+  border-radius: 10rpx;
+}
+
+/* 全部商圈 */
+.find-all {
+  margin-top: 30rpx;
+  background: #fff;
+  width: 100%;
+}
+
+.find-all-title {
+  padding: 30rpx;
+  font-size: 28rpx;
+  color: #333;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 28px;
+  opacity: 1;
+}

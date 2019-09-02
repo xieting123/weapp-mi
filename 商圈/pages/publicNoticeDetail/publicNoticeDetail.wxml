@@ -1,0 +1,28 @@
+<view class='public-detail'>
+  <view class='public-detail-head'>
+    <view class='public-detail-img'>
+      <image src='{{dataInfo.user.avatar}}'></image>
+      <image src='../../image/icon_会员@3x.png'></image>
+    </view>
+    <view class='public-detail-info'>
+      <text>{{dataInfo.user.name?dataInfo.user.name:dataInfo.user.nickname}}</text>
+      <text>{{createTime}}</text>
+    </view>
+  </view>
+  <view class='public-detail-content'>
+    <text>{{dataInfo.notifyContent}}</text>
+    <view class='public-img-container'>
+    <block wx:for="{{dataInfo.imageList}}" wx:item="item">
+     <image src='{{item.thumb}}' data-thumb="{{item.thumb}}" mode="widthFix" bindtap='showImg'></image>
+    </block>
+      
+    </view>
+  </view>
+    <view class='public-btn'>
+    <button bindtap="delNotice">删除通告</button>
+    <navigator url='../publishNotice/publishNotice?notifyId={{notifyId}}&circleId={{dataInfo.circleId}}&notifyContent={{dataInfo.notifyContent}}&imageLists={{imageLists}}' hover-class="none">
+       <image class='publish-editor' src='../../image/bottom_button@3x.png'></image> 
+    </navigator>
+  </view>
+
+</view>

@@ -1,0 +1,42 @@
+/* packageA/pages/PublishingArticledetail/PublishingArticledetail.wxss */
+@import '../../../pages/PublishingDynamicsDetail/PublishingDynamicsDetail.wxss';
+
+
+.article-title {
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 45px;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.dynamic-container-list {
+  padding-bottom: 100rpx;
+}
+
+button {
+  background: #fff;
+  color: #d7000f;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+button::after {
+  border: none;
+}
+
+.article-title{
+padding: 0 32rpx;
+}
+.dynamic-user{
+  padding-left: 32rpx;
+}
+.dynamic-like-list-payinfo-flex{
+  display: flex;
+
+}
+.dynamic-payinfo-button-one{
+margin-right:170rpx;
+}

@@ -1,0 +1,11 @@
+<view>
+  <block wx:for="{{viewhelplist}}" wx:item='item'>
+    <view class='help-container-item'>
+      <view class='help-title'>{{item.title}}</view>
+      <view class='help-content'>
+        <text>{{item.content}}  </text>
+      </view>
+      <view class='help-time'>{{item.createTime}}</view>
+    </view>
+  </block>
+</view>

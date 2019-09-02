@@ -1,0 +1,50 @@
+<view class='search-container'>
+  <view class='search-container-head'>
+  <view class='search-container-head-left'>
+      <image class='search-search' src='../../image/icon_sousuo@3x.png'></image>
+    <input placeholder="搜索圈子" placeholder-class="place-holder" bindinput="inputTyping" value="{{content}}" />
+    <view catchtap="cancleContent">
+      <image style='display:{{show}}' class='search-cancle-icon' src='../../image/icon_clearwenben@3x.png'></image>
+    </view>
+  </view>
+
+    <view class='search-cancle' catchtap="routerlink">取消</view>
+  </view>
+  <view wx:if="{{!content}}" class='search-info'>输入文字搜索</view>
+  <view wx:if="{{quanlist.length==0&&content}}" class='search-info'>未搜索到记录</view>
+  <!-- 搜索内容 -->
+  <view>
+    <view>
+      <!-- <template is='shanghui'></template> -->
+      <block wx:for="{{quanlist}}" wx:item="item">
+        <navigator wx:if="{{!item.joinFlag}}" hover-class="none" url='../goingQuan/goingQuan?circleId={{item.circleId}}'>
+          <view class='shangquan-container' id="{{item.circleId}}">
+            <image src='{{item.circlePhoto.thumb}}'></image>
+            <view class='shangquan-info'>
+              <text class='shangquan-name'>{{item.circleName}}</text>
+              <text class='shangquan-describe'>{{item.circleInfo}}</text>
+              <view class='shangquan-nums'>
+                <text>{{item.cost==0?'免费':item.cost+'元/年'}}</text>
+                <text> | 成员{{item.userCount>99?item.userCount+'+':item.userCount}}</text>
+              </view>
+            </view>
+          </view>
+        </navigator>
+        <navigator wx:else hover-class="none" url='../inQuan/inQuan?circleId={{item.circleId}}'>
+          <view class='shangquan-container' id="{{item.circleId}}">
+            <image src='{{item.circlePhoto.thumb}}'></image>
+            <view class='shangquan-info'>
+              <text class='shangquan-name'>{{item.circleName}}</text>
+              <text class='shangquan-describe'>{{item.circleInfo}}</text>
+              <view class='shangquan-nums'>
+                <text>{{item.cost==0?'免费':item.cost+'元/年'}}</text>
+                <text> | 成员{{item.userCount>99?item.userCount+'+':item.userCount}}</text>
+              </view>
+            </view>
+          </view>
+        </navigator>
+      </block>
+
+    </view>
+  </view>
+</view>

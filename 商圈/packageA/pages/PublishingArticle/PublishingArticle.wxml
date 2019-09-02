@@ -1,0 +1,38 @@
+<view clsaa='publish-article-head'>
+  <!-- 头部 -->
+  <view class='publish-dynamics-head'>
+    <text catchtap="cancleArticle">取消</text>
+    <text catchtap="previewArticle">预览</text>
+  </view>
+  <view class='publish-article-box'>
+    <!-- 请输入标题 -->
+    <view class='publish-article-input'>
+      <input placeholder="请输入标题" placeholder-class="placeholderClass" value="{{titlecontent}}" bindinput="titlevaluefn"></input>
+    </view>
+    <view class='publish-article-placeholderClass'>富文本编辑区(点击菜单栏添加图片或者文字)
+      <!-- 图片文字显示区域 -->
+      <!-- 这是显示图片或者文字的盒子，装编辑完成的图片和文字 -->
+      <block wx:for="{{contentbox}}" wx:item="item">
+        <view class='publish-article-placeholderClass-item' wx:if="{{item.thumb}}">
+          <image class='publish-article-placeholderClass-item-del' bindtap="contentboxfn" data-index='{{index}}' style='width:50rpx;height:50rpx' src='../../../image/icon_yichutupian.png'></image>
+          <image mode="aspectFill" src='{{item.thumb}}' style="width:200rpx;height:200rpx"></image>
+        </view>
+        <!-- 输入文字 -->
+        <view wx:else class='publish-article-content publish-article-placeholderClass-item'>
+          <image class='publish-article-placeholderClass-item-del' data-index='{{index}}' bindtap="contentboxfn" style='width:50rpx;height:50rpx' src='../../../image/icon_yichutupian.png'></image>
+          <text class='content'>{{item}}</text>
+        </view>
+      </block>
+
+    </view>
+  </view>
+  <!-- 底部菜单 -->
+  <view class='publish-dynamics-position-fixed'>
+    <view class='publish-dynamics-meuns'>
+      <image wx:if='{{!imgurl.length||!contentbox.length}}' src='../../../image/icon_tupianmoren@3x.png' bindtap='uploadDetailImage'></image>
+      <image wx:else src='../../../image/icon_zhidingxinxi@3x.png' bindtap='uploadDetailImage'></image>
+      <image wx:if="{{!content||!contentbox.length}}" bindtap='textRouterfn' src='../../../image/icon_wenzhibianji@3x.png'></image>
+      <image wx:else src='../../../image/icon_wenzibianjixuan@3x.png' bindtap='textRouterfn'></image>
+    </view>
+  </view>
+</view>

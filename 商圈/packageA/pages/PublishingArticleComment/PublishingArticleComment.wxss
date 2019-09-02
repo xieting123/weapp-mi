@@ -1,0 +1,2 @@
+/* packageA/pages/PublishingArticleComment/PublishingArticleComment.wxss */
+@import '../../../pages/PublishingDynamicsComment/PublishingDynamicsComment.wxss'

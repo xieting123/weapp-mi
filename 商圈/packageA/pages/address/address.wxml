@@ -1,0 +1,43 @@
+<!--pages/address/address.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset" class='forms'>
+  <view class="section">
+    <view class="section__title">收货人</view>
+    <input name="user" placeholder="请填写" />
+  </view>
+  <view class="section">
+    <view class="section__title">联系方式</view>
+    <input name="contact" placeholder="请填写" />
+  </view>
+  <view class="section" bindtap='open'>
+    <view class="section__title">所在地区</view>
+    <!-- <input name="area" placeholder="请填写" /> -->
+    <text>{{province}}</text>
+  </view>
+  <view class="section">
+    <view class="section__title">详细地址</view>
+    <input name="address" placeholder="请填写" />
+  </view>
+  <view class="section section_gap">
+    <radio-group name="setDefault">
+      <label>
+        <radio value="1" />设为默认</label>
+    </radio-group>
+  </view>
+
+  <view class="btn-area">
+    <button formType="submit">保存地址</button>
+  </view>
+</form>
+<view class='condition' wx:if='{{condition}}'>
+  <view class='title'>
+    <text bindtap='openFns'>确定</text>
+  </view>
+  <view class='condition-box'>
+    <view class='lt'>
+      <text wx:for='{{provinceList}}' wx:key='index' data-name='{{item.provinceName}}' data-index='{{index}}' bindtap='provinceFn' class='{{provinceIndex == index? "active": ""}}' data-id='{{item.id}}'>{{item.provinceName}}</text>
+    </view>
+    <view class='rt' wx:if='{{cityList.length != 0}}'>
+      <text wx:for='{{cityList}}' wx:key='index' data-name='{{item.cityName}}' data-index='{{index}}' class='{{cityIndex == index? "active": ""}}' bindtap='cityFn' data-id='{{item.id}}'>{{item.cityName}}</text>
+    </view>
+  </view>
+</view>

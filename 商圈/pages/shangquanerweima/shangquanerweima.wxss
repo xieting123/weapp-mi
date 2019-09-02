@@ -1,0 +1,144 @@
+/* pages/shangquanerweima/shangquanerweima.wxss */
+
+.erweima-container-box {
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+
+.erweima-container {
+  width: 686rpx;
+  height: 636rpx;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  border-radius: 10px;
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+
+.erweima-container-top image {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+
+.erweima-container-top {
+  display: flex;
+  align-items: center;
+}
+
+.erweima-container-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.erweima-container-info text:nth-child(1) {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  opacity: 1;
+}
+
+.erweima-container-info text:nth-child(2) {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+}
+
+.erweima-container-center image {
+  height: 200rpx;
+  width: 200rpx;
+}
+
+.erweima-container-center {
+  display: flex;
+  align-items: center;
+  padding: 56rpx 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.erweima-container-center-text {
+  width: 390rpx;
+  display: flex;
+  flex-direction: column;
+  margin-left: 32rpx;
+}
+
+.erweima-container-center-text text:nth-child(1) {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 28px;
+  color: rgba(51, 51, 51, 1);
+  opacity: 1;
+}
+
+.erweima-container-center-text text:nth-child(2) {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(69, 102, 147, 1);
+  opacity: 1;
+}
+
+.erweima-container-center-text text:nth-child(3) {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+}
+
+.erweima-container-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 56rpx 32rpx;
+}
+
+.erweima-container-bottom image {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.erweima-container-bottom-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.erweima-container-bottom-left text:nth-child(1) {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+}
+
+.erweima-container-bottom-left text:nth-child(2) {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 28px;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.canvas-btn {
+  width: 686rpx;
+  height: 88rpx;
+  background: linear-gradient(90deg, rgba(255, 170, 128, 1) 0%, rgba(255, 76, 76, 1) 100%);
+  opacity: 1;
+  border-radius: 44px;
+  margin-top: 100rpx;
+  color: #fff;
+}
+
+.canvas-btn::after {
+  border: none;
+}

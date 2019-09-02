@@ -1,0 +1,28 @@
+<view class='agentbox-container'>
+  <block wx:for="{{goodslistAgentData}}">
+    <view class='agentbox' bindtap="toagentDetial" data-id="{{item.id}}">
+      <image class='coverImageInfoimg' src='{{item.coverImageInfo.thumb}}' mode='aspectFill'></image>
+      <view class='agentbox-bottom'>
+        <text class='agentbox-goods-name'>{{item.name}}</text>
+
+        <view class='agentbox-bottom-bottom'>
+          <view class='agentbox-bottom-bottom-left'>
+            <view class='agentbox-price'>
+              <text>成本价 </text>
+              <text>￥{{item.costPrice}}</text>
+            </view>
+            <view class='agentbox-costprice'>
+              <text>利润 </text>
+              <text>￥{{item.profitMoney}}</text>
+            </view>
+          </view>
+
+          <image class='agentFlagImg' wx:if="{{!item.agentFlag}}" data-id="{{item.id}}" catchtap="toagent" src='../../../img/icon­­_weidaili@3x.png'></image>
+          <image class='agentFlagImg' wx:else src='../../../img/icon­­_yidaili@3x.png' data-id="{{item.id}}" catchtap="tocancledetial"></image>
+        </view>
+
+      </view>
+
+    </view>
+  </block>
+</view>

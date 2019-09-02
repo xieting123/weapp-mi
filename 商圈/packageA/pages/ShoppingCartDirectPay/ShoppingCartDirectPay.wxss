@@ -1,0 +1,2 @@
+/* packageA/pages/ShoppingCartDirectPay/ShoppingCartDirectPay.wxss */
+@import '../ShoppingCartPay/ShoppingCartPay.wxss'

@@ -1,0 +1,35 @@
+/* packageA/pages/ShopCertificationState/ShopCertificationState.wxss */
+@import '../selfGood/selfGood.wxss';
+@import '../ShopCertification/ShopCertification.wxss';
+.editor-btn{
+font-size:28rpx;
+font-family:PingFang SC;
+font-weight:400;
+line-height:88rpx;
+text-align: center;
+color:rgba(255,255,255,1);
+width:328rpx;
+height:88rpx;
+background:linear-gradient(90deg,rgba(255,170,128,1) 0%,rgba(255,76,76,1) 100%);
+opacity:1;
+border-radius:10rpx;
+margin: 56rpx 179rpx 30rpx;
+}
+.selfgood-status,.selfgood-status2{
+font-size:18rpx;
+font-family:PingFang SC;
+font-weight:400;
+line-height:40rpx;
+opacity:1;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.selfgood-status{
+background:rgba(255,184,184,1);
+color:rgba(255,255,255,1);
+}
+.selfgood-status2{
+background:#F1F2F6;
+color:rgba(4,205,146,1);
+}

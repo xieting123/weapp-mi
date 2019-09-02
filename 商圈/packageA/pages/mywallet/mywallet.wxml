@@ -1,0 +1,36 @@
+<view class='wallet-container'>
+  <view class='wallet-money'>
+    <view class='wallet-money-num'>
+      <view>账户余额</view>
+      <view>￥520.00</view>
+    </view>
+    <!-- 提现按钮 -->
+    <text class='wallet-btn'>去提现</text>
+  </view>
+  <view></view>
+</view>
+
+<view class='wallet-container-bottom'>
+  <view class='wallet-container-bottom-item'>
+    <text>交易明细</text>
+    <image src='../../../image/6.png'></image>
+  </view>
+  <navigator hover-class="none" url='../myCoinInfo/myCoinInfo'>
+    <view class='wallet-container-bottom-item'>
+      <text>蜜币明细</text>
+      <image src='../../../image/6.png'></image>
+    </view>
+  </navigator>
+  <!-- <navigator hover-class="none" url='../myCoinInfo/myCoinInfo'> -->
+  <view class='wallet-container-bottom-item'>
+    <text>提现记录</text>
+    <image src='../../../image/6.png'></image>
+  </view>
+  <!-- </navigator> -->
+  <!-- <navigator hover-class="none" url='../myCoinInfo/myCoinInfo'> -->
+  <view class='wallet-container-bottom-item'>
+    <text>提现规则</text>
+    <image src='../../../image/6.png'></image>
+  </view>
+  <!-- </navigator> -->
+</view>

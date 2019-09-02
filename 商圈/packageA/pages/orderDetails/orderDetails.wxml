@@ -1,0 +1,77 @@
+<!--packageA/pages/orderDetails/orderDetails.wxml-->
+<view class='orderdetails-box'>
+  <view class='orderdetails-box-right'>
+    <image class='orderdetails-box-right-img' src='../../../image/dingdanzhifu.png'></image>
+    <view class='orderdetails-box-time'>
+      <text>等待买家付款</text>
+      <view class='orderdetails-box-right-bottom'>
+        <text>请于</text>
+        <text>{{expiredTime}} </text>
+        <text>内付款，超时订单将自动关闭</text>
+      </view>
+    </view>
+  </view>
+  <!-- 导航进度条 -->
+  <view class='progress-box'>
+    <progress percent="0" color="red" />
+    <view class='progress-box-status'>
+      <text>买家付款</text>
+      <text>商家发货</text>
+      <text>交易完成</text>
+    </view>
+  </view>
+</view>
+<!-- 地址栏 -->
+<view class='address-info'>
+  <view class='address-info-left'>
+    <image class='address-icon' src='../../../image/icon_weizhi-moren.png'></image>
+    <view wx:if="{{proviceInfo.isDefault}}" class='proviceInfo-box'>
+      <view class='address-info-left-top'>
+        <text>{{proviceInfo.consigneeName}}</text>
+        <text>{{proviceInfo.consigneePhone}}</text>
+      </view>
+      <view class='address-info-left-bottom'>
+        {{proviceInfo.provinceName}}{{proviceInfo.cityName}}{{proviceInfo.consigneeDetail}}
+      </view>
+    </view>
+    <text wx:else bindtap="toaddress">新建收货地址</text>
+  </view>
+  <image wx:if="{{!proviceInfo.isDefault}}" class='toaddaddress-icon' src='../../../image/6.png'></image>
+</view>
+<!-- 商品列表 -->
+<view class='shoplist-containerBox'>
+  <block wx:for-items="{{orderList}}" wx:key="{{item.id}}">
+    <!-- 外层循环的是店铺 -->
+    <view class='shoppling-item'>
+      <view class='shoppling-top'>
+        <image class='shopIcon' src='../../../img/icon_dianputubiao@3x.png'></image>
+        <text>{{item.store.name}}</text>
+        <image class='toshoplistIcon' src='../../../image/6.png'></image>
+      </view>
+      <block wx:for-items="{{item.orderItemList}}" wx:for-item="items" wx:key="*item">
+        <view class='shoppling-list'>
+          <view class='off-self-box' style="position:relative;">
+            <image src='{{items.productCoverInfo.thumb}}'></image>
+          </view>
+          <view>
+            <view class='shoppling-list-name'>{{items.productName}}</view>
+            <view class='shoppling-list-price'>
+              <text>￥{{items.price}}</text>
+              <text>X {{items.quantity}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class='shoppling-bottom'>
+        <text>共{{item.quantity}}件，合计： </text>
+        <text> ￥{{item.price}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class='payshopping-menu'>
+  <text>合计：</text>
+  <text>￥{{allMoney}}</text>
+  <text class='checkout-btn' bindtap="payOrderfn">去支付</text>
+</view>

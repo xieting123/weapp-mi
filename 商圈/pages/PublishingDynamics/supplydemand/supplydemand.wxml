@@ -1,0 +1,16 @@
+<view class='supplydemand-container'>
+  <view class='supplydemand-container-header'>
+    <image src='../../../image/icon_@3x.png'></image>
+    <text class='supplydemand-container-header-tip'>可迅速展示您的供需，展示效果请</text>
+    <text class='supplydemand-container-header-egxp'>查看示例</text>
+  </view>
+  <view class='supplydemand-container-supply'>
+    <textarea placeholder="在此输入您的供应（100字以内 非必填）"       placeholder-class="oneplaceholder"  value="{{supplycontent}}"  maxlength="100"  bindinput="supplycontentfn"></textarea>
+    <text>{{supplycontent.length}}/100</text>
+  </view>
+  <view class='supplydemand-container-demand'>
+    <textarea placeholder="在此输入您的需求（100字以内 非必填）" maxlength="100"   placeholder-class="twoplaceholder" value="{{demandcontent}}"bindinput="demandcontentfn"></textarea>
+    <text>{{demandcontent.length}}/100</text>
+  </view>
+
+</view>

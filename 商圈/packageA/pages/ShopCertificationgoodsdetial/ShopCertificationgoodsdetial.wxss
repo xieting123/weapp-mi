@@ -1,0 +1,96 @@
+/* packageA/pages/ShopCertificationgoodsdetial/ShopCertificationgoodsdetial.wxss */
+@import '../shopManagement/shopManagement.wxss';
+
+.shopDetial-top-container {
+  background: #fff;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+.shopDetial-top image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.shopDetial-top {
+  display: flex;
+  align-items: center;
+}
+
+.good-consignmentIntroduction {
+  width: 496rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+  margin-left: 32rpx;
+}
+
+.shopDetial-top-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shopDetial-top-bottom-left text:nth-child(1) {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.shopDetial-top-bottom-left text:nth-child(2) {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 36rpx;
+  color: rgba(215, 0, 15, 1);
+  opacity: 1;
+}
+
+.shopDetial-top-bottom-right {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.shopmanagement-container-bottom-menu {
+  margin: 80rpx;
+}
+
+.shopmanagement-menubox {
+  margin-top: 16rpx;
+  padding: 32rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 40rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.shopmanagement-menubox-title {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 25rpx 0;
+  width:100%;
+  display: inline-block;
+}
+.shopmanagement-container-bottom {
+  margin-top: 50rpx;
+}
+.shopmanagement-container-bottom view:nth-child(3){
+  margin: 0;
+}
+.shopmanagement-container-bottom-menu{
+  margin: 0;
+  margin-right:155rpx;
+  margin-bottom: 94rpx;
+  margin-left: 35rpx;
+}

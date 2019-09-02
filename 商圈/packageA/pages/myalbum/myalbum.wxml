@@ -1,0 +1,24 @@
+<view>
+  <!-- <view class='publish-dynamics-head'>
+    <text catchtap="cancleArticle">取消</text>
+    <text class='publish-album' bindtap="publishAlbum">发布</text>
+  </view> -->
+  <view class='publish-dynamics-box-photo'>
+    <!-- 发布照片 -->
+    <view class='publish-img-container'>
+      <view class='img-list'>
+        <block wx:for="{{imginfo}}" wx:key="index">
+          <view class='img-item'>
+            <!-- 删除照片-->
+            <image class='publish-detial' bindtap='clearImg' data-index="{{index}}"  data-id="{{item.id}}" src='../../../image/icon_yichutupian.png'></image>
+            <image src='{{item.imgUrl}}' data-thumb="{{item.imgUrl}}" bindtap='showImg'  mode='aspectFill' bindlongpress="bindlongpressimg" data-id='{{index}}'></image>
+          </view>
+        </block>
+        <view class='chooseimg' bindtap='uploadDetailImage'>
+          <image src='../../../image/img_add.png'></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

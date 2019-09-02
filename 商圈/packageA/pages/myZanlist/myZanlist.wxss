@@ -1,0 +1,95 @@
+/* packageA/pages/myZanlist/myZanlist.wxss */
+
+page {
+  background: #fff;
+}
+
+.zanlist-contaner {
+  padding: 32rpx 33rpx;
+}
+
+.zanlist-item {
+  padding: 20rpx 0;
+}
+
+.zanlist-item-box {
+  display: flex;
+  align-items: center;
+}
+
+.zanlist-item-box image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 8rpx;
+}
+
+.zanlist-item-box-user {
+  display: flex;
+  flex-direction: column;
+}
+
+.zanlist-item-box-user text:nth-child(1) {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(69, 102, 147, 1);
+}
+
+.zanlist-item-box-user text:nth-child(2) {
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+}
+
+.zanlist-contaner-bottom {
+  margin-left: 76rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.zanlist-contaner-bottom-zantips {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(51, 51, 51, 1);
+  opacity: 1;
+}
+
+.zanlist-contaner-bottom-content {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 36rpx;
+  color: rgba(77, 77, 77, 1);
+  opacity: 1;
+}
+
+.zanlist-contaner-bottom-content-box {
+  padding: 24rpx;
+  background: rgba(241, 242, 246, 1);
+}
+
+.zanlist-contaner-bottom-content, .content {
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.zanlist-contaner-bottom-createTime {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(153, 153, 153, 1);
+  opacity: 1;
+}
+.zanlist-contaner-bottom-article-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

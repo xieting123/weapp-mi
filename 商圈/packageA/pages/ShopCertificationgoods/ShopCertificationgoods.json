@@ -1,0 +1,7 @@
+{
+      "usingComponents": {
+        "action-sheet": "../../components/sheet/index"
+      },
+  "navigationBarTitleText": "商品管理",
+    "enablePullDownRefresh": true
+}

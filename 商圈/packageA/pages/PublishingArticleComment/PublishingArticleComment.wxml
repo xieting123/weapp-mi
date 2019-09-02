@@ -1,0 +1,36 @@
+<view class='publish-dynamics-container'>
+  <view class='publish-dynamics-head'>
+    <text>取消</text>
+    <text wx:if='{{replyType==2}}' bindtap="commentfn">发布</text>
+    <text wx:elif="{{replyType==0}}" bindtap="replyCommentfn">发布</text>
+     <text wx:else bindtap="replyCommentreplyfn">发布</text>
+  </view>
+  <view class='replay-content content'>
+    回复
+    <text class='replay-content-name'>{{dynamicsContentUser}}</text>：{{dynamicsContent}}
+  </view>
+  <view>
+    <textarea bindinput="getInput" value="{{content}}" maxlength="{{maxlength}}" placeholder='说点什么...' placeholder-class="placeholderstyle" bindinput="getInput"></textarea>
+  </view>
+
+<view class='publish-img-container-all'>
+  <!-- 发布照片 -->
+  <view class='publish-img-container'>
+    <view class='img-list'>
+      <block wx:for="{{datainfo}}" wx:key="index">
+        <view class='img-item'>
+          <!-- 删除照片-->
+          <image class='publish-detial' bindtap='clearImg' data-index="{{index}}" src='../../../image/icon_yichutupian.png'></image>
+          <image src='{{item.thumb}}' data-thumb="{{item.thumb}}"mode='aspectFill'  bindtap="previewImage" data-id='{{index}}'></image>
+        </view>
+      </block>
+      <view wx:if="{{!datainfo.length}}" class='chooseimg' bindtap='chooseImage'>
+        <image src='../../../image/img_add.png'></image>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
+</view>

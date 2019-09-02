@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText": "通告",
+  "onReachBottomDistance": 300,
+    "enablePullDownRefresh": true
+}
